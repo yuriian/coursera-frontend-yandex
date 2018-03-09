@@ -58,4 +58,25 @@ assert.deepEqual(logger.logs, [
     'Новое событие new_notification!'
 ]);
 
+// my test
+emitter
+    .off('new_notification', logger)
+    .off('new_notific', logger)
+    .emit('new_notification')
+    .emit('new_notification')
+    .emit('new_notification')
+    .emit('new_notification')
+    .emit('new_notification')
+    .emit('new_notification')
+    .emit('new_notification');
+
+// Проверяем количество нотификаций
+assert.equal(notifications.counter, 10, 'Получено 10 нотификации');
+// Проверяем, что логи были отключены, а затем снова подключены
+assert.deepEqual(logger.logs, [
+    'Произошло новое событие new_notification',
+    'Добавлена новая нотификация. Количество - 1',
+    'Новое событие new_notification!'
+]);
+
 console.info('OK!');
