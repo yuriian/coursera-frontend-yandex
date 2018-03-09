@@ -26,12 +26,14 @@ module.exports = {
      * @param {Object} subscriber
      */
     off: function (event, subscriber) {
-        var subscribers = this.events[event];
+        var subsItems = this.events[event];
 
-        this.events[event] = subscribers.filter(function(item) {
-            return item.subscriber !== subscriber;
-        });
-      
+        if (subsItems) {
+            this.events[event] = subsItems.filter(function(item) {
+                return item.subscriber !== subscriber;
+            });
+        }
+
         return this;
     },
 
@@ -39,12 +41,14 @@ module.exports = {
      * @param {String} event
      */
     emit: function (event) {
-       var handlers = this.events[event];
-
-       handlers.forEach(function(item) {
-           item.handler.call(item.subscriber);
-       });
-
-       return this;
+        var subsItems = this.events[event];
+        
+        if (subsItems) {
+            subsItems.forEach(function(item) {
+                item.handler.call(item.subscriber);
+            });
+        }
+        
+        return this;
     }
 };
