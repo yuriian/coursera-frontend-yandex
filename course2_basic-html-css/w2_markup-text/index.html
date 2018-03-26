@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Блог компании Яндекс</title>
 </head>
 <body>
     <header><h1>Блог компании Яндекс.</h1></header>
@@ -15,7 +15,7 @@
                 <p>
                     Если ваш сайт медленно грузится, вы рискуете тем, что люди не оценят ни то,
                     какой он красивый, ни то, какой он удобный. Никому не понравится, когда все
-                    тормозит. Мы регулярно добавляем в Яндекс.Почту новую функциональность,
+                    тормозит. Мы регулярно добавляем в <a href="https://mail.yandex.com/" target="_blank">Яндекс.Почту</a> новую функциональность,
                     иногда — исправляем ошибки, а это значит, у нас постоянно появляются новый код
                     и новая логика. Всё это напрямую влияет на скорость работы интерфейса.
                 </p>
@@ -23,8 +23,7 @@
 
             <section>
                 <h2>Что мы измеряем</h2>
-
-                <h4>Этапы первой загрузки:</h4>
+                <p>Этапы первой загрузки: </p>
                 <ul>
                     <li>подготовка;</li>
                     <li>загрузка статики (<abbr title="HyperText Transfer Protocol">HTTP</abbr>-запрос и парсинг);</li>
@@ -32,31 +31,28 @@
                     <li>инициализация базовых объектов;</li>
                     <li>отрисовка.</li>
                 </ul>
-
-                <h4>Этапы отрисовки любой страницы:</h4>
+                <p>Этапы отрисовки любой страницы:</p>
                 <ul>
                     <li>подготовка к запросу на сервер;</li>
                     <li>запрос данных с сервера;</li>
                     <li>шаблонизация;</li>
                     <li>обновление <abbr title="Document Object Model">DOM</abbr>.</li>
                 </ul>
-
-                — <q>Ок, теперь у нас есть метрики, мы можем отправить их на сервер</q> - говорим мы<br>
-                — <q>Что же дальше?</q> - вопрошаете вы<br>
-                — <q>А давай построим график!</q> - отвечаем мы<br>
-                — <q>А что будем считать?</q> - уточняете вы<br>               
-
+                <p>
+                    — <q>Ок, теперь у нас есть метрики, мы можем отправить их на сервер</q> - говорим мы<br>
+                    — <q>Что же дальше?</q> - вопрошаете вы<br>
+                    — <q>А давай построим график!</q> - отвечаем мы<br>
+                    — <q>А что будем считать?</q> - уточняете вы<br> 
+                </p>           
                 <p>
                     Как вы знаете, <em>медиана</em> – это серединное, а не среднее значение в выборке.
                     Если у нас имеются числа 1, 2, 2, 3, 8, 10, 20, то медиана – 3, а среднее – 6,5.
                     В общем случае медиана отлично показывает, сколько грузится средний пользователь.
                 </p>
-
                 <p>
                     В случае ускорения или замедления медиана, конечно, изменится. Но она не может
                     рассказать, сколько пользователей ускорилось, а сколько замедлилось.
                 </p>
-
                 <p>
                     <a href="http://apdex.org/overview.html" target="_blank">
                         <dfn><abbr title="Application Performance Index">APDEX</abbr></dfn>
@@ -128,10 +124,11 @@
                     Мы же решили сделать свой аналог на <abbr title="JavaScript">JS</abbr>. Чтобы реализовать этот метод обновления,
                     начали искать реализации <code>diff</code> на <abbr title="JavaScript">JS</abbr>. На популярных хостингах кода нашли
                     библиотеки:
-                </p>
-                
-                - VCDiff<br>
-                - google-diff-patch-match<br>
+                </p>                
+                <ul>
+                    <li>VCDiff</li>
+                    <li>google-diff-patch-match</li>
+                </ul>
                             
                 <p>Для окончательного выбора библиотеки нам нужно сравнить:</p>
 
@@ -187,20 +184,18 @@
                         итерационный метод численной оптимизации, предназначенный для
                         нахождения локального максимума/минимума нелинейного функционала
                         без ограничений.
-                        <pre>
-                            <code>
-дано <b><var>&epsilon;</var></b>, <b><var>x<sub>0</sub></var></b>
-инициализировать <b><var>H</var><sub>0</sub></b>
-<b><var>k</var> = 0</b>
-<b>while || &nabla;<var>f</var><sub><var>k</var></sub> || > <var>&epsilon;</var></b>
-    найти направление <b><var>p</var><sub><var>k</var></sub> = &ndash;<var>C</var><sub><var>k</var></sub>&nabla;<var>f</var><sub><var>k</var></sub></b>
-    вычислить <b><var>x</var><sub><var>k</var>+1</sub> = <var>x</var><sub><var>k</var></sub> + <var>&alpha;</var><sub><var>k</var></sub><var>p</var><sub><var>k</var></sub></b>, <b><var>&alpha;</var><sub><var>k</var></sub></b> удовлетворяет условиям Вольфе
-    обозначить <b><var>s</var><sub><var>k</var></sub> = <var>x</var><sub><var>k</var>+1</sub> &ndash; <var>x</var><sub><var>k</var></sub> и <var>y</var><sub><var>k</var></sub> = &nabla;<var>f</var><sub><var>k</var>+1</sub> &ndash; &nabla;<var>f</var><sub><var>k</var></sub></b>
-    вычислить <b><var>C</var><sub><var>k</var>+1</sub></b>
-    <b><var>k</var> = <var>k</var> + 1</b>
-<b>end</b>
-                            </code>
-                        </pre>
+                        <p>
+                            дано <var>&epsilon;</var>, <var>x<sub>0</sub></var><br>
+                            инициализировать <var>H</var><sub>0</sub><br>
+                            <var>k</var> = 0<br>
+                            <b>while</b> || &nabla;<var>f</var><sub><var>k</var></sub> || > <var>&epsilon;</var><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;найти направление <var>p</var><sub><var>k</var></sub> = &ndash;<var>C</var><sub><var>k</var></sub>&nabla;<var>f</var><sub><var>k</var></sub><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;вычислить <var>x</var><sub><var>k</var>+1</sub> = <var>x</var><sub><var>k</var></sub> + <var>&alpha;</var><sub><var>k</var></sub><var>p</var><sub><var>k</var></sub>, <var>&alpha;</var><sub><var>k</var></sub> удовлетворяет условиям Вольфе<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;обозначить <var>s</var><sub><var>k</var></sub> = <var>x</var><sub><var>k</var>+1</sub> &ndash; <var>x</var><sub><var>k</var></sub> и <var>y</var><sub><var>k</var></sub> = &nabla;<var>f</var><sub><var>k</var>+1</sub> &ndash; &nabla;<var>f</var><sub><var>k</var></sub><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;вычислить <var>C</var><sub><var>k</var>+1</sub><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<var>k</var> = <var>k</var> + 1<br>
+                            <b>end</b>
+                        </p>
                     </dd>
                 </dl>
                 <p>Почему именно алгоритм Флетчера, а не другие популярные алгоритмы вроде:</p>
@@ -256,17 +251,17 @@
         </article>
 
         <section>
-            <h3>Комментарии (3):</h3>
+            <h3>Комментарии (4):</h3>
             <article>
                 <h4>                   
-                    <a href="mailto:mogaika@yandex-team.ru">Mogaika</a>
+                    Mogaika (<a href="mailto:mogaika@yandex-team.ru">mogaika@yandex-team.ru</a>)
                     <time datetime="2014-11-30T17:05+03:00">30 ноября 2014 в 17:05</time>                   
                 </h4>    
                 <p>А можете привести сравнение, на сколько быстрее грузится lite версия?</p>
             </article>
             <article>
                 <h4>
-                    <a href="mailto:mrawesome@yandex.ru">JIguse</a>
+                    JIguse (<a href="mailto:mrawesome@yandex.ru">mrawesome@yandex.ru</a>)
                     <time datetime="2014-11-29T21:30+03:00">29 ноября 2014 в 21:30</time>
                 </h4>    
                 <p>
@@ -276,19 +271,19 @@
             </article>
             <article>
                 <h4>
-                    <a href="mailto:brist89@yandex-team.ru">Brister</a>
+                    Brister (<a href="mailto:brist89@yandex-team.ru">brist89@yandex-team.ru</a>)
                     <time datetime="2014-11-24T13:13+03:00">24 ноября 2014 в 13:13</time>
                 </h4>    
-                <p>
+                <blockquote>
                     <code>(кол-во счастливых пользователей + кол-во удовлетворенных / 2) / (кол-во всех)</code>.<br>
                     Получается значение от нуля до единицы, которое, видимо, лучше всего показывает,
                     хорошо или плохо работает почта.        
-                </p>
+                </blockquote>
                 <p>наверное все-таки от 0.5 до 1</p>
             </article>
             <article>
                 <h4>
-                    <a href="mailto:test@yandex.ru">alexeimois</a>
+                    alexeimois (<a href="mailto:test@yandex.ru">test@yandex.ru</a>)
                     <time datetime="2014-11-22T17:35+03:00">22 ноября 2014 в 17:35</time>
                 </h4>
                 <p>
@@ -301,7 +296,7 @@
         </section>    
     </main>
     <footer>
-        <small>© Яндекс, help@yandex.ru, Хохрякова, 10</small>
+        <small>&copy; Яндекс, <a href="mailto:help@yandex.rus">help@yandex.ru</a>, Хохрякова, 10</small>
     </footer>
 </body>
 </html>
