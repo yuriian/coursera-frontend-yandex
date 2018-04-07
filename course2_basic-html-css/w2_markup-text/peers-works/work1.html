@@ -1,4 +1,6 @@
-
+<!-- Aleksandr Kurov -->
+<!-- https://www.coursera.org/learn/snovy-html-i-css/peer/6mMfX/razmietit-tiekst/review-next -->
+<!-- https://s3.amazonaws.com/coursera-uploads/peer-review/81d9328cfa3cb649f72650dd2f49a4d2/index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,22 +8,22 @@
   <title>Блог компании Яндекс.</title>
   <!-- MathML для Chrome -->
   <script>window.MathJax = { MathML: { extensions: ["mml3.js", "content-mathml.js"]}};</script>
-  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML"></script>
 </head>
 <body>
-  <header>
-    <h1>ЯНДЕКС.ПОЧТА: КАК МЫ ИЗМЕРЯЕМ СКОРОСТЬ ЗАГРУЗКИ И УЛУЧШАЕМ ЕЁ</h1>
-  </header>
   <main>
     <article>
-      <p>Если ваш сайт медленно грузится, вы рискуете тем, что люди не оценят ни то,
-      какой он красивый, ни то, какой он удобный. Никому не понравится, когда все тормозит.
-      Мы регулярно добавляем в <a href="https://mail.yandex.ru">Яндекс.Почту</a> новую функциональность, иногда — исправляем ошибки,
-      а это значит, у нас постоянно появляются новый код и новая логика. Всё это напрямую влияет на скорость работы интерфейса.</p>
+      <header>
+        <h1>ЯНДЕКС.ПОЧТА: КАК МЫ ИЗМЕРЯЕМ СКОРОСТЬ ЗАГРУЗКИ И УЛУЧШАЕМ ЕЁ</h1>
+        <p>Если ваш сайт медленно грузится, вы рискуете тем, что люди не оценят ни то,
+        какой он красивый, ни то, какой он удобный. Никому не понравится, когда все тормозит.
+        Мы регулярно добавляем в <a href="https://mail.yandex.ru">Яндекс.Почту</a> новую функциональность, иногда — исправляем ошибки,
+        а это значит, у нас постоянно появляются новый код и новая логика. Всё это напрямую влияет на скорость работы интерфейса.</p>
+      </header>
 
       <section>
         <h2>Что мы измеряем</h2>
-        <p>Этапы первой загрузки:
+        <p>Этапы первой загрузки:</p>
           <ul>
             <li>подготовка;</li>
             <li>загрузка статики (<abbr title="HyperText Transfer Protocol">HTTP</abbr>-запрос и парсинг);</li>
@@ -29,15 +31,15 @@
             <li>инициализация базовых объектов;</li>
             <li>отрисовка.</li>
           </ul>
-        </p>
-        <p>Этапы отрисовки любой страницы:
+
+        <p>Этапы отрисовки любой страницы:</p>
           <ul>
             <li>подготовка к запросу на сервер;</li>
             <li>запрос данных с сервера;</li>
             <li>шаблонизация;</li>
             <li>обновление <abbr title="Document Object Model">DOM</abbr>.</li>
           </ul>
-        </p>
+
         <p>
         &mdash; <q>Ок, теперь у нас есть метрики, мы можем отправить их на сервер</q> - говорим мы.<br>
         &mdash; <q>Что же дальше?</q> - вопрошаете вы.<br>
@@ -55,7 +57,7 @@
         Мы выбираем временной интервал [0; t], такой, что если время показа страницы попало в него,
         то пользователь счастлив. Берем еще один интервал, (t; 4t] (в четыре раза больше первого),
         и считаем, что если страница показана за это время, то пользователь в целом удовлетворен
-        скоростью работы, но уже не настолько счастлив. И применяем формулу: <code>(кол-во счастливых пользователей + кол-во удовлетворенных / 2) / (кол-во всех).</code>
+        скоростью работы, но уже не настолько счастлив. И применяем формулу: <code>(<var>кол-во счастливых пользователей</var> + <var>кол-во удовлетворенных</var> / 2) / (<var>кол-во всех</var>).</code>
         Получается значение от нуля до единицы, которое, видимо, лучше всего показывает,
         хорошо или плохо работает почта.</p>
       </section>
@@ -64,36 +66,36 @@
         <h2>Как мы измеряем</h2>
         <p>Сейчас модуль обновления сам логирует все свои стадии, и можно легко понять причину
         замедления: медленнее стал отвечать сервер либо слишком долго выполняется JavaScript.
-        Выглядит это примерно так:
+        Выглядит это примерно так:</p>
         <pre>
           <code>
             this.timings['look-ma-im-start'] = Date.now();
             this.timings['look-ma-finish'] = Date.now();
           </code>
         </pre>
-        </p>
+
         <p>C помощью <code>Date.now()</code> мы получаем текущее время. Все тайминги собираются и при отправке
         рассчитываются. На этапах разница между «end» и «start» не считается, а все вычисления
-        производятся в конце:
+        производятся в конце:</p>
         <pre>
           <code>
-            var totalTime = this.timings['look-ma-finish'] - this.timings['look-ma-im-start'];
+            var <var>totalTime</var> = this.timings['look-ma-finish'] - this.timings['look-ma-im-start'];
           </code>
         </pre>
-        </p>
+
         <p>И на сервер прилетают подобные записи: <samp>serverResponse=50&domUpdate=60</samp></p>
       </section>
 
       <section>
         <h2>Как мы ускоряем</h2>
-        <p>Чтобы снизить время загрузки почты при выходе новых версий, мы уже делаем следующее:
+        <p>Чтобы снизить время загрузки почты при выходе новых версий, мы уже делаем следующее:</p>
         <ul>
           <li>включаем gzip;</li>
           <li>выставляем заголовки кэширования;</li>
           <li>фризим <abbr title="Cascading Style Sheets">CSS</abbr>, <abbr title="JavaScript">JS</abbr>, шаблоны и картинки;</li>
           <li>используем <abbr title="Content Delivery Network">CDN</abbr>;</li>
         </ul>
-        </p>
+
         <p>Мы подумали: <q>А что если хранить где-то старую версию файлов, а при выходе новой
         передавать только diff между ней и той, которая сохранена у пользователя?</q> В браузере же
         останется просто наложить патч на клиенте.</p>
@@ -103,12 +105,12 @@
         «Google <abbr title="Secure Digital High Capacity">SDHC</abbr>»</a>, — но по разным причинам они не получили должного распространения
         в браузерах и на серверах.</p>
         <p>Мы же решили сделать свой аналог на JS. Чтобы реализовать этот метод обновления,
-        начали искать реализации diff на JS. На популярных хостингах кода нашли библиотеки:
+        начали искать реализации diff на JS. На популярных хостингах кода нашли библиотеки:</p>
         <ul>
           <li>VCDiff,</li>
           <li>google-diff-patch-match.</li>
-        </ul></p>
-        <p>Для окончательного выбора библиотеки нам нужно сравнить:
+        </ul>
+        <p>Для окончательного выбора библиотеки нам нужно сравнить:</p>
           <table>
             <thead>
               <tr>
@@ -130,10 +132,10 @@
               </tr>
             </tbody>
           </table>
-        </p>
+
         <p>После того как мы определились с библиотекой для диффа, нужно определиться с тем,
         где и как хранить статику на клиенте.</p>
-        <p>Формат файла с патчами для проекта выглядит так:
+        <p>Формат файла с патчами для проекта выглядит так:</p>
         <pre>
           <code>
           [
@@ -149,47 +151,47 @@
             }
           ]
           </code>
-        </pre></p>
+        </pre>
         <p>То есть это обычный массив из объектов. Каждый объект — отдельный ресурс.
         У каждого объекта есть три свойства. <var>k</var> — названия ключа в localStorage
         для этого ресурса. <var>p</var> — патч для ресурса, который сгенерировал vcdiff.
         <var>s</var> — чексумма для ресурса актуальной версии, чтобы потом можно было проверить
         правильность наложения патча на клиенте. Чексумма вычисляется по алгоритму Флетчера.</p>
-        <p><dl><dt>Алгоритм Бройдена — Флетчера — Гольдфарба — Шанно (BFGS)</dt><dd>— итерационный
+        <dl><dt>Алгоритм Бройдена — Флетчера — Гольдфарба — Шанно (BFGS)</dt><dd>— итерационный
         метод численной оптимизации, предназначенный для нахождения локального максимума/минимума
-        нелинейного функционала без ограничений.</dd><dl>
+        нелинейного функционала без ограничений.</dd></dl>
         <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <mtext>дано&nbsp;<mi>&epsi;</mi><mo separator=true>,</mo>&nbsp;<msub><mi>x</mi><mn>0</mn></msub></mtext><mspace linebreak=newline>
-          <mtext>инициализировать&nbsp;<msub><mi>H</mi><mn>0</mn></msub></mtext><mspace linebreak=newline>
-          <mi>k</mi><mo>=</mo><mn>0</mn><mspace linebreak=newline>
+          <mtext>дано&nbsp;</mtext><mi>&epsi;</mi><mo separator=true>,</mo><mtext>&nbsp;</mtext><msub><mi>x</mi><mn>0</mn></msub><mspace linebreak=newline />
+          <mtext>инициализировать&nbsp;</mtext><msub><mi>H</mi><mn>0</mn></msub><mspace linebreak=newline />
+          <mi>k</mi><mo>=</mo><mn>0</mn><mspace linebreak=newline />
           <mtext mathvariant=bold>while</mtext><mo>&#x2225;</mo><mi>&nabla;</mi><msub><mi>f</mi><mi>k</mi></msub><mo>&#x2225;</mo>
-          <mo>></mo><mi>&epsi;</mi><mspace linebreak=newline>
+          <mo>></mo><mi>&epsi;</mi><mspace linebreak=newline />
           <mpadded lspace="1em">
             <mtext>найти направление&nbsp;</mtext><msub><mi>p</mi><mi>k</mi></msub><mo>=</mo><mo>-</mo><msub><mi>C</mi><mi>k</mi></msub>
             <mi>&nabla;</mi><msub><mi>f</mi><mi>k</mi></msub>
-          </mpadded><mspace linebreak=newline>
+          </mpadded><mspace linebreak=newline />
           <mpadded lspace="1em">
             <mtext>вычислить&nbsp;</mtext><msub><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo>
             <msub><mi>x</mi><mi>k</mi></msub><mo>+</mo><msub><mi>&alpha;</mi><mi>k</mi></msub><mo>&InvisibleTimes;</mo><msub><mi>p</mi><mi>k</mi></msub><mo>,</mo>
             <msub><mi>&alpha;</mi><mi>k</mi></msub><mtext>&nbsp;удовлетворяет условиям Вольфе</mtext>
-          </mpadded><mspace linebreak=newline>
+          </mpadded><mspace linebreak=newline />
           <mpadded lspace="1em">
             <mtext>обозначить&nbsp;</mtext><msub><mi>s</mi><mi>k</mi></msub><mo>=</mo>
             <msub><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>-</mo><msub><mi>x</mi><mi>k</mi></msub>
             <mtext>&nbsp;и&nbsp;</mtext>
             <msub><mi>y</mi><mi>k</mi></msub><mo>=</mo>
             <mi>&nabla;</mi><msub><mi>f</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>-</mo><mi>&nabla;</mi><msub><mi>f</mi><mi>k</mi></msub>
-          </mpadded><mspace linebreak=newline>
+          </mpadded><mspace linebreak=newline />
           <mpadded lspace="1em">
             <mtext>вычислить&nbsp;</mtext><msub><mi>C</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub>
-          </mpadded><mspace linebreak=newline>
+          </mpadded><mspace linebreak=newline />
           <mpadded lspace="1em">
             <mi>k</mi><mo>=</mo><mi>k</mi><mo>+</mo><mn>1</mn>
-          </mpadded><mspace linebreak=newline>
+          </mpadded><mspace linebreak=newline />
           <mtext mathvariant=bold>end</mtext>
         </math>
-        </p>
-        <p>Почему именно алгоритм Флетчера, а не другие популярные алгоритмы вроде:
+
+        <p>Почему именно алгоритм Флетчера, а не другие популярные алгоритмы вроде:</p>
         <dl>
           <dt>CRC16/32</dt>
           <dd>- алгоритм нахождения контрольной суммы, предназначенный для проверки
@@ -198,13 +200,13 @@
           <dd>- 128-битный алгоритм хеширования, предназначенный для создания «отпечатков»
           или дайджестов сообщения произвольной длины и последующей проверки их подлинности.</dd>
         </dl>
-        </p>
+
         <p>Потому что он быстрый, компактный и легок в реализации.</p>
       </section>
 
       <section>
         <h2>Итог</h2>
-        <p>Фактически мы экономим 80-90% трафика. Размер загружаемой статики в байтах:
+        <p>Фактически мы экономим 80-90% трафика. Размер загружаемой статики в байтах:</p>
         <table>
           <thead>
             <tr>
@@ -230,7 +232,7 @@
               <td>3 995</td>
             </tr>
           </tbody>
-        </table></p>
+        </table>
         <footer>
           Авор: @doochik<br>
           С++ разработчик<br>
@@ -259,14 +261,12 @@
       <article>
         - Brister (<a href="mailto:brist89@yandex-team.ru">brist89@yandex-team.ru</a>)
         <time datetime="2014-11-24T13:13+07:00">24 ноября 2014 в 13:13</time>
-        <p>
           <blockquote>
           (кол-во счастливых пользователей + кол-во удовлетворенных / 2) / (кол-во всех).
           Получается значение от нуля до единицы, которое, видимо, лучше всего показывает,
           хорошо или плохо работает почта.
           </blockquote>
-          наверное все-таки от 0.5 до 1
-        </p>
+        <p>наверное все-таки от 0.5 до 1</p>
       </article>
       <hr>
       <article>
