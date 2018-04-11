@@ -1,0 +1,53 @@
+.animation {
+    height: 150px;
+    width: 150px;
+    background-color: #f00;
+    margin-left: 0px;    
+    /* transform: translate(100px, 100%) scale(2) rotate(145deg); */
+    animation: anime 3s ease-in-out 0s forwards;
+    /* animation: anime-infinity 3s ease-in-out 0s infinite alternate; */
+    will-change: transform;
+    -webkit-transition: background-color .5s linear;
+    transition: background-color .5s linear;
+}
+
+.animation:hover {
+    background-color: #ff0;
+}
+
+@keyframes anime {
+    0% {
+        transform: translate(0px, 0%) scale(1) rotate(0deg);
+    }
+
+    33.3% {        
+        transform: translate(100px, 0%);
+    }
+
+    66.6% {
+        transform: translate(100px, 100%);
+    }
+
+    100% {
+        transform: translate(100px, 100%) scale(2) rotate(145deg);
+    }
+}
+
+@keyframes anime-infinity {
+    0% {
+        transform: translate(0px, 0%) scale(1) rotate(0deg);
+    }
+
+    25% {        
+        transform: translate(100px, 0%);
+    }
+
+    50% {
+        transform: translate(100px, 100%);
+    }
+
+    75%,
+    100% {
+        transform: translate(100px, 100%) scale(2) rotate(145deg);
+    }
+}
