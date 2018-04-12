@@ -65,10 +65,16 @@
     background: #fff;
 }
 
-.ship {
+.ship-wrapper {
     position: absolute;
-    right: -0%;
+    right: -20%;
     bottom: 30px;
+}
+
+.ship {
+    /* position: absolute;
+    right: -0%;
+    bottom: 30px; */
     
     width: 100px;
     height: 36px;

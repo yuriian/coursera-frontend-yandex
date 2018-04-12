@@ -8,8 +8,23 @@
     }
 }
 
+@keyframes ship-waving {
+    from {
+        transform: rotate(-2deg);
+    }
+    
+    100% {
+        transform: rotate(1deg);
+    }
+}
+
+.ship-wrapper {
+    animation:  ship 57s 3s linear infinite;
+}
+
 .ship {
-    animation: ship 57s 3s linear infinite;
+    will-change: transform;
+    animation: ship-waving 1.05s ease-out infinite alternate;
 }
 
 @keyframes smoke {
@@ -31,17 +46,35 @@
 }
 
 .smoke-1 {
+    will-change: transform;
     animation: smoke 2.1s linear infinite;
 }
 
 .smoke-2 {
+    will-change: transform;
     /* animation: smoke 2.1s cubic-bezier(.13,.4,.3,.1) .7s infinite; */
     animation: smoke 2.1s linear .7s infinite;
 }
 
 .smoke-3 {
+    will-change: transform;
     /* animation: smoke 2.1s cubic-bezier(.13,.4,.3,.1) 1.4s infinite; */
     animation: smoke 2.1s linear 1.4s infinite;
+}
+
+@keyframes ship_smokestack {
+    0% {
+        transform: scale(1, 1.1);
+    }
+
+    100% {
+        transform: scale(1.1, .8);
+    }
+}
+
+.ship_smokestack {
+    transform-origin: 50% 100%;
+    animation: ship_smokestack .35s ease-out infinite alternate;
 }
 
 
@@ -55,27 +88,29 @@
 }
 
 .cloud-1 {
-    animation: cloud1 30s linear infinite;
+    will-change: transform;
+    animation: cloud1 60s linear infinite;
     
 }
 
 @keyframes cloud2 {
     from {
-        transform: translateX(0px) scale(0.5);
+        transform: translateX(-100px) scale(-.5, .5);
     }
     to {
-        transform: translateX(640px) scale(0.5);
+        transform: translateX(640px) scale(-.5, .5);
     }
 }
 
 .cloud-2 {
-    animation: cloud2 20s linear infinite;
+    will-change: transform;
+    animation: cloud2 35s linear infinite;
     
 }
 
 @keyframes cloud3 {
     from {
-        transform: translateX(0px) scale(0.6);
+        transform: translateX(-100px) scale(0.6);
     }
     to {
         transform: translateX(660px) scale(0.6);
@@ -83,21 +118,23 @@
 }
 
 .cloud-3 {
-    animation: cloud3 15s linear infinite;
+    will-change: transform;
+    animation: cloud3 25s linear infinite;
     
 }
 
 @keyframes cloud4 {
     from {
-        transform: translateX(0px) scale(0.7);
+        transform: translateX(0px) scale(-.7, .7);
     }
     to {
-        transform: translateX(660px) scale(0.7);
+        transform: translateX(660px) scale(-.7, .7);
     }
 }
 
 .cloud-4 {
-    animation: cloud4 10s linear infinite;
+    will-change: transform;
+    animation: cloud4 16s linear infinite;
     
 }
 
@@ -112,7 +149,8 @@
 }
 
 .sun-wrapper {
-    animation: sun-wrapper 90s linear 0s infinite;
+    will-change: transform;
+    animation: sun-wrapper 100s linear infinite;
 }
 
 @keyframes sun {
@@ -126,5 +164,37 @@
 }
 
 .sun {
+    will-change: transform;
     animation: sun 15s linear infinite;
+}
+
+@keyframes twenty-four-hours {
+  
+    0%, 25% {
+        /* day */
+        background: skyblue;
+        box-shadow: 0 -400px 300px -300px steelblue inset;
+    }
+
+    45% {
+        /* evening */
+        background: darkslateblue;
+        box-shadow: 0 -400px 300px -300px orangered inset;
+    }
+   
+    65%, 95% {
+        /* night */
+        background: darkslateblue;
+        box-shadow: 0 -400px 300px -300px transparent inset;
+    }
+
+    100% {
+        /* day */
+        background: skyblue;
+        box-shadow: 0 -400px 300px -300px steelblue inset;
+    }
+}
+
+.box_front {
+    animation: twenty-four-hours 100s linear 0s infinite;
 }
