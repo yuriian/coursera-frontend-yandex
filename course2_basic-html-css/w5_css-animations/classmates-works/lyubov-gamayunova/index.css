@@ -1,0 +1,379 @@
+.canvas {
+    position: relative;
+    
+    width: 500px;
+    height: 380px;
+    margin: 80px 0 0 0;
+    
+    transition: .3s ease;
+    
+    perspective: 800px;
+}
+
+.box_front {
+    position: relative;
+    
+    overflow: hidden;
+    
+    width: 500px;
+    height: 380px;
+    
+    background: skyblue;
+    box-shadow: 0 -400px 300px -300px steelblue inset;
+
+    animation: sky 8s linear 0s infinite alternate;
+    -webkit-animation: sky 8s linear 0s infinite alternate;  
+}
+
+
+/* animation: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction;
+    animation: название длительность особенности-движения-анимации задержка кол-во-повторений направление-повтора-анимации
+
+*/
+
+/*TODO
+Цвета неба задаются следующими свойствами:
+    День:
+        background: skyblue;
+        box-shadow: 0 -400px 300px -300px steelblue inset;
+    Вечер:
+        background: darkslateblue;
+        box-shadow: 0 -400px 300px -300px orangered inset;
+    Ночь:
+        background: darkslateblue;
+        box-shadow: 0 -400px 300px -300px transparent inset;
+        
+Нужно реализовать плавный переход между ними и зациклить его.
+*/
+
+.ship::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    width: 100px;
+    height: 20px;
+    
+    content: '';
+    
+    border-radius: 0 0 0 20px;
+    background: #e25c45;
+}
+
+.ship::before {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    
+    width: 65px;
+    height: 16px;
+    
+    content: '';
+    
+    border-radius: 20px 0 0 0;
+    background: #fff;
+}
+
+.ship {
+    position: absolute;
+    right: -100px;
+    bottom: 30px;
+    
+    width: 100px;
+    height: 36px;
+
+    animation: ship 60s linear 4s infinite normal;
+    -webkit-animation: ship 60s linear 4s infinite normal;  
+}
+
+.ship_smokestack {
+    position: absolute;
+    bottom: 36px;
+    left: 45px;
+    
+    width: 10px;
+    height: 17px;
+    
+    background: #a18e6e;
+}
+
+.ship_window {
+    position: absolute;
+    top: 6px;
+    left: 40px;
+    
+    width: 7px;
+    height: 7px;
+    
+    border-radius: 50%;
+    background: #a18e6e;
+    box-shadow: 13px 0 0 0 #a18e6e, -13px 0 0 0 #a18e6e;
+}
+
+.smoke div {
+    position: absolute;
+    
+    width: 7px;
+    height: 7px;
+    
+    border-radius: 50%;
+    background: #fff;
+}
+
+.smoke-1 {
+    top: -25px;
+    right: 44px;
+
+    animation: smoke-one 3s linear 1s infinite normal;
+    -webkit-animation: smoke-one 3s linear 1s infinite normal;  
+}
+
+.smoke-2 {
+    top: -25px;
+    right: 42px;
+
+    animation: smoke-two 3s linear 3s infinite normal;
+    -webkit-animation: smoke-two 3s linear 3s infinite normal;  
+}
+
+.smoke-3 {
+    top: -25px;
+    right: 49px;
+
+    animation: smoke-three 3s linear 5s infinite normal;
+    -webkit-animation: smoke-three 3s linear 5s infinite normal;     
+}
+
+.sun {
+    position: absolute;
+    top: 230px;
+    right: 100%;
+    
+    width: 80px;
+    height: 80px;
+    
+    border-radius: 50%;
+    background: #ffcf11;
+    box-shadow: 0 0 100px #ffdf05;
+
+    animation: sun 5s linear 0s infinite normal;
+    -webkit-animation: sun 5s linear 0s infinite normal;
+}
+
+.sun-wrapper {
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+    
+    transform-origin: bottom center;
+
+    animation: sunshine 12s linear 0s infinite normal;
+    -webkit-animation: sunshine 12s linear 0s infinite normal;
+}
+
+.sun div {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    
+    width: 2px;
+    height: 100px;
+    margin-left: -1px;
+    
+    border: solid #ffcf11;
+    border-width: 10px 0 10px 0;
+}
+
+.sun div:nth-child(2) {
+    transform: rotate(18deg);
+}
+
+.sun div:nth-child(3) {
+    transform: rotate(36deg);
+}
+
+.sun div:nth-child(4) {
+    transform: rotate(54deg);
+}
+
+.sun div:nth-child(5) {
+    transform: rotate(72deg);
+}
+
+.sun div:nth-child(6) {
+    transform: rotate(90deg);
+}
+
+.sun div:nth-child(7) {
+    transform: rotate(-18deg);
+}
+
+.sun div:nth-child(8) {
+    transform: rotate(-36deg);
+}
+
+.sun div:nth-child(9) {
+    transform: rotate(-54deg);
+}
+
+.sun div:nth-child(10) {
+    transform: rotate(-72deg);
+}
+
+.cloud {
+    position: absolute;
+    left: -180px;
+    
+    width: 200px;
+    height: 60px;
+    
+    opacity: .8;
+    border-radius: 200px;
+    background: #fff;
+
+
+}
+
+.cloud:before,
+.cloud:after {
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    
+    width: 100px;
+    height: 80px;
+    
+    content: '';
+    
+    border-radius: 100px;
+    background: #fff;
+}
+
+.cloud:after {
+    top: -55px;
+    right: 15px;
+    left: auto;
+    
+    width: 120px;
+    height: 120px;
+}
+
+.cloud-1 {
+    top: 10px;
+
+    animation: cloud-one 25s linear 0s infinite normal;
+    -webkit-animation: cloud-one 25s linear 0s infinite normal;  
+
+}
+
+.cloud-2 {
+    top: 50px;
+
+    animation: cloud-two 20s linear 0s infinite normal;
+    -webkit-animation: cloud-two 20s linear 0s infinite normal;
+    
+}
+
+.cloud-3 {
+    top: 100px;
+    animation: cloud-three 15s linear 0s infinite normal;
+    -webkit-animation: cloud-three 15s linear 0s infinite normal;
+}
+
+.cloud-4 {
+    top: 170px;
+    animation: cloud-four 10s linear 0s infinite normal;
+    -webkit-animation: cloud-four 10s linear 0s infinite normal;
+}
+
+.sea {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+    height: 40px;
+    
+    opacity: .8;
+    background: #2a94d6;
+}
+
+.sea::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+    height: 10px;
+    
+    content: '';
+    
+    background: #1d7fbb;
+}
+
+
+/* animation: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction;
+    animation: название длительность особенности-движения-анимации задержка кол-во-повторений направление-повтора-анимации
+
+*/
+
+ @keyframes cloud-one {  
+    
+    0% {transform: scale(-0.25, 0.25) ;}
+    100% {transform: scale(-0.25, 0.25) translateX(-2800px);}
+ }
+
+  @keyframes cloud-two {  
+    
+    0% {transform: scale(0.5, 0.5) ;}
+    100% {transform: scale(0.5, 0.5) translateX(1400px);}
+ }
+
+  @keyframes cloud-three {  
+    
+    0% {transform: scale(-0.75, 0.75) ;}
+    100% {transform: scale(-0.75, 0.75) translateX(-1050px);}
+ }
+
+  @keyframes cloud-four {
+    100% {transform: translateX(700px); }
+ }
+
+   @keyframes ship {
+    100% {transform: translateX(-700px); }
+ }
+
+@keyframes smoke-one {
+    0% {opacity: 1;}    
+    100% {transform: scale(2.5) translateY(-100%); opacity: 0; }
+ }
+
+ @keyframes smoke-two {
+    0% {opacity: 1;}    
+    100% {transform: scale(2.5) translateY(-150%); opacity: 0; }
+     }
+
+@keyframes smoke-three {
+    0% {opacity: 1;}    
+    100% {transform: scale(2.5) translateY(-200%); opacity: 0; }
+ }
+
+
+@keyframes sunshine {
+    100% {transform: rotate(1turn);}
+ }
+
+@keyframes sun {
+    100% {transform: rotate(1turn);}
+ }
+
+
+@keyframes sky {
+    0% { background: skyblue;
+        box-shadow: 0 -400px 300px -300px steelblue inset; }
+    50% {background: darkslateblue;
+        box-shadow: 0 -400px 300px -300px orangered inset;}
+    100% {background: darkslateblue;
+        box-shadow: 0 -400px 300px -300px transparent inset;}
+ }
