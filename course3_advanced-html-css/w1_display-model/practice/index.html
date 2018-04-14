@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Схлопывание</title>
+  <style type="text/css">
+    .header {
+      height: 100px;
+      background: #F0BA7D;
+    }
+
+    .content {
+      background: #CADADD;
+
+      padding: 1px;
+      /* border-top: 1px solid transparent; */
+      /* overflow: auto; */
+      /* overflow: hidden; */
+    }
+
+    h1 {
+      /* margin-top: 0; Обнуляем верхний отступ */
+      /* padding-top: 1em; */
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="header"></div>
+  <div class="content">
+    <h1>Заголовок</h1>
+    <p>Текст</p>
+  </div>
+
+  <style>
+    .container {
+      width: 500px;
+      min-height: 280px;
+      border: 1px solid #aaa;
+      padding: 10px;
+    }
+
+    .floated {
+      float: left;
+      margin: 5px;
+    }
+
+    .oh {
+      margin: 0;
+      text-align: left;
+      background-color: green;
+      color: white;
+      padding: 10px;
+      overflow: hidden;
+    }
+
+    .bfc {
+      overflow: hidden;
+    }
+
+    /* general styling */
+
+    body {
+      text-align: center;
+    }
+
+    .container {
+      margin: 10px auto;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .p {
+      background: none;
+      padding-top: 100px;
+      font-size: 13px;
+      text-align: center;
+      color: black;
+    }
+
+    /* general styling ends */
+  </style>
+  <section>
+    <h2>Preventing Text Wrapping around a Float Using a Block Formatting Context</h2>
+    <div class="container">
+      <div class="floated">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/man-jumping.jpg" alt="man jumping">
+      </div>
+      <p class="oh">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam,
+        feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies
+        mi vitae est. Mauris placerat eleifend leo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae hic ut
+        ab perferendis sit quod architecto, dolor debitis quam rem provident aspernatur tempora expedita perspiciatis suscipit
+        ipsam voluptas tenetur. Nostrum? Quae hic ut ab perferendis sit quod architecto. Quae hic ut ab perferendis sit quod
+        architecto.</p>
+    </div>
+  </section>
+
+  <style>
+    .container2 {
+      background-color: red;
+      overflow: hidden; /* creates a block formatting context */
+    }
+
+    .sibling {
+      background-color: lightgreen;
+      margin: 10px 0;
+    }
+
+    .newBFC {
+      overflow: hidden;
+    }
+  </style>
+  <div class="container2">
+    <!-- <h2>Heading 2</h2> -->
+    <p class="sibling">Sibling 1</p>
+    <p class="sibling">Sibling 2</p>
+    <div class="newBFC">
+      <p class="sibling">Sibling 3</p>
+    </div>
+  </div>
+</body>
+
+</html>

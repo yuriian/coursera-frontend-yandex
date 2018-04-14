@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("OpenSans"), url("./../fonts/opensans-regular.woff2"), url("./../fonts/opensans-regular.woff"), url("./../fonts/opensans-regular.ttf"), url("./../fonts/opensans-regular.eot"); }
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 700;
+  src: local("OpenSans"), url("./../fonts/opensans-bold.woff2"), url("./../fonts/opensans-bold.woff"), url("./../fonts/opensans-bold.ttf"), url("./../fonts/opensans-bold.eot"); }
+body {
+  font: normal 1rem 'OpenSans', sans-serif; }
+
+a {
+  text-decoration: none; }
+
+figure, h1, h2, p {
+  margin: 0;
+  font-size: 1rem; }
+
+.article {
+  width: 260px;
+  height: 420px;
+  float: left;
+  margin: 5px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  padding: 15px;
+  transform: perspective(0px) translate3d(0px, 0px, 0px);
+  transition: transform .2s 0s ease-out, box-shadow .2s 0s ease-out; }
+  .article:hover {
+    box-shadow: 0px 8px 10px -2px rgba(0, 0, 0, 0.3);
+    transform: perspective(1000px) translate3d(0px, -5px, 5px); }
+  .article__image-wrapper {
+    height: 230px;
+    overflow: hidden;
+    text-align: center;
+    position: relative; }
+  .article__image {
+    width: 344px;
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    margin-left: -172px; }
+  .article__header {
+    overflow: hidden; }
+  .article__title {
+    color: #3758c3;
+    text-decoration: underline; }
+    .article__title:hover {
+      color: #f00; }
