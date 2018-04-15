@@ -8,43 +8,143 @@
   font-style: normal;
   font-weight: 700;
   src: local("OpenSans"), url("./../fonts/opensans-bold.woff2"), url("./../fonts/opensans-bold.woff"), url("./../fonts/opensans-bold.ttf"), url("./../fonts/opensans-bold.eot"); }
-body {
-  font: normal 1rem 'OpenSans', sans-serif; }
+/* 500px; */
+input:checked ~ .article {
+  height: auto;
+  min-height: 140px;
+  width: 99%;
+  box-sizing: border-box;
+  margin: 0 5px 15px; }
+  input:checked ~ .article .article__image-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    width: 24%;
+    min-width: 200px;
+    box-sizing: border-box; }
+  input:checked ~ .article .article__image {
+    bottom: -5px; }
+  input:checked ~ .article .article__header {
+    display: inline-block;
+    vertical-align: top;
+    width: 44%;
+    min-width: 200px;
+    box-sizing: border-box; }
+  input:checked ~ .article .article__description {
+    display: inline-block;
+    vertical-align: top;
+    width: 29%;
+    min-width: 350px;
+    box-sizing: border-box; }
 
-a {
-  text-decoration: none; }
+html {
+  font: normal 16px 'OpenSans', sans-serif; }
 
-figure, h1, h2, p {
-  margin: 0;
-  font-size: 1rem; }
+figure, h1, h2 {
+  margin: 0; }
+
+a:hover {
+  color: #f00; }
+
+label,
+input {
+  float: left;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.clearfix {
+  clear: both; }
+
+.main {
+  margin: 0 auto;
+  width: 87%;
+  min-width: 384px;
+  text-align: left;
+  overflow: auto; }
+
+section {
+  overflow: auto; }
 
 .article {
-  width: 260px;
-  height: 420px;
-  float: left;
+  width: 344px;
+  height: 840px;
+  display: inline-block;
   margin: 5px;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  padding: 15px;
-  transform: perspective(0px) translate3d(0px, 0px, 0px);
-  transition: transform .2s 0s ease-out, box-shadow .2s 0s ease-out; }
-  .article:hover {
-    box-shadow: 0px 8px 10px -2px rgba(0, 0, 0, 0.3);
-    transform: perspective(1000px) translate3d(0px, -5px, 5px); }
+  box-shadow: 0px 8px 10px -2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  padding: 15px 0; }
   .article__image-wrapper {
-    height: 230px;
+    height: 320px;
     overflow: hidden;
     text-align: center;
-    position: relative; }
+    position: relative;
+    opacity: 1;
+    transform: perspective(0px) translate3d(0px, 0px, 0px);
+    transition-property: opacity, transform, box-shadow;
+    transition-duration: .1s;
+    transition-timing-function: ease-out; }
+    .article__image-wrapper:hover {
+      opacity: 0.7;
+      box-shadow: 0px 8px 10px -8px rgba(0, 0, 0, 0.3);
+      transform: perspective(500px) translate3d(0px, -5px, 5px); }
   .article__image {
-    width: 344px;
+    width: 120%;
     position: absolute;
-    bottom: -55px;
+    bottom: -70px;
     left: 50%;
-    margin-left: -172px; }
+    margin-left: -60%; }
   .article__header {
-    overflow: hidden; }
+    overflow: hidden;
+    padding: 0 15px; }
   .article__title {
-    color: #3758c3;
-    text-decoration: underline; }
-    .article__title:hover {
-      color: #f00; }
+    font-size: 1.5rem;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .article__category {
+    font-size: 0.8rem;
+    color: #666666;
+    display: inline-block;
+    margin: 0 0 10px; }
+  .article__prices {
+    margin: 0 0 10px; }
+
+.rating {
+  width: 90px;
+  height: 18px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 5px; }
+  .rating__progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13); }
+  .rating__star {
+    float: left;
+    width: 20%;
+    height: 18px;
+    background: url("./../img/empty-star.png") center/cover no-repeat; }
+
+.price {
+  font-size: 1.4rem; }
+  .price__current {
+    font-weight: bold;
+    color: #97070a; }
+  .price__old {
+    font-size: .7em;
+    text-decoration: line-through; }
+
+.description {
+  font-size: .95rem;
+  padding: 0 15px; }
+  .description__title {
+    font-size: 1em; }
+  .description__content {
+    font-size: 1em; }
+  .description p {
+    margin: 5px 0; }
