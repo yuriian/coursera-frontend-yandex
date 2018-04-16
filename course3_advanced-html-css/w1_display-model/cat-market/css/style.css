@@ -9,6 +9,65 @@
   font-weight: 700;
   src: local("OpenSans"), url("./../fonts/opensans-bold.woff2"), url("./../fonts/opensans-bold.woff"), url("./../fonts/opensans-bold.ttf"), url("./../fonts/opensans-bold.eot"); }
 /* 500px; */
+.rating {
+  width: 90px;
+  height: 18px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 5px; }
+  .rating:hover .rating__default {
+    display: none; }
+  .rating__default {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13); }
+  .rating__checkbox {
+    height: 100%;
+    float: right;
+    margin: 0 0 0 -9px;
+    position: relative;
+    opacity: 0;
+    width: 9px;
+    z-index: 1; }
+    .rating__checkbox:hover ~ label {
+      background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13); }
+    .rating__checkbox:checked ~ label {
+      background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13); }
+    .rating__checkbox:checked ~ input {
+      pointer-events: none; }
+    .rating__checkbox:checked ~ .rating__default {
+      display: none; }
+  .rating__label {
+    float: right;
+    height: 100%;
+    width: 9px;
+    z-index: -1; }
+  .rating__star {
+    position: relative;
+    top: -100%;
+    float: left;
+    width: 20%;
+    height: 18px;
+    background: url("./../img/empty-star.png") center/cover no-repeat; }
+
+@-moz-document url-prefix() {
+  .rating {
+    width: 130px;
+    height: 26px;
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0; }
+    .rating__checkbox {
+      margin: 0 0 0 -13px;
+      width: 13px; }
+    .rating__label {
+      width: 13px; }
+    .rating__star {
+      width: 26px;
+      height: 100%; } }
 input:checked ~ .article {
   height: auto;
   min-height: 140px;
@@ -110,25 +169,6 @@ section {
     margin: 0 0 10px; }
   .article__prices {
     margin: 0 0 10px; }
-
-.rating {
-  width: 90px;
-  height: 18px;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 5px; }
-  .rating__progress {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    z-index: -1;
-    background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13); }
-  .rating__star {
-    float: left;
-    width: 20%;
-    height: 18px;
-    background: url("./../img/empty-star.png") center/cover no-repeat; }
 
 .price {
   font-size: 1.4rem; }

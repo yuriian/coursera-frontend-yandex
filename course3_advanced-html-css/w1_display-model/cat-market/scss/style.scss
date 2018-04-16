@@ -1,5 +1,6 @@
 @import 'fonts';
 @import 'variables';
+@import 'rating';
 @import 'list';
 
 html {
@@ -8,7 +9,6 @@ html {
 
 figure, h1, h2 {
   margin: 0;
-  // font-size: 1rem;
 }
 
 a {
@@ -35,7 +35,6 @@ input {
   width: 87%;
   min-width: $articleWidth + 40px;
   text-align: left;
-  // border: 1px solid;
   overflow: auto;
 }
 
@@ -44,21 +43,15 @@ section {
 }
 
 .article {
-  // border: 1px solid;
-
   width: $articleWidth;
   height: $articleHeight;
-  // float: left;
   display: inline-block;
   margin: 5px;
-  // box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   box-shadow:0px 8px 10px -2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   padding: 15px 0;
 
   &__image-wrapper {
-    // border: 1px solid cornflowerblue;
-
     height: $imageWrapperHeight;
     overflow: hidden;
     text-align: center;
@@ -83,10 +76,6 @@ section {
     bottom: -70px;
     left: 50%;
     margin-left: -$imageWidth/2;
-
-    // &:hover {
-    //   width: $imageWidth + 50px;
-    // }
   }
 
   &__header {
@@ -95,9 +84,6 @@ section {
   }
 
   &__title {
-    // color: hsl(226, 56%, 49%);
-    // text-decoration: underline;
-    // font-weight: n ormal;
     font-size: 1.5rem;
     line-height: 1;
     white-space: nowrap;
@@ -114,36 +100,6 @@ section {
 
   &__prices {
     margin: 0 0 10px;
-  }
-}
-
-
-.rating {
-  width: 5 * 18px;
-  height: 18px;
-
-  position: relative;
-  overflow: hidden;
-
-  margin-bottom: 5px;
-
-  &__progress {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    // width: 100%;
-    z-index: -1;
-    background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13);
-  }
-
-  &__star {
-    // display: inline-block;
-    // vertical-align: middle;
-    float: left;
-    width: 20%;
-    height: 18px;
-    background: url('./../img/empty-star.png') center / cover   no-repeat;
   }
 }
 
