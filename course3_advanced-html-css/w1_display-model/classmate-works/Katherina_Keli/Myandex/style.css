@@ -1,0 +1,117 @@
+body {
+font-family: Arial;
+}
+
+.content {
+margin-top: 40px;
+min-width: 800px;
+}
+
+.view-blocks:checked ~ div .card {
+display: inline-block;
+width: 240px;
+margin: 0 10px;
+}
+
+
+.view-list:checked ~ div .card {
+display: block;	
+height: 280px;
+}
+
+
+.view-list:checked ~ div .img {
+height: 250px;
+}
+
+.view-list:checked ~ div .img, .information,.description {
+float: left;
+}
+
+.view-list:checked ~ div .information,.description {
+width: 200px;
+}
+
+.view-list:checked ~ div .description {
+margin-top: -10px;
+margin-left: 30px;
+}
+
+
+
+
+.img:hover {
+filter: alpha (Opacity=70);/* прозрачность для IE */
+opacity: 0.7;/* прозрачность для других браузеров */
+}
+
+
+.name {
+	white-space: nowrap;
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+   }
+
+.name a {
+font-size: 20px;
+}
+
+a:hover {
+color: red;
+}
+
+
+.category, .description {
+font-size: 12px;
+padding: 2px 0;
+}
+
+.newprice {
+font-size: 20px;
+color: #660000;
+font-weight:bold;
+}
+
+.oldprice {
+text-decoration: line-through;
+color: gray;
+}
+
+
+/*Рейтинг */
+
+.rating__wrap {
+display: inline-block;
+font-size: 1em;
+}
+
+.rating__input{
+display: none;
+}
+
+.rating__ico {
+width: 9px;
+color: #C0C0C0;
+float: right;
+padding-left: 3px;
+cursor: pointer;
+}
+
+
+.rating__ico:hover:before,
+.rating__ico:hover ~ .rating__ico:before,
+.rating__input:checked ~ .rating__ico:before
+
+{
+color: #FFFF00;
+}
+
+
+
+
+
+
+
+
+
+

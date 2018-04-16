@@ -6,18 +6,13 @@
   margin-bottom: 5px;
 
   &:hover {
-    .rating__default {
-      display: none;
+    label.rating__label {
+      background: none;
     }
   }
 
-  &__default {
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13);
-  }
-
-  &__checkbox {
+  input {
+    cursor: pointer;
     height: 100%;
     float: right;
     margin: 0 0 0 -9px;
@@ -26,66 +21,68 @@
     width: 9px;
     z-index: 1;
 
-    &:hover {
-      ~ label {
-        background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13);
-      }
-    }
-
     &:checked {
       ~ label {
         background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13);
       }
+    } 
 
-      ~ input {
-        pointer-events: none;
-      }
-
-      ~ .rating__default {
-        display: none;
+    &:hover {
+      ~ label.rating__label {
+        background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13);
       }
     } 
   }
 
-  &__label {
+  label {
     float: right;
     height: 100%;
     width: 9px;
     z-index: -1;
   }
 
+  &__stars-wrapper {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
   &__star {
-    position: relative;
-    top: -100%;
     float: left;
     width: 20%;
     height: 18px;
-    background: url('./../img/empty-star.png') center / cover   no-repeat;
+    background: url('./../img/empty-star.png') center / cover no-repeat;
   }
 }
 
 @-moz-document url-prefix() {
-  $starWidth: 26px;
-  $statHeight: 26px;
+  $radioWidth: 14px;
+  $starWidth: $radioWidth*2;
+  $statHeight: $radioWidth*2;
 
   .rating {
-    width: 5 * $starWidth;
+    width: 5 * $starWidth; 
     height: $statHeight;
 
-    -webkit-transform: scale(.7); 
-    -ms-transform: scale(.7);
-    transform: scale(.7);
+    -webkit-transform: scale(.65); 
+    -ms-transform: scale(.65);
+    transform: scale(.65);
 
     -webkit-transform-origin:0; 
     -ms-transform-origin: 0; 
     transform-origin: 0;
   
-    &__checkbox {
+    input {
       margin: 0 0 0 -1 * $starWidth/2;
       width: $starWidth/2;
     }
   
-    &__label {
+    label {
       width: $starWidth/2;
     }
   
@@ -94,5 +91,4 @@
       height: 100%;
     }
   }
-
 }

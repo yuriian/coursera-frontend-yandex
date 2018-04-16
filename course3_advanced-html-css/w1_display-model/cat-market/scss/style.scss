@@ -1,7 +1,7 @@
 @import 'fonts';
 @import 'variables';
 @import 'rating';
-@import 'list';
+@import 'list-view';
 
 html {
   font: normal 16px 'OpenSans', sans-serif;
@@ -27,7 +27,7 @@ input {
 }
 
 .clearfix {
-    clear: both;
+  clear: both;
 }
 
 .main {
@@ -51,23 +51,24 @@ section {
   overflow: hidden;
   padding: 15px 0;
 
+  &:hover {
+    .article__image-wrapper {
+      opacity: 0.7;                
+      box-shadow:0px 8px 10px -8px rgba(0, 0, 0, 0.3);
+      transform: perspective(500px) translate3d(0px, -5px, 5px);   
+    }
+  }
+
   &__image-wrapper {
     height: $imageWrapperHeight;
     overflow: hidden;
     text-align: center;
     position: relative;
-    opacity: 1;
 
     transform: perspective(0px) translate3d(0px, 0px, 0px);
     transition-property: opacity, transform, box-shadow;
     transition-duration: .1s;
     transition-timing-function: ease-out;
-
-    &:hover { 
-      opacity: 0.7;                
-      box-shadow:0px 8px 10px -8px rgba(0, 0, 0, 0.3);
-      transform: perspective(500px) translate3d(0px, -5px, 5px);   
-    }
   }
 
   &__image {
