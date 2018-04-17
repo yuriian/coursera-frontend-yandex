@@ -20,11 +20,19 @@ input[name="viewToggler"] {
 }
 
 .label-toggler {
-  margin: 0 20px 0 0;
+  margin: 10px 20px 5px 0;
   transition: color .2s ease-in-out;
 }
 
-#listToggler:checked ~ .article {
+.label-toggler:first-of-type {
+  margin-left: 50px;
+}
+
+#listToggler:checked ~ .main {
+  text-align: center;
+}
+
+#listToggler:checked ~ .main .article {
   height: auto;
   min-height: 140px;
   width: 99%;
