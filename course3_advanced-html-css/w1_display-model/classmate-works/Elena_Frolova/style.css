@@ -1,0 +1,233 @@
+@font-face {
+    font-family: 'als_rublregular';
+    src: url('fonts/rouble-webfont.woff2') format('woff2'),
+         url('fonts/rouble-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	margin: 25px;
+}
+
+
+h1{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 0 25px 25px 0px;
+}
+
+.rub{
+	letter-spacing: -1ex;
+	opacity: 0;
+}
+
+input + label{padding:5px 50px 5px 5px;}
+
+#listview + label:before{
+	content: 'Показать списком';
+}
+
+#listview:checked + label:before{
+	content: 'Показать в виде плитки';
+}
+
+#items{
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	padding: 25px 0;
+	margin: 20px -25px;
+}
+
+#listview:checked ~ #items .item{
+	max-width: 100%;
+	width: 100%;
+	margin-bottom: 25px;
+	display: block;
+}
+
+#listview:checked ~ #items .item .photo {
+	display: inline-block;
+	height: 100%;
+	min-height: 345px;
+	padding: 0 20px 20px 0;
+	vertical-align: top;
+	text-align: center;
+	width: 30%;
+	max-width: 350px;
+	box-sizing: border-box;
+}
+
+#listview:checked ~ #items .item .photo img{
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#listview:checked ~ #items .item .itemheader{
+	display: inline-block;
+	vertical-align: top;
+	padding: : 15px 20px 20px 0;
+	width: 35%;
+	box-sizing: border-box;
+}
+
+#listview:checked ~ #items .item .description{
+	display: inline-block;
+	vertical-align: top;
+	width: 30%;
+	box-sizing: border-box;
+}
+
+.item{
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 25px;
+
+	max-width: 450px;
+	min-width: 200px;
+}
+
+h2 {
+	color: #2e3192;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.5em;
+	font-weight: 200; 
+	padding: 0px;
+	margin: 0px;
+	text-decoration: underline;
+	white-space: nowrap;
+
+}
+
+.item h2{
+	margin-right: 25px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.photo {
+	position:relative;
+	height: 465px;
+	width: 345px;
+	margin: 0 0 20px 0;
+}
+
+.item:hover h2,
+h2:hover,
+.category:hover{
+	color: #f42;
+	opacity: 1;
+}
+a{
+	text-decoration: none;
+}
+a:visited, a:hover{
+	color: inherit;
+}
+
+.item:hover .photo{
+	opacity: .7;
+}
+
+.photo img{
+	text-align: center;
+	position: absolute;
+	max-height: 465px;
+	max-width: 345px;
+	bottom: 0px;
+}
+
+.category {
+	opacity: .6;
+	font-size: .9em;
+	line-height: 2;
+	color: #000;
+	text-decoration: underline;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.price{
+	color: #96070a;
+	font: 700 1.5em 'Roboto', sans-serif; 
+	display: inline-block;
+}
+
+.oldprice{
+	display: inline-block;
+	text-decoration: line-through;
+	font-weight: 700;
+	padding-left: 1em;
+	opacity: .8; 
+}
+
+.price:after, .oldprice:after{
+	font-family: als_rublregular;
+	content: "a";
+}
+
+.oldprice:empty, .price:empty{
+	display: none;
+}
+
+/* ----- star rating -----*/
+
+.stars{
+	width:100%;
+	margin:5px 0px 0px -18px;
+	padding-left: 18px;
+}
+
+.star{
+  background-image: url(img/stars.png);
+  background-position: 0px; 
+  width:  10px;
+  height: 18px;
+  padding:0px;
+  margin:0px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.star:nth-of-type(2n){background-position: -9px;}
+
+
+/* - set user rate - */
+
+.stars input{
+  margin-left: -9px;
+  opacity: 0;
+  max-width: 9px;
+  min-height: 18px;
+}
+
+input:checked~.star:nth-of-type(2n+1){  
+  background-position: -19px; 
+}
+
+input:checked~.star:nth-of-type(2n){  
+  background-position: 10px; 
+}
+
+input:hover~.star:nth-of-type(2n+1){ 
+  opacity: .5;
+}
+
+input:hover~.star:nth-of-type(2n){  
+  opacity: .5;
+}
+
+.description{
+	width: 100%;
+	padding: : 15px 0px;
+}

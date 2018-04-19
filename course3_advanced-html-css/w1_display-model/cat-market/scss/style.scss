@@ -34,6 +34,7 @@ input {
   margin: 0 auto;
   width: 87%;
   min-width: $articleWidth + 40px;
+  max-width: 1450px;
   text-align: left;
   overflow: auto;
 }
@@ -44,7 +45,6 @@ section {
 
 .article {
   width: $articleWidth;
-  max-width: 1200px;
   height: $articleHeight;
   display: inline-block;
   margin: 5px;

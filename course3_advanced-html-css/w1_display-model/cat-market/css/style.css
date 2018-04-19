@@ -15,7 +15,7 @@
   overflow: hidden;
   margin-bottom: 5px; }
   .rating:hover label.rating__label {
-    background: none; }
+    opacity: 0.6; }
   .rating input {
     cursor: pointer;
     height: 100%;
@@ -28,7 +28,8 @@
     .rating input:checked ~ label {
       background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13); }
     .rating input:hover ~ label.rating__label {
-      background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13); }
+      background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13);
+      opacity: 1; }
   .rating label {
     float: right;
     height: 100%;
@@ -85,6 +86,7 @@ input[name="viewToggler"] {
   margin-left: 50px; }
 
 #listToggler:checked ~ .main {
+  max-width: 1200px;
   text-align: center; }
 
 #listToggler:checked ~ .main .article {
@@ -138,6 +140,7 @@ input {
   margin: 0 auto;
   width: 87%;
   min-width: 384px;
+  max-width: 1450px;
   text-align: left;
   overflow: auto; }
 
@@ -146,7 +149,6 @@ section {
 
 .article {
   width: 344px;
-  max-width: 1200px;
   height: 840px;
   display: inline-block;
   margin: 5px;

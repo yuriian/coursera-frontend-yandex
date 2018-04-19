@@ -7,7 +7,7 @@
 
   &:hover {
     label.rating__label {
-      background: none;
+      opacity: 0.6;
     }
   }
 
@@ -30,6 +30,7 @@
     &:hover {
       ~ label.rating__label {
         background-image: linear-gradient(to bottom, #fad407, #fbce09, #fcc90c, #fdc30f, #fdbe13);
+        opacity: 1;
       }
     } 
   }
