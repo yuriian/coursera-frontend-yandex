@@ -1,0 +1,13 @@
+$articleWidth: 230px;
+$articleHeight: 170px;
+
+// $articleMinWidth: 280px;
+// $articleMinHeight: 200px;
+
+$articleHorizontalMargin: $articleWidth * 0.04;
+$fullArticleWidth: $articleWidth + $articleHorizontalMargin * 2;
+
+$articleHoverHeight: 320px;
+$articleHoverWidth: 340px;
+
+$sliderWidth: $fullArticleWidth * 4;

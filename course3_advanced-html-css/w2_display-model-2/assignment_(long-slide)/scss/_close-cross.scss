@@ -1,0 +1,39 @@
+.close-btn {
+  width: 100%;
+  height: 100%;
+
+  transition: transform .15s ease-in-out;
+
+  cursor: pointer;
+  display: none;
+
+  &:hover {
+    transform: rotate(0.25turn);
+
+    .close-btn__line {
+      height: 12%;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 10%;
+
+    background: hsl(0, 0, 90%);
+    border-radius: 7px;
+
+    display: block;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    &:first-child {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:last-child {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}

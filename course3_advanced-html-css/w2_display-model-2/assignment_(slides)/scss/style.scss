@@ -1,0 +1,30 @@
+@import 'variables';
+@import 'article';
+@import 'slider';
+@import 'overlay';
+@import 'close-cross';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font:  16px "Segoe UI", Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+.main-wrapper {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+}

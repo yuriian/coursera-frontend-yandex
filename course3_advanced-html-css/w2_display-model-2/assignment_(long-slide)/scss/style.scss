@@ -1,0 +1,13 @@
+@import 'variables';
+@import 'article';
+@import 'slider';
+@import 'overlay';
+@import 'close-cross';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font:  16px "Segoe UI", Arial, Helvetica, sans-serif;
+}
