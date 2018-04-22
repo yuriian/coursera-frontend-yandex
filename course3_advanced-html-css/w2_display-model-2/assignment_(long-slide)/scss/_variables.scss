@@ -1,13 +1,19 @@
-$articleWidth: 230px;
-$articleHeight: 170px;
+$cardAmount: 9;
 
-// $articleMinWidth: 280px;
-// $articleMinHeight: 200px;
+$cardWidth: 20vw;
+$cardHeight: $cardWidth * 0.8;
 
-$articleHorizontalMargin: $articleWidth * 0.04;
-$fullArticleWidth: $articleWidth + $articleHorizontalMargin * 2;
+$cardMinWidth: 140px;
+$cardMinHeight: 70px;
 
-$articleHoverHeight: 320px;
-$articleHoverWidth: 340px;
+$cardMaxWidth: 300px;
+$cardMaxHeight: 150px;
 
-$sliderWidth: $fullArticleWidth * 4;
+$cardHoverHeight: 320px;
+$cardHoverWidth: 340px;
+
+$sliderWidth: $cardWidth * 4;
+$sliderMinWidth: $cardMinWidth * 4;
+$sliderMaxWidth: $cardMaxWidth * 4;
+
+$sliderHeight: $cardHeight * 2;
