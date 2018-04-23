@@ -1,0 +1,112 @@
+/* DEFAULT STYLES */
+
+.container {
+  margin-top: 100px;
+  width: 80%;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+img {
+  width: 90%;
+  cursor: pointer;
+}
+
+p {
+  display: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+article {
+  display: inline-block;
+  width: 23%;
+  padding: 10px;
+  position: relative;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  margin-bottom: auto;
+  white-space: normal;
+}
+
+#right:checked ~ main article {
+  left: -75%;
+}
+
+.check,
+.close-label {
+  display: none;
+}
+
+/* HOVER EFFECTS */
+
+article:hover > p {
+  display: block;
+}
+
+article:hover img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+article:hover {
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  margin-bottom: 0;
+  margin-top: auto;
+}
+
+/* MODAL WINDOW STYLES */
+
+.check:checked ~ .image-label:first-of-type img {
+  z-index: 9999;
+  position: fixed;
+  display: inline-block;
+  width: 50%;
+  top: 10%;
+  left: 25%;
+}
+
+.check:checked ~ .background-label:first-of-type {
+  z-index: 9998;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.check:checked ~ .background-label:first-of-type .close-label {
+  color: white;
+  position: fixed;
+  top: 80px;
+  right: 80px;
+  z-index: 9999;
+  box-sizing: border-box;
+  padding: 0 15px 0 15px;
+  cursor: pointer;
+  display: block;
+  font-size: 3rem;
+}
+
+#left {
+  z-index: 10;
+  position: fixed;
+  top: 45%;
+  left: 49%;
+}
+
+#right {
+  z-index: 10;
+  position: fixed;
+  top: 45%;
+  left: 51%;
+}

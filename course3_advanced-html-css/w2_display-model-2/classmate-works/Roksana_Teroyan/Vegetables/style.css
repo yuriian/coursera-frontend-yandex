@@ -1,0 +1,210 @@
+html
+{
+    height: 100%;
+}
+body
+{
+    font-size: 16px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-width: 992px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.content
+{
+    box-sizing: border-box;
+    max-width: 1170px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10px 15px;
+}
+.content section
+{
+    overflow: hidden;
+
+    max-width: 99999px;
+    height: 100%;
+}
+.input_ul
+{
+    overflow: hidden;
+
+    max-width: 1170px;
+    height: 100%;
+}
+.input_ul > input
+{
+    position: relative;
+    z-index: 1;
+    top: 280px;
+    left: 45%;
+
+    margin-top: 150px;
+}
+ul
+{
+    position: relative;
+
+    box-sizing: border-box;
+    max-width: 1170px;
+    height: 100%;
+    margin: 0;
+    padding: 10px 0;
+
+    list-style-type: none;
+
+    transition: all .5s;
+}
+.item
+{
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    left: 0;
+
+    display: inline-block;
+    overflow: hidden;
+
+    box-sizing: border-box;
+    width: 24%;
+    max-height: 180px;
+    margin-right: .5%;
+    margin-left: .5%;
+}
+.item label
+{
+    cursor: pointer;
+}
+.item:hover
+{
+    overflow: visible;
+}
+.item:hover .box
+{
+    box-shadow: 0 3px 3px rgba(0,0,0,.2), 3px 0 3px rgba(0,0,0,.2), 0 -3px 3px rgba(0,0,0,.2), -3px 0 3px rgba(0,0,0,.2);
+}
+
+.item:nth-child(2)
+{
+    left: 25%;
+}
+.item:nth-child(3)
+{
+    left: 50%;
+}
+.item:nth-child(4)
+{
+    left: 75%;
+}
+.item:nth-child(5)
+{
+    left: 100%;
+}
+.item:nth-child(6)
+{
+    left: 125%;
+}
+.item:nth-child(7)
+{
+    left: 150%;
+}
+
+.item .box
+{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 15px;
+
+    border-radius: 2px;
+    background-color: #fff;
+}
+.item .description
+{
+    padding-top: 8px;
+}
+.item img
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+.img_wrap
+{
+    overflow: hidden;
+
+    height: 165px;
+
+    text-align: center;
+}
+
+.input_ul > input:nth-child(1):checked ~ ul
+{
+    left: 0;
+}
+.input_ul > input:nth-child(2):checked ~ ul
+{
+    left: -75%;
+}
+.input_ul > input:nth-child(3):checked ~ ul
+{
+    left: -150%;
+}
+.input_ul > input:nth-child(4):checked ~ ul
+{
+    left: -225%;
+}
+.big_screen article
+{
+    position: fixed;
+    z-index: 1;
+}
+.big_screen article > div
+{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+
+    padding: 10px;
+
+    background-color: rgba(100,100,100,.9);
+}
+.big_screen label img
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 40px;
+
+    cursor: pointer;
+}
+.big_screen article > div > img
+{
+    position: relative;
+    top: 15%;
+
+    display: block;
+
+    width: 500px;
+    height: 600px;
+    margin: 0 auto;
+}
+.big_screen article > input
+{
+    position: relative;
+    left: -9999px;
+}
+.big_screen input:checked + div
+{
+    display: block;
+}
+
