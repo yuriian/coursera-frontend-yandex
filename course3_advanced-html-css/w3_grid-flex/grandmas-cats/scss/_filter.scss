@@ -7,8 +7,7 @@
 
   &__li {
     @include category-bottom-border;
-
-    transition: background 0.5s ease-in-out;
+    transition: background .4s ease-in-out;
 
     &:hover {
       background-position: left bottom;
@@ -26,13 +25,16 @@
     cursor: pointer;
     user-select: none;
 
-    transition: color 0.3s ease-in-out,
-                background 0.3s ease-in-out;
+    transition-property: color, background;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.35,.76,.3,.99);
+    transition-delay: .1s;
 
+    // @include category-linear-bg($categoryBgColor, $categoryBgHoverColor, $categoryBgSelectedColor);
     @include category-linear-bg;
 
     &:hover {
-      background-position: 66% bottom;
+      background-position: 66% 100%;
       color: #fff;
     }
   }
@@ -44,10 +46,13 @@
 #large-cats:checked ~ .main label[for=large-cats],
 #smartest-cats:checked ~ .main label[for=smartest-cats],
 #vocal-cats:checked ~ .main label[for=vocal-cats] {
-  background-position: 33% bottom;
+  // @include category-linear-bg($categoryBgSelectedColor, $categoryBgSelectedColor, $categoryBgSelectedColor);
+  @include category-linear-bg;
+
+  background-position: 33% 100%;
   color: #fff;
 
   &:hover {
-    background-position: 0% bottom;
+    background-position: 0 100%;
   }
 }

@@ -1,21 +1,39 @@
 $categoryBgColor: hsl(0, 0%, 85%); // #d9d9d9
 $categoryBgHoverColor: hsl(0, 0%, 55%); // #8c8c8c;
-$categoryBgSelectedColor: hsl(0, 0%, 35%); // #5a5a5a
+$categoryBgSelectedColor: hsl(0, 0%, 37%);
+$categoryBgSelectedHoverColor: hsl(0, 0%, 25%); // #5a5a5a
 
 $bottomBorderColor: $categoryBgHoverColor; // #8c8c8c;
 $bottomBorderHoverColor: hsl(0, 0%, 45%);
 
 @mixin category-linear-bg {
   background: rgb(90,90,90);
+  
   background: linear-gradient(90deg, 
-                            $categoryBgSelectedColor 0%, $categoryBgSelectedColor 14%, hsl(0, 0%, 70%) 21%,
-                            $categoryBgSelectedColor 28%, $categoryBgSelectedColor 43%, hsl(0, 0%, 88%) 50%,
-                            $categoryBgHoverColor 57%, $categoryBgHoverColor 72%, hsl(0, 0%, 99%) 79%,
-                            $categoryBgColor 86%, $categoryBgColor 100%);
+                            $categoryBgSelectedHoverColor 0%, $categoryBgSelectedHoverColor 16%, hsl(0, 0%, 70%) 21%,
+                            $categoryBgSelectedColor 26%, $categoryBgSelectedColor 45%, hsl(0, 0%, 88%) 50%,
+                            $categoryBgHoverColor 55%, $categoryBgHoverColor 74%, hsl(0, 0%, 99%) 79%,
+                            $categoryBgColor 84%, $categoryBgColor 100%);
+
   background-size: 700% 100%;
-  background-position: right bottom;
   background-repeat: no-repeat;
+  background-position: 100% 100%;
 }
+
+// @mixin category-linear-bg($color, $hoverColor, $checkedColor) {
+  // background: linear-gradient(90deg, 
+  //                             $checkedColor 0%, $checkedColor 20%, hsl(0, 0%, 70%) 30%,
+  //                             $hoverColor 40%, $hoverColor 60%, hsl(0, 0%, 70%) 70%,
+  //                             $color 80%, $color 10%,);
+  // background-size: 500% 100%;
+  // background-repeat: no-repeat;
+
+  // background-position: right bottom;
+
+  // &:hover {
+  //   background-position: center bottom;
+  // }
+// }
 
 @mixin category-bottom-border {
   padding-bottom: 1px;

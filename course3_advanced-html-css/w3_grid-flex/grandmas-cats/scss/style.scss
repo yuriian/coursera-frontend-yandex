@@ -16,7 +16,7 @@ html {
 
 body {
   font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
 
   display: flex;
@@ -32,10 +32,13 @@ ul {
   padding: 0;
 }
 
+figure {
+  margin: 0;
+}
+
 .main {
   display: flex;
   flex: 1;
-  align-items: stretch;
 
   margin: 0 0 20px;
 }

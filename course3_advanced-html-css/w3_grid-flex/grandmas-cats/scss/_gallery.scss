@@ -3,5 +3,76 @@
   flex: 1 1 50%;
   order: 1;
 
-  margin: 0 16px;
+  margin: 0 10px;
+
+  &__row {
+    display: flex;
+  }
+
+  .gallery__row {
+    margin: 0 0 9px;
+
+    &:first-child {
+      .gallery__card {
+        &:first-child {
+          flex: 1 1 33.3%;
+          max-width: 33.3%;
+        }
+
+        &:last-child {
+          flex: 2 1 66.6%;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      .gallery__card {
+        flex: 1 1 33.3%;
+        max-width: 33.3%;        
+      }
+    }
+
+    &:nth-child(3) {
+
+      .gallery__card {
+        &:first-child {
+          flex: 1 1 66.6%;
+          max-width: 66.6%;
+        }
+
+        &:last-child {
+          flex: 2 1 33.3%;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      .gallery__card {
+        flex: 1;
+      }
+    }
+  }
+
+  &__card {
+    margin: 0 6px;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+}
+
+#all-cats:checked ~ .main .card {
+  opacity: 1;
+}
+
+#energy-cats:checked ~ .main .energy-cats,
+#kids-cats:checked ~ .main .kids-cats,
+#rare-cats:checked ~ .main .rare-cats,
+#large-cats:checked ~ .main .large-cats,
+#smartest-cats:checked ~ .main .smartest-cats,
+#vocal-cats:checked ~ .main .vocal-cats {
+  opacity: 1;
+  pointer-events: auto;
 }

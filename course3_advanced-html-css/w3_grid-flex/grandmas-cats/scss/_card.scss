@@ -1,0 +1,51 @@
+.card {
+  height: 290px;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    .card__caption {
+      transform: translateY(-50%);
+      opacity: 1;
+    }
+  }
+
+  &__img {
+    max-width:100%;
+    max-height:100%;
+  }
+
+  &__caption {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    height: 70px;
+    // line-height: 70px;
+    // min-width: 200px;
+    width: 80%;
+    max-width: 280px;
+    background: hsla(0, 0%, 0%, .4);
+    color: #fff;
+
+    cursor: default;
+
+    padding: 0 15px;
+    font-size: 1.2rem;
+
+    transform: translateY(100%);
+    opacity: 0;
+
+    // white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    
+    transition: transform .5s cubic-bezier(.35,.76,.3,.99),
+                opacity .5s ease-in;
+  }
+}

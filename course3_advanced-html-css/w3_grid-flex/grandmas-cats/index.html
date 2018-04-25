@@ -13,14 +13,15 @@
   <header class="header">
     <h1 class="header__title">Бабуленькины кошечки</h1>
   </header>
-  <input class="hidden" type="checkbox" id="energy-cats">
-  <input class="hidden" type="checkbox" id="kids-cats">
-  <input class="hidden" type="checkbox" id="rare-cats">
-  <input class="hidden" type="checkbox" id="large-cats">
-  <input class="hidden" type="checkbox" id="smartest-cats">
-  <input class="hidden" type="checkbox" id="vocal-cats">
-  
-  <main class="main">
+  <input class="hidden" type="radio" name="cat-breeds" id="all-cats" checked>
+  <input class="hidden" type="radio" name="cat-breeds" id="energy-cats">
+  <input class="hidden" type="radio" name="cat-breeds" id="kids-cats">
+  <input class="hidden" type="radio" name="cat-breeds" id="rare-cats">
+  <input class="hidden" type="radio" name="cat-breeds" id="large-cats">
+  <input class="hidden" type="radio" name="cat-breeds" id="smartest-cats">
+  <input class="hidden" type="radio" name="cat-breeds" id="vocal-cats">
+
+  <div class="main">
     <aside class="filter">
       <ul class="filter__ul">
         <li class="filter__li">
@@ -47,9 +48,57 @@
 
     </aside>
     <div class="gallery">
+      <!-- first-row -->
+      <div class="gallery__row">
+        <figure class="gallery__card card energy-cats">
+          <img class="card__img" src="./img/energy-cat-breeds/AmericanCurl.jpg" alt="American Curl Cat">
+          <figcaption class="card__caption">Аме&shy;ри&shy;ка&shy;нский кёрл</figcaption>
+        </figure>
+
+        <figure class="gallery__card card energy-cats">
+          <img class="card__img" src="./img/energy-cat-breeds/AmericanCurl.jpg" alt="American Curl Cat">
+          <figcaption class="card__caption">Американский кёрл</figcaption>
+        </figure>
+      </div>
+      <!-- second row -->
+      <div class="gallery__row">
+        <figure class="gallery__card card energy-cats">
+          <img class="card__img" src="./img/energy-cat-breeds/AmericanCurl.jpg" alt="American Curl Cat">
+          <figcaption class="card__caption">Американский кёрл (American Curl Cat (American Curl Cat))</figcaption>
+        </figure>
+
+        <figure class="gallery__card card energy-cats">
+          <img class="card__img" src="./img/energy-cat-breeds/AmericanCurl.jpg" alt="American Curl Cat">
+          <figcaption class="card__caption">Американский кёрл</figcaption>
+        </figure>
+
+        <figure class="gallery__card card energy-cats">
+          <img class="card__img" src="./img/energy-cat-breeds/AmericanCurl.jpg" alt="American Curl Cat">
+          <figcaption class="card__caption">Американский кёрл</figcaption>
+        </figure>
+      </div>
+      <!-- third row -->
+      <div class="gallery__row">
+        <figure class="gallery__card card energy-cats">
+          <img class="card__img" src="./img/energy-cat-breeds/AmericanCurl.jpg" alt="American Curl Cat">
+          <figcaption class="card__caption">Американский кёрл (American Curl Cat (American Curl Cat))</figcaption>
+        </figure>
+
+        <figure class="gallery__card card energy-cats">
+          <img class="card__img" src="./img/energy-cat-breeds/AmericanCurl.jpg" alt="American Curl Cat">
+          <figcaption class="card__caption">Американский кёрл</figcaption>
+        </figure>
+      </div>
+      <!-- forth row -->
+      <div class="gallery__row">
+        <figure class="gallery__card card energy-cats">
+          <img class="card__img" src="./img/energy-cat-breeds/AmericanCurl.jpg" alt="American Curl Cat">
+          <figcaption class="card__caption">Американский кёрл (American Curl Cat (American Curl Cat))</figcaption>
+        </figure>
+      </div>
 
     </div>
-  </main>
+  </div>
   <footer class="footer">
     <small class="footer__copyright">&copy; Бабуленькины кошечки 2018</small>
     <address class="footer__address">Наш адрес: улица Котова, д.5</address>
