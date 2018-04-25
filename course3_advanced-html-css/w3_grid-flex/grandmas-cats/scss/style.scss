@@ -1,0 +1,45 @@
+@import 'variables';
+@import 'header';
+@import 'filter';
+@import 'sorting';
+@import 'gallery';
+@import 'footer';
+@import 'card';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin: 0;
+
+  display: flex;
+  flex-flow: column;
+
+  background: #ebebeb;
+  padding: 0 30px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+
+  margin: 0 0 20px;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,95 @@
+.header__title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0; }
+
+.filter {
+  background: #d9d9d9; }
+  .filter__li {
+    padding-bottom: 1px;
+    background-size: 300% 1px;
+    background-image: linear-gradient(to right, #737373, #737373 34%, #fff 50%, #8c8c8c 67%, #8c8c8c);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    transition: background 0.5s ease-in-out; }
+    .filter__li:hover {
+      background-position: left bottom; }
+  .filter__breed-label {
+    font-size: 1rem;
+    white-space: nowrap;
+    padding: 2.8ex;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+    background: #5a5a5a;
+    background: linear-gradient(90deg, #595959 0%, #595959 14%, #b3b3b3 21%, #595959 28%, #595959 43%, #e0e0e0 50%, #8c8c8c 57%, #8c8c8c 72%, #fcfcfc 79%, #d9d9d9 86%, #d9d9d9 100%);
+    background-size: 700% 100%;
+    background-position: right bottom;
+    background-repeat: no-repeat; }
+    .filter__breed-label:hover {
+      background-position: 66% bottom;
+      color: #fff; }
+
+#energy-cats:checked ~ .main label[for=energy-cats],
+#kids-cats:checked ~ .main label[for=kids-cats],
+#rare-cats:checked ~ .main label[for=rare-cats],
+#large-cats:checked ~ .main label[for=large-cats],
+#smartest-cats:checked ~ .main label[for=smartest-cats],
+#vocal-cats:checked ~ .main label[for=vocal-cats] {
+  background-position: 33% bottom;
+  color: #fff; }
+  #energy-cats:checked ~ .main label[for=energy-cats]:hover,
+  #kids-cats:checked ~ .main label[for=kids-cats]:hover,
+  #rare-cats:checked ~ .main label[for=rare-cats]:hover,
+  #large-cats:checked ~ .main label[for=large-cats]:hover,
+  #smartest-cats:checked ~ .main label[for=smartest-cats]:hover,
+  #vocal-cats:checked ~ .main label[for=vocal-cats]:hover {
+    background-position: 0% bottom; }
+
+.sorting {
+  border: 1px solid yellow;
+  width: 200px;
+  order: 2; }
+
+.gallery {
+  border: 1px solid blue;
+  flex: 1 1 50%;
+  order: 1;
+  margin: 0 16px; }
+
+.footer {
+  border-top: 1px solid #7c7c7c;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+* {
+  box-sizing: border-box; }
+
+html {
+  height: 100%; }
+
+body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  background: #ebebeb;
+  padding: 0 30px; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.main {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+  margin: 0 0 20px; }
+
+.hidden {
+  display: none; }
