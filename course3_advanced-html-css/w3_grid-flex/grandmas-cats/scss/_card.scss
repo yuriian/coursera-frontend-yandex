@@ -5,6 +5,15 @@
   position: relative;
   overflow: hidden;
 
+  counter-increment: card;
+  
+  &::before {
+    content: counter(card);
+    position: absolute;
+    top: 10px;
+    left: 15px;
+  }
+
   &:hover {
     .card__caption {
       transform: translateY(-50%);
@@ -15,6 +24,10 @@
   &__img {
     max-width:100%;
     max-height:100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &__caption {

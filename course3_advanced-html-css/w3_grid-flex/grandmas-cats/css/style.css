@@ -24,7 +24,6 @@
     transition-property: color, background;
     transition-duration: .3s;
     transition-timing-function: cubic-bezier(0.35, 0.76, 0.3, 0.99);
-    transition-delay: .1s;
     background: #5a5a5a;
     background: linear-gradient(90deg, #404040 0%, #404040 16%, #b3b3b3 21%, #5e5e5e 26%, #5e5e5e 45%, #e0e0e0 50%, #8c8c8c 55%, #8c8c8c 74%, #fcfcfc 79%, #d9d9d9 84%, #d9d9d9 100%);
     background-size: 700% 100%;
@@ -34,6 +33,7 @@
       background-position: 66% 100%;
       color: #fff; }
 
+#all-cats:checked ~ .main label[for=all-cats],
 #energy-cats:checked ~ .main label[for=energy-cats],
 #kids-cats:checked ~ .main label[for=kids-cats],
 #rare-cats:checked ~ .main label[for=rare-cats],
@@ -47,6 +47,7 @@
   background-position: 100% 100%;
   background-position: 33% 100%;
   color: #fff; }
+  #all-cats:checked ~ .main label[for=all-cats]:hover,
   #energy-cats:checked ~ .main label[for=energy-cats]:hover,
   #kids-cats:checked ~ .main label[for=kids-cats]:hover,
   #rare-cats:checked ~ .main label[for=rare-cats]:hover,
@@ -61,48 +62,50 @@
   order: 2; }
 
 .gallery {
-  border: 1px solid blue;
+  display: flex;
+  flex-flow: row wrap;
   flex: 1 1 50%;
   order: 1;
-  margin: 0 10px; }
-  .gallery__row {
-    display: flex; }
-  .gallery .gallery__row {
-    margin: 0 0 9px; }
-    .gallery .gallery__row:first-child .gallery__card:first-child {
-      flex: 1 1 33.3%;
-      max-width: 33.3%; }
-    .gallery .gallery__row:first-child .gallery__card:last-child {
-      flex: 2 1 66.6%; }
-    .gallery .gallery__row:nth-child(2) .gallery__card {
-      flex: 1 1 33.3%;
-      max-width: 33.3%; }
-    .gallery .gallery__row:nth-child(3) .gallery__card:first-child {
-      flex: 1 1 66.6%;
-      max-width: 66.6%; }
-    .gallery .gallery__row:nth-child(3) .gallery__card:last-child {
-      flex: 2 1 33.3%; }
-    .gallery .gallery__row:last-child {
-      margin-bottom: 0; }
-      .gallery .gallery__row:last-child .gallery__card {
-        flex: 1; }
+  margin: 0 10px -9px; }
   .gallery__card {
-    margin: 0 6px;
-    opacity: 0.5;
-    pointer-events: none; }
+    margin: 0 6px 9px;
+    opacity: 0.3;
+    pointer-events: none;
+    transition: opacity .4s ease-in-out; }
+  .gallery__section {
+    display: none; }
+    .gallery__section ~ .gallery__card:nth-of-type(8n-7),
+    .gallery__section ~ .gallery__card:nth-of-type(8n-5),
+    .gallery__section ~ .gallery__card:nth-of-type(8n-4),
+    .gallery__section ~ .gallery__card:nth-of-type(8n-3),
+    .gallery__section ~ .gallery__card:nth-of-type(8n-1) {
+      width: calc(33.3% - 12px); }
+    .gallery__section ~ .gallery__card:nth-of-type(8n-6),
+    .gallery__section ~ .gallery__card:nth-of-type(8n-2) {
+      width: calc(66.6% - 12px); }
+    .gallery__section ~ .gallery__card:nth-of-type(8n) {
+      width: calc(100% - 12px); }
 
 #all-cats:checked ~ .main .card {
-  opacity: 1; }
-
-#energy-cats:checked ~ .main .energy-cats,
-#kids-cats:checked ~ .main .kids-cats,
-#rare-cats:checked ~ .main .rare-cats,
-#large-cats:checked ~ .main .large-cats,
-#smartest-cats:checked ~ .main .smartest-cats,
-#vocal-cats:checked ~ .main .vocal-cats {
   opacity: 1;
   pointer-events: auto; }
 
+#energy-cats:checked ~ .main .energy-cats,
+#kids-cats:checked ~ .main .kids-cats,
+#large-cats:checked ~ .main .large-cats,
+#rare-cats:checked ~ .main .rare-cats,
+#smartest-cats:checked ~ .main .smartest-cats,
+#vocal-cats:checked ~ .main .vocal-cats {
+  opacity: 1;
+  pointer-events: auto;
+  animation: brightness .7s ease-in-out; }
+
+@keyframes brightness {
+  70% {
+    filter: brightness(1.2);
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1); }
+  100% {
+    filter: brightness(1); } }
 .footer {
   border-top: 1px solid #7c7c7c;
   height: 64px;
@@ -115,13 +118,23 @@
   text-align: center;
   background: #fff;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  counter-increment: card; }
+  .card::before {
+    content: counter(card);
+    position: absolute;
+    top: 10px;
+    left: 15px; }
   .card:hover .card__caption {
     transform: translateY(-50%);
     opacity: 1; }
   .card__img {
     max-width: 100%;
-    max-height: 100%; }
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
   .card__caption {
     display: flex;
     align-items: center;

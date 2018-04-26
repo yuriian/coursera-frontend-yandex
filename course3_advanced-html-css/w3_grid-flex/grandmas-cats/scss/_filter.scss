@@ -28,7 +28,7 @@
     transition-property: color, background;
     transition-duration: .3s;
     transition-timing-function: cubic-bezier(.35,.76,.3,.99);
-    transition-delay: .1s;
+    // transition-delay: .1s;
 
     // @include category-linear-bg($categoryBgColor, $categoryBgHoverColor, $categoryBgSelectedColor);
     @include category-linear-bg;
@@ -40,6 +40,7 @@
   }
 }
 
+#all-cats:checked ~ .main label[for=all-cats],
 #energy-cats:checked ~ .main label[for=energy-cats],
 #kids-cats:checked ~ .main label[for=kids-cats],
 #rare-cats:checked ~ .main label[for=rare-cats],

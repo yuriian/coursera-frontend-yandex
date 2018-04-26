@@ -6,6 +6,8 @@ $categoryBgSelectedHoverColor: hsl(0, 0%, 25%); // #5a5a5a
 $bottomBorderColor: $categoryBgHoverColor; // #8c8c8c;
 $bottomBorderHoverColor: hsl(0, 0%, 45%);
 
+$cardHorizontalMargin: 6px;
+
 @mixin category-linear-bg {
   background: rgb(90,90,90);
   
