@@ -9,13 +9,22 @@ $bottomBorderHoverColor: hsl(0, 0%, 45%);
 $cardHorizontalMargin: 6px;
 
 @mixin category-linear-bg {
-  background: rgb(90,90,90);
-  
-  background: linear-gradient(90deg, 
-                            $categoryBgSelectedHoverColor 0%, $categoryBgSelectedHoverColor 16%, hsl(0, 0%, 70%) 21%,
-                            $categoryBgSelectedColor 26%, $categoryBgSelectedColor 45%, hsl(0, 0%, 88%) 50%,
-                            $categoryBgHoverColor 55%, $categoryBgHoverColor 74%, hsl(0, 0%, 99%) 79%,
-                            $categoryBgColor 84%, $categoryBgColor 100%);
+  background: rgb(90, 90, 90);
+
+  background: linear-gradient(
+    90deg,
+    $categoryBgSelectedHoverColor 0%,
+    $categoryBgSelectedHoverColor 16%,
+    hsl(0, 0%, 70%) 21%,
+    $categoryBgSelectedColor 26%,
+    $categoryBgSelectedColor 45%,
+    hsl(0, 0%, 88%) 50%,
+    $categoryBgHoverColor 55%,
+    $categoryBgHoverColor 74%,
+    hsl(0, 0%, 99%) 79%,
+    transparent 84%,
+    transparent 100%
+  );
 
   background-size: 700% 100%;
   background-repeat: no-repeat;
@@ -23,25 +32,32 @@ $cardHorizontalMargin: 6px;
 }
 
 // @mixin category-linear-bg($color, $hoverColor, $checkedColor) {
-  // background: linear-gradient(90deg, 
-  //                             $checkedColor 0%, $checkedColor 20%, hsl(0, 0%, 70%) 30%,
-  //                             $hoverColor 40%, $hoverColor 60%, hsl(0, 0%, 70%) 70%,
-  //                             $color 80%, $color 10%,);
-  // background-size: 500% 100%;
-  // background-repeat: no-repeat;
+// background: linear-gradient(90deg,
+//                             $checkedColor 0%, $checkedColor 20%, hsl(0, 0%, 70%) 30%,
+//                             $hoverColor 40%, $hoverColor 60%, hsl(0, 0%, 70%) 70%,
+//                             $color 80%, $color 10%,);
+// background-size: 500% 100%;
+// background-repeat: no-repeat;
 
-  // background-position: right bottom;
+// background-position: right bottom;
 
-  // &:hover {
-  //   background-position: center bottom;
-  // }
+// &:hover {
+//   background-position: center bottom;
+// }
 // }
 
 @mixin category-bottom-border {
   padding-bottom: 1px;
 
   background-size: 300% 1px;
-  background-image: linear-gradient(to right, $bottomBorderHoverColor, $bottomBorderHoverColor 34%, #fff 50%, $bottomBorderColor 67%, $bottomBorderColor);
+  background-image: linear-gradient(
+    to right,
+    $bottomBorderHoverColor,
+    $bottomBorderHoverColor 34%,
+    #fff 50%,
+    $bottomBorderColor 67%,
+    $bottomBorderColor
+  );
   background-position: right bottom;
   background-repeat: no-repeat;
 }

@@ -1,7 +1,7 @@
 @import 'variables';
 @import 'header';
 @import 'filter';
-@import 'sorting';
+@import 'rating';
 @import 'gallery';
 @import 'footer';
 @import 'card';
@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
   min-height: 100%;
   margin: 0;
 
@@ -23,7 +23,6 @@ body {
   flex-flow: column;
 
   background: #ebebeb;
-  padding: 0 30px;
 }
 
 ul {
@@ -34,13 +33,14 @@ ul {
 
 figure {
   margin: 0;
+  height: 100%;
 }
 
 .main {
   display: flex;
   flex: 1;
-
-  margin: 0 0 20px;
+  margin: 0 auto 20px;
+  width: 1300px;
 }
 
 .hidden {

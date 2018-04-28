@@ -1,18 +1,13 @@
 .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   height: 290px;
   text-align: center;
   background: #fff;
   position: relative;
   overflow: hidden;
-
-  counter-increment: card;
-  
-  &::before {
-    content: counter(card);
-    position: absolute;
-    top: 10px;
-    left: 15px;
-  }
 
   &:hover {
     .card__caption {
@@ -22,12 +17,8 @@
   }
 
   &__img {
-    max-width:100%;
-    max-height:100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
   }
 
   &__caption {
@@ -43,7 +34,7 @@
     // min-width: 200px;
     width: 80%;
     max-width: 280px;
-    background: hsla(0, 0%, 0%, .4);
+    background: hsla(0, 0%, 0%, 0.5);
     color: #fff;
 
     cursor: default;
@@ -57,8 +48,7 @@
     // white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    
-    transition: transform .5s cubic-bezier(.35,.76,.3,.99),
-                opacity .5s ease-in;
+
+    transition: transform 0.4s ease-out, opacity 0.4s ease-in;
   }
 }

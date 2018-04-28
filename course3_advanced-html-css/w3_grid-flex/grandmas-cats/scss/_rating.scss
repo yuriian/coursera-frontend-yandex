@@ -1,0 +1,138 @@
+.rating {
+  align-self: flex-start;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  width: 200px;
+  order: 2;
+
+  padding: 0 16px 16px;
+  background: $categoryBgColor;
+
+  &__title {
+    margin: 0 0 5px;
+    text-transform: uppercase;
+    color: hsl(0, 95%, 44%);
+
+    font-weight: normal;
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
+  label[for='ratingCheckbox'] {
+    flex: 1;
+    text-align: right;
+  }
+
+  #ratingCheckbox {
+    align-self: flex-end;
+
+    &:checked {
+      ~ .rating__section[value='10'] {
+        order: 1;
+      }
+
+      ~ .rating__section[value='9'] {
+        order: 2;
+      }
+
+      ~ .rating__section[value='8'] {
+        order: 3;
+      }
+
+      ~ .rating__section[value='7'] {
+        order: 4;
+      }
+
+      ~ .rating__section[value='6'] {
+        order: 5;
+      }
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    h4 {
+      flex: 1 1 100%;
+      margin: 20px 0 7px;
+      font-weight: normal;
+      font-size: 1.2rem;
+    }
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &[value='10'] .rating__color {
+      width: 80% * 1;
+    }
+
+    &[value='9'] .rating__color {
+      width: 80% * 0.9;
+    }
+
+    &[value='8'] .rating__color {
+      width: 80% * 0.8;
+    }
+
+    &[value='7'] .rating__color {
+      width: 80% * 0.7;
+    }
+
+    &[value='6'] .rating__color {
+      width: 80% * 0.6;
+    }
+  }
+
+  $greenGradient: hsl(148, 100%, 50%);
+  $yellowGradient: hsl(58, 100%, 50%);
+  $redGradient: hsl(2, 98%, 46%);
+
+  &__color {
+    height: 20px;
+    box-shadow: inset 0 0 0 1px hsla(0, 0, 0, 0.3);
+    padding: 5px;
+
+    &--green {
+      background-image: linear-gradient(
+        90deg,
+        $greenGradient 0%,
+        $greenGradient 10%,
+        #fff 95%,
+        #fff 100%
+      );
+    }
+    &--red {
+      background-image: linear-gradient(
+        90deg,
+        $redGradient 0%,
+        $redGradient 10%,
+        #fff 95%,
+        #fff 100%
+      );
+    }
+    &--yellow {
+      background-image: linear-gradient(
+        90deg,
+        $yellowGradient 0%,
+        $yellowGradient 10%,
+        #fff 95%,
+        #fff 100%
+      );
+    }
+  }
+  &__value {
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+}

@@ -21,7 +21,7 @@
   <input class="hidden" type="radio" name="cat-breeds" id="smartest-cats">
   <input class="hidden" type="radio" name="cat-breeds" id="vocal-cats">
 
-  <div class="main">
+  <main class="main">
     <aside class="filter">
       <ul class="filter__ul">
         <li class="filter__li">
@@ -47,125 +47,215 @@
         </li>
       </ul>
     </aside>
-    <aside class="sorting">
 
+    <aside class="rating">
+      <h3 class="rating__title">Рейтинг</h3>
+
+      <label for="ratingCheckbox">по убыванию</label>
+      <input type="checkbox" id="ratingCheckbox">
+
+      <section class="rating__section" value="8">
+        <h4>American Curl</h4>
+        <span class="rating__color rating__color--yellow"></span>
+        <span class="rating__value">8</span>
+      </section>
+
+      <section class="rating__section" value="10">
+        <h4>Savannah</h4>
+        <span class="rating__color rating__color--green"></span>
+        <span class="rating__value">10</span>
+      </section>
+
+      <section class="rating__section" value="7">
+        <h4>Bobtail</h4>
+        <span class="rating__color rating__color--yellow"></span>
+        <span class="rating__value">7</span>
+      </section>
+
+      <section class="rating__section" value="9">
+        <h4>Sphynx</h4>
+        <span class="rating__color rating__color--green"></span>
+        <span class="rating__value">9</span>
+      </section>
+
+      <section class="rating__section" value="6">
+        <h4>Schottish Fold</h4>
+        <span class="rating__color rating__color--red"></span>
+        <span class="rating__value">6</span>
+      </section>
+
+      <section class="rating__section" value="10">
+        <h4>Egyptian Mau</h4>
+        <span class="rating__color rating__color--green"></span>
+        <span class="rating__value">10</span>
+      </section>
+
+      <section class="rating__section" value="8">
+        <h4>Manx</h4>
+        <span class="rating__color rating__color--yellow"></span>
+        <span class="rating__value">8</span>
+      </section>
     </aside>
+
     <div class="gallery">
-      <hr class="gallery__section">
-      <figure class="gallery__card card rare-cats">
-        <img class="card__img" src="./img/rare-cat-breeds/Abyssinian.jpg" alt="Abyssinian Cat">
-        <figcaption class="card__caption">Abyssinian Cat</figcaption>
-      </figure>
+      <div class="gallery__card card rare-cats">
+        <figure>
+          <img class="card__img" src="./img/rare-cat-breeds/Abyssinian.jpg" alt="Abyssinian Cat">
+          <figcaption class="card__caption">Abyssinian Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card vocal-cats">
-        <img class="card__img" src="./img/vocal-cat-breeds/AmericanBobtail2.jpg" alt="American Bobtail Cat">
-        <figcaption class="card__caption">American Bobtail Cat</figcaption>
-      </figure>
+      <div class="gallery__card card vocal-cats">
+        <figure>
+          <img class="card__img" src="./img/vocal-cat-breeds/AmericanBobtail2.jpg" alt="American Bobtail Cat">
+          <figcaption class="card__caption">American Bobtail Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card energy-cats">
-        <img class="card__img" src="./img/energy-cat-breeds/AmericanCurl3.jpg" alt="American Curl Cat">
-        <figcaption class="card__caption">American Curl Cat</figcaption>
-      </figure>
+      <div class="gallery__card card energy-cats">
+        <figure>
+          <img class="card__img" src="./img/energy-cat-breeds/AmericanCurl3.jpg" alt="American Curl Cat">
+          <figcaption class="card__caption">American Curl Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card energy-cats">
-        <img class="card__img" src="./img/energy-cat-breeds/BalineseJavanese.jpg" alt="Balinese-Javanese Cat">
-        <figcaption class="card__caption">Balinese-Javanese Cat</figcaption>
-      </figure>
+      <div class="gallery__card card energy-cats">
+        <figure>
+          <img class="card__img" src="./img/energy-cat-breeds/BalineseJavanese.jpg" alt="Balinese-Javanese Cat">
+          <figcaption class="card__caption">Balinese-Javanese Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card smartest-cats">
-        <img class="card__img" src="./img/smartest-cat-breeds/Bengal.jpg" alt="Bengal Cat">
-        <figcaption class="card__caption">Bengal Cat</figcaption>
-      </figure>
+      <div class="gallery__card card smartest-cats">
+        <figure>
+          <img class="card__img" src="./img/smartest-cat-breeds/Bengal.jpg" alt="Bengal Cat">
+          <figcaption class="card__caption">Bengal Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card energy-cats">
-        <img class="card__img" src="./img/energy-cat-breeds/Bombay2.jpg" alt="Bombay Cat">
-        <figcaption class="card__caption">Bombay Cat</figcaption>
-      </figure>
+      <div class="gallery__card card energy-cats">
+        <figure>
+          <img class="card__img" src="./img/energy-cat-breeds/Bombay2.jpg" alt="Bombay Cat">
+          <figcaption class="card__caption">Bombay Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card rare-cats">
-        <img class="card__img" src="./img/rare-cat-breeds/BritishShorthair.jpg" alt="British Shorthair Cat">
-        <figcaption class="card__caption">British Shorthair Cat</figcaption>
-      </figure>
+      <div class="gallery__card card rare-cats">
+        <figure>
+          <img class="card__img" src="./img/rare-cat-breeds/BritishShorthair.jpg" alt="British Shorthair Cat">
+          <figcaption class="card__caption">British Shorthair Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card smartest-cats">
-        <img class="card__img" src="./img/smartest-cat-breeds/Burmese2.jpg" alt="Burmese Cat">
-        <figcaption class="card__caption">Burmese Cat</figcaption>
-      </figure>
+      <div class="gallery__card card smartest-cats">
+        <figure>
+          <img class="card__img" src="./img/smartest-cat-breeds/Burmese2.jpg" alt="Burmese Cat">
+          <figcaption class="card__caption">Burmese Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card smartest-cats">
-        <img class="card__img" src="./img/smartest-cat-breeds/CornishRex.jpg" alt="Cornish Rex Cat">
-        <figcaption class="card__caption">Cornish Rex Cat</figcaption>
-      </figure>
+      <div class="gallery__card card smartest-cats">
+        <figure>
+          <img class="card__img" src="./img/smartest-cat-breeds/CornishRex.jpg" alt="Cornish Rex Cat">
+          <figcaption class="card__caption">Cornish Rex Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card rare-cats">
-        <img class="card__img" src="./img/rare-cat-breeds/EgyptianMau3.jpg" alt="Egyptian Mau Cat">
-        <figcaption class="card__caption">Egyptian Mau Cat</figcaption>
-      </figure>
+      <div class="gallery__card card rare-cats">
+        <figure>
+          <img class="card__img" src="./img/rare-cat-breeds/EgyptianMau3.jpg" alt="Egyptian Mau Cat">
+          <figcaption class="card__caption">Egyptian Mau Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card vocal-cats">
-        <img class="card__img" src="./img/vocal-cat-breeds/EuropeanBurmese.jpg" alt="European Burmese Cat">
-        <figcaption class="card__caption">European Burmese Cat</figcaption>
-      </figure>
+      <div class="gallery__card card vocal-cats">
+        <figure>
+          <img class="card__img" src="./img/vocal-cat-breeds/EuropeanBurmese.jpg" alt="European Burmese Cat">
+          <figcaption class="card__caption">European Burmese Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card large-cats">
-        <img class="card__img" src="./img/large-cat-breeds/ExoticShorthair.jpg" alt="Exotic Shorthair Cat">
-        <figcaption class="card__caption">Exotic Shorthair Cat</figcaption>
-      </figure>
+      <div class="gallery__card card large-cats">
+        <figure>
+          <img class="card__img" src="./img/large-cat-breeds/ExoticShorthair.jpg" alt="Exotic Shorthair Cat">
+          <figcaption class="card__caption">Exotic Shorthair Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card kids-cats" rating="10">
-        <img class="card__img" src="./img/kids-cat-breeds/Manx.jpg" alt="Manx Cat">
-        <figcaption class="card__caption">Manx Cat</figcaption>
-      </figure>
+      <div class="gallery__card card kids-cats">
+        <figure>
+          <img class="card__img" src="./img/kids-cat-breeds/Manx.jpg" alt="Manx Cat">
+          <figcaption class="card__caption">Manx Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card large-cats">
-        <img class="card__img" src="./img/large-cat-breeds/Persian.jpg" alt="Persian Solid Cat">
-        <figcaption class="card__caption">Persian Solid Cat</figcaption>
-      </figure>
+      <div class="gallery__card card large-cats">
+        <figure>
+          <img class="card__img" src="./img/large-cat-breeds/Persian.jpg" alt="Persian Solid Cat">
+          <figcaption class="card__caption">Persian Solid Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card energy-cats">
-        <img class="card__img" src="./img/energy-cat-breeds/PixieBob.jpg" alt="Pixie-bob Cat">
-        <figcaption class="card__caption">Pixie-bob Cat</figcaption>
-      </figure>
+      <div class="gallery__card card energy-cats">
+        <figure>
+          <img class="card__img" src="./img/energy-cat-breeds/PixieBob.jpg" alt="Pixie-bob Cat">
+          <figcaption class="card__caption">Pixie-bob Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card large-cats">
-        <img class="card__img" src="./img/large-cat-breeds/RagaMuffin2.jpg" alt="Ragamuffin Cat">
-        <figcaption class="card__caption">Ragamuffin Cat</figcaption>
-      </figure>
+      <div class="gallery__card card large-cats">
+        <figure>
+          <img class="card__img" src="./img/large-cat-breeds/RagaMuffin2.jpg" alt="Ragamuffin Cat">
+          <figcaption class="card__caption">Ragamuffin Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card energy-cats">
-        <img class="card__img" src="./img/energy-cat-breeds/Savannah.jpg" alt="Savannah Cat">
-        <figcaption class="card__caption">Savannah Cat</figcaption>
-      </figure>
+      <div class="gallery__card card energy-cats">
+        <figure>
+          <img class="card__img" src="./img/energy-cat-breeds/Savannah.jpg" alt="Savannah Cat">
+          <figcaption class="card__caption">Savannah Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card smartest-cats">
-        <img class="card__img" src="./img/smartest-cat-breeds/SchottishFold.jpg" alt="Schottish Fold Cat">
-        <figcaption class="card__caption">Schottish Fold Cat</figcaption>
-      </figure>
+      <div class="gallery__card card smartest-cats">
+        <figure>
+          <img class="card__img" src="./img/smartest-cat-breeds/SchottishFold.jpg" alt="Schottish Fold Cat">
+          <figcaption class="card__caption">Schottish Fold Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card smartest-cats">
-        <img class="card__img" src="./img/smartest-cat-breeds/Singapura.jpg" alt="Singapura Cat">
-        <figcaption class="card__caption">Singapura Cat</figcaption>
-      </figure>
+      <div class="gallery__card card smartest-cats">
+        <figure>
+          <img class="card__img" src="./img/smartest-cat-breeds/Singapura.jpg" alt="Singapura Cat">
+          <figcaption class="card__caption">Singapura Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card energy-cats">
-        <img class="card__img" src="./img/energy-cat-breeds/Somali.jpg" alt="Somali Cat">
-        <figcaption class="card__caption">Somali Cat</figcaption>
-      </figure>
+      <div class="gallery__card card energy-cats">
+        <figure>
+          <img class="card__img" src="./img/energy-cat-breeds/Somali.jpg" alt="Somali Cat">
+          <figcaption class="card__caption">Somali Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card rare-cats">
-        <img class="card__img" src="./img/rare-cat-breeds/Sphynx.jpg" alt="Sphynx Cat">
-        <figcaption class="card__caption">Sphynx Cat</figcaption>
-      </figure>
+      <div class="gallery__card card rare-cats">
+        <figure>
+          <img class="card__img" src="./img/rare-cat-breeds/Sphynx.jpg" alt="Sphynx Cat">
+          <figcaption class="card__caption">Sphynx Cat</figcaption>
+        </figure>
+      </div>
 
-      <figure class="gallery__card card vocal-cats">
-        <img class="card__img" src="./img/vocal-cat-breeds/TurkishVan.jpg" alt="Turkish Van Cat">
-        <figcaption class="card__caption">Turkish Van Cat</figcaption>
-      </figure>
+      <div class="gallery__card card vocal-cats">
+        <figure>
+          <img class="card__img" src="./img/vocal-cat-breeds/TurkishVan.jpg" alt="Turkish Van Cat">
+          <figcaption class="card__caption">Turkish Van Cat</figcaption>
+        </figure>
+      </div>
 
     </div>
-  </div>
+  </main>
   <footer class="footer">
-    <small class="footer__copyright">&copy; Бабуленькины кошечки 2018</small>
+    <small class="footer__copyright">&copy; Бабуленькины кошечки, 2018</small>
     <address class="footer__address">Наш адрес: улица Котова, д.5</address>
   </footer>
 </body>

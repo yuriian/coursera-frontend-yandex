@@ -2,23 +2,54 @@
   background: $categoryBgColor;
 
   &__ul {
-    
+    overflow: hidden;
   }
 
   &__li {
+    height: 64px;
     @include category-bottom-border;
-    transition: background .4s ease-in-out;
+    transition: background 0.4s ease-in-out;
+
+    $animationDuration: 0.3s;
+
+    animation-name: moveRight;
+    animation-duration: $animationDuration;
+    animation-timing-function: cubic-bezier(0.16, 0.59, 0.41, 1.05);
+    animation-fill-mode: both;
+
+    &:first-child {
+      animation-delay: 0;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 0.3 * $animationDuration;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.6 * $animationDuration;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.9 * $animationDuration;
+    }
+    &:nth-child(5) {
+      animation-delay: 1.2 * $animationDuration;
+    }
+    &:nth-child(6) {
+      animation-delay: 1.5 * $animationDuration;
+    }
+    &:nth-child(7) {
+      animation-delay: 1.7 * $animationDuration;
+    }
 
     &:hover {
       background-position: left bottom;
     }
-
   }
 
   &__breed-label {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 63px;
     white-space: nowrap;
-    padding: 2.8ex;
+    padding: 0 16px;
 
     display: block;
 
@@ -26,8 +57,8 @@
     user-select: none;
 
     transition-property: color, background;
-    transition-duration: .3s;
-    transition-timing-function: cubic-bezier(.35,.76,.3,.99);
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.35, 0.76, 0.3, 0.99);
     // transition-delay: .1s;
 
     // @include category-linear-bg($categoryBgColor, $categoryBgHoverColor, $categoryBgSelectedColor);
@@ -40,13 +71,13 @@
   }
 }
 
-#all-cats:checked ~ .main label[for=all-cats],
-#energy-cats:checked ~ .main label[for=energy-cats],
-#kids-cats:checked ~ .main label[for=kids-cats],
-#rare-cats:checked ~ .main label[for=rare-cats],
-#large-cats:checked ~ .main label[for=large-cats],
-#smartest-cats:checked ~ .main label[for=smartest-cats],
-#vocal-cats:checked ~ .main label[for=vocal-cats] {
+#all-cats:checked ~ .main label[for='all-cats'],
+#energy-cats:checked ~ .main label[for='energy-cats'],
+#kids-cats:checked ~ .main label[for='kids-cats'],
+#rare-cats:checked ~ .main label[for='rare-cats'],
+#large-cats:checked ~ .main label[for='large-cats'],
+#smartest-cats:checked ~ .main label[for='smartest-cats'],
+#vocal-cats:checked ~ .main label[for='vocal-cats'] {
   // @include category-linear-bg($categoryBgSelectedColor, $categoryBgSelectedColor, $categoryBgSelectedColor);
   @include category-linear-bg;
 
@@ -55,5 +86,17 @@
 
   &:hover {
     background-position: 0 100%;
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
