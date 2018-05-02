@@ -8,6 +8,7 @@
   background: #fff;
   position: relative;
   overflow: hidden;
+  will-change: transform;
 
   &:hover {
     .card__caption {
@@ -42,7 +43,7 @@
     padding: 0 15px;
     font-size: 1.2rem;
 
-    transform: translateY(100%);
+    transform: translateY(0);
     opacity: 0;
 
     // white-space: nowrap;
@@ -50,5 +51,7 @@
     overflow: hidden;
 
     transition: transform 0.4s ease-out, opacity 0.4s ease-in;
+
+    will-change: transform, opacity;
   }
 }

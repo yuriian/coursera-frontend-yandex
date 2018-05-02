@@ -64,6 +64,8 @@
     // @include category-linear-bg($categoryBgColor, $categoryBgHoverColor, $categoryBgSelectedColor);
     @include category-linear-bg;
 
+    will-change: opacity;
+
     &:hover {
       background-position: 66% 100%;
       color: #fff;

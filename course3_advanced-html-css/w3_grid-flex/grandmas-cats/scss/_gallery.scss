@@ -6,34 +6,33 @@
   margin: 0 10px -9px;
 
   &__card {
+    width: calc(33.3% - #{$cardHorizontalMargin * 2});
     margin: 0 6px 9px;
     opacity: 0.3;
     pointer-events: none;
 
-    transition: opacity .4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
   }
 
- 
-    .gallery__card:nth-of-type(8n-7), // 1, 9, 17, ...
-    .gallery__card:nth-of-type(8n-5), // 3, 11, 19, ...
-    .gallery__card:nth-of-type(8n-4), // 4, 12, 20, ...
-    .gallery__card:nth-of-type(8n-3), // 5, 13, 21, ...
-    .gallery__card:nth-of-type(8n-1) // 7, 15, 23, ...
-    {
-      width: calc(33.3% - #{$cardHorizontalMargin * 2});
-    }
+  // .gallery__card:nth-of-type(8n-7), // 1, 9, 17, ...
+  // .gallery__card:nth-of-type(8n-5), // 3, 11, 19, ...
+  // .gallery__card:nth-of-type(8n-4), // 4, 12, 20, ...
+  // .gallery__card:nth-of-type(8n-3), // 5, 13, 21, ...
+  // .gallery__card:nth-of-type(8n-1) // 7, 15, 23, ...
+  // {
+  //   width: calc(33.3% - #{$cardHorizontalMargin * 2});
+  // }
 
-    .gallery__card:nth-of-type(8n-6), // 2, 10
-    .gallery__card:nth-of-type(8n-2) // 6, 14
-    {
-      width: calc(66.6% - #{$cardHorizontalMargin * 2});
-    }
+  // .gallery__card:nth-of-type(8n-6), /* 2, 10*/
+  //   .gallery__card:nth-of-type(8n-2), // 6, 14
+  .gallery__card:nth-of-type(4n + 2) {
+    width: calc(66.6% - #{$cardHorizontalMargin * 2});
+  }
 
-    .gallery__card:nth-of-type(8n) // 8, 16, 24, ...
-    {
-      width: calc(100% - #{$cardHorizontalMargin * 2});
-    }
-
+  .gallery__card:nth-of-type(8n) // 8, 16, 24, ...
+ {
+    width: calc(100% - #{$cardHorizontalMargin * 2});
+  }
 }
 
 #all-cats:checked ~ .main .card {
@@ -49,7 +48,7 @@
   opacity: 1;
   pointer-events: auto;
 
-  animation: brightness .7s ease-in-out;
+  animation: brightness 0.7s ease-in-out;
   // animation: cloud3 25s linear infinite;
 }
 

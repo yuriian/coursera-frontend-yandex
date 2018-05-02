@@ -1,3 +1,29 @@
+#ratingCheckbox {
+  align-self: flex-end;
+
+  &:checked {
+    ~ .rating__section[data-rate='10'] {
+      order: 1;
+    }
+
+    ~ .rating__section[data-rate='9'] {
+      order: 2;
+    }
+
+    ~ .rating__section[data-rate='8'] {
+      order: 3;
+    }
+
+    ~ .rating__section[data-rate='7'] {
+      order: 4;
+    }
+
+    ~ .rating__section[data-rate='6'] {
+      order: 5;
+    }
+  }
+}
+
 .rating {
   align-self: flex-start;
 
@@ -26,32 +52,6 @@
     text-align: right;
   }
 
-  #ratingCheckbox {
-    align-self: flex-end;
-
-    &:checked {
-      ~ .rating__section[value='10'] {
-        order: 1;
-      }
-
-      ~ .rating__section[value='9'] {
-        order: 2;
-      }
-
-      ~ .rating__section[value='8'] {
-        order: 3;
-      }
-
-      ~ .rating__section[value='7'] {
-        order: 4;
-      }
-
-      ~ .rating__section[value='6'] {
-        order: 5;
-      }
-    }
-  }
-
   &__section {
     display: flex;
     flex-flow: row wrap;
@@ -61,7 +61,7 @@
 
     h4 {
       flex: 1 1 100%;
-      margin: 20px 0 7px;
+      margin: 15px 0 5px;
       font-weight: normal;
       font-size: 1.2rem;
     }
@@ -72,23 +72,23 @@
       align-items: center;
     }
 
-    &[value='10'] .rating__color {
+    &[data-rate='10'] .rating__color {
       width: 80% * 1;
     }
 
-    &[value='9'] .rating__color {
+    &[data-rate='9'] .rating__color {
       width: 80% * 0.9;
     }
 
-    &[value='8'] .rating__color {
+    &[data-rate='8'] .rating__color {
       width: 80% * 0.8;
     }
 
-    &[value='7'] .rating__color {
+    &[data-rate='7'] .rating__color {
       width: 80% * 0.7;
     }
 
-    &[value='6'] .rating__color {
+    &[data-rate='6'] .rating__color {
       width: 80% * 0.6;
     }
   }
