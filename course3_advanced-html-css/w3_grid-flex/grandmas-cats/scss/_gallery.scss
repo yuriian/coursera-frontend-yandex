@@ -8,9 +8,6 @@
   &__card {
     width: calc(33.3% - #{$cardHorizontalMargin * 2});
     margin: 0 6px 9px;
-    opacity: 0.3;
-    pointer-events: none;
-
     transition: opacity 0.4s ease-in-out;
   }
 

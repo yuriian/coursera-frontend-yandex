@@ -1,6 +1,11 @@
 .filter {
   background: $categoryBgColor;
 
+  &__control:checked ~ .main .gallery__card {
+    opacity: .3;
+    pointer-events: none;
+  }
+
   &__ul {
     overflow: hidden;
   }
@@ -73,7 +78,6 @@
   }
 }
 
-#all-cats:checked ~ .main label[for='all-cats'],
 #energy-cats:checked ~ .main label[for='energy-cats'],
 #kids-cats:checked ~ .main label[for='kids-cats'],
 #rare-cats:checked ~ .main label[for='rare-cats'],
