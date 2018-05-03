@@ -8,6 +8,41 @@ $bottomBorderHoverColor: hsl(0, 0%, 45%);
 
 $cardHorizontalMargin: 6px;
 
+// rating gradients
+$greenGradientColor: hsl(148, 100%, 50%);
+$yellowGradientColor: hsl(58, 100%, 50%);
+$redGradientColor: hsl(2, 98%, 46%);
+
+@mixin greenGradient {
+  background-image: linear-gradient(
+    90deg,
+    $greenGradientColor 0%,
+    $greenGradientColor 10%,
+    #fff 95%,
+    #fff 100%
+  );
+}
+
+@mixin redGradient {
+  background-image: linear-gradient(
+    90deg,
+    $redGradientColor 0%,
+    $redGradientColor 10%,
+    #fff 95%,
+    #fff 100%
+  );
+}
+
+@mixin yellowGradient {
+  background-image: linear-gradient(
+    90deg,
+    $yellowGradientColor 0%,
+    $yellowGradientColor 10%,
+    #fff 95%,
+    #fff 100%
+  );
+}
+
 @mixin category-linear-bg {
   background: rgb(90, 90, 90);
 

@@ -1,5 +1,7 @@
 #ratingCheckbox {
-  align-self: flex-end;
+  height: .9rem;
+  width: .9rem;
+  margin: .3rem 0 0 .6rem;
 
   &:checked {
     ~ .rating__section[data-rate='10'] {
@@ -25,19 +27,17 @@
 }
 
 .rating {
-  align-self: flex-start;
-
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  align-self: flex-start;
 
   width: 200px;
-  order: 2;
 
   padding: 0 16px 16px;
   background: $categoryBgColor;
 
   &__title {
+    flex: 1 1 100%;
     margin: 0 0 5px;
     text-transform: uppercase;
     color: hsl(0, 95%, 44%);
@@ -50,89 +50,65 @@
   label[for='ratingCheckbox'] {
     flex: 1;
     text-align: right;
+    cursor: pointer;
+    user-select: none;
   }
 
   &__section {
-    display: flex;
-    flex-flow: row wrap;
     flex: 1 1 100%;
-    align-items: center;
+  }
+
+  &__caption {
+    flex: 1 1 100%;
+    margin: 15px 0 5px;
+    font-weight: normal;
+    font-size: 1.2rem;
+  }
+
+  &__progress {
+    width: 100%;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
 
-    h4 {
-      flex: 1 1 100%;
-      margin: 15px 0 5px;
-      font-weight: normal;
-      font-size: 1.2rem;
+    &::after {
+      content: attr(data-rate);
+      font-weight: bold;
+      font-size: 1.3rem;
+      line-height: 1.3rem;
     }
 
-    div {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    &::before {
+      content: '';
+      box-sizing: border-box;
+      height: 20px;     
+      padding: 5px;
+      box-shadow: inset 0 0 0 1px hsla(0, 0, 0, 0.3);
     }
 
-    &[data-rate='10'] .rating__color {
-      width: 80% * 1;
+    &[data-rate='10']::before {
+      width: 75% * 1;      
+      @include greenGradient;
     }
 
-    &[data-rate='9'] .rating__color {
-      width: 80% * 0.9;
+    &[data-rate='9']::before {
+      width: 75% * 0.9;
+      @include greenGradient;
     }
 
-    &[data-rate='8'] .rating__color {
-      width: 80% * 0.8;
+    &[data-rate='8']::before {
+      width: 75% * 0.8;
+      @include yellowGradient;
     }
 
-    &[data-rate='7'] .rating__color {
-      width: 80% * 0.7;
+    &[data-rate='7']::before {
+      width: 75% * 0.7;
+      @include yellowGradient;
     }
 
-    &[data-rate='6'] .rating__color {
-      width: 80% * 0.6;
+    &[data-rate='6']::before {
+      width: 75% * 0.6;
+      @include redGradient;
     }
-  }
-
-  $greenGradient: hsl(148, 100%, 50%);
-  $yellowGradient: hsl(58, 100%, 50%);
-  $redGradient: hsl(2, 98%, 46%);
-
-  &__color {
-    height: 20px;
-    box-shadow: inset 0 0 0 1px hsla(0, 0, 0, 0.3);
-    padding: 5px;
-
-    &--green {
-      background-image: linear-gradient(
-        90deg,
-        $greenGradient 0%,
-        $greenGradient 10%,
-        #fff 95%,
-        #fff 100%
-      );
-    }
-    &--red {
-      background-image: linear-gradient(
-        90deg,
-        $redGradient 0%,
-        $redGradient 10%,
-        #fff 95%,
-        #fff 100%
-      );
-    }
-    &--yellow {
-      background-image: linear-gradient(
-        90deg,
-        $yellowGradient 0%,
-        $yellowGradient 10%,
-        #fff 95%,
-        #fff 100%
-      );
-    }
-  }
-  &__value {
-    vertical-align: middle;
-    font-weight: bold;
-    font-size: 1.4rem;
   }
 }
