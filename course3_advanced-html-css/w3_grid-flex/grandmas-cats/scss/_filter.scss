@@ -11,7 +11,6 @@
   }
 
   &__li {
-    height: 64px;
     @include category-bottom-border;
     transition: background 0.4s ease-in-out;
 
@@ -52,9 +51,8 @@
 
   &__breed-label {
     font-size: 1.2rem;
-    line-height: 63px;
     white-space: nowrap;
-    padding: 0 16px;
+    padding: 1.1rem;
 
     display: block;
 

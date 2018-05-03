@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: center;
 
-  height: 290px;
   text-align: center;
   background: #fff;
   position: relative;
@@ -31,11 +30,9 @@
     left: 0;
     bottom: 0;
 
-    height: 70px;
-    // line-height: 70px;
-    // min-width: 200px;
+    min-height: 20%;
     width: 80%;
-    max-width: 280px;
+    max-width: 60%;
     background: hsla(0, 0%, 0%, 0.5);
     color: #fff;
 
@@ -47,7 +44,6 @@
     transform: translateY(0);
     opacity: 0;
 
-    // white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 

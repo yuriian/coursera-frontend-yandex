@@ -12,6 +12,18 @@
 
 html {
   height: 100%;
+
+  @media only screen and (max-width: $midBreakPoint) {
+    font-size: 12px;
+  }  
+
+  @media only screen and (max-width: $smallBreakPoint) {
+    font-size: 10px;
+  } 
+
+  @media only screen and (max-width: $extraSmallBreakPoint) {
+    font-size: 8px;
+  } 
 }
 
 body {
@@ -23,6 +35,15 @@ body {
   flex-flow: column;
 
   background: #ebebeb;
+
+  margin: 0 auto 20px;
+  width: 90vw;
+  min-width: 480px;
+  max-width: 1600px;
+
+  @media screen and (max-width: $midBreakPoint) {
+    width: 100vw;
+  }
 }
 
 ul {
@@ -39,8 +60,6 @@ figure {
 .main {
   display: flex;
   flex: 1;
-  margin: 0 auto 20px;
-  width: 1300px;
 }
 
 .hidden {
