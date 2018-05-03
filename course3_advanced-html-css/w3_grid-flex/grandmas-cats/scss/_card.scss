@@ -11,7 +11,7 @@
   will-change: transform;
 
   &:hover {
-    .card__caption {
+    &::after {
       transform: translateY(-50%);
       opacity: 1;
     }
@@ -22,7 +22,8 @@
     max-height: 100%;
   }
 
-  &__caption {
+  &::after {
+    content: attr(data-caption);
     display: flex;
     align-items: center;
     text-align: left;

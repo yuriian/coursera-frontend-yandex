@@ -7,6 +7,9 @@
 
 .filter {
   background: #d9d9d9; }
+  .filter__control:checked ~ .main .gallery__card {
+    opacity: .3;
+    pointer-events: none; }
   .filter__ul {
     overflow: hidden; }
   .filter__li {
@@ -58,7 +61,6 @@
       background-position: 66% 100%;
       color: #fff; }
 
-#all-cats:checked ~ .main label[for='all-cats'],
 #energy-cats:checked ~ .main label[for='energy-cats'],
 #kids-cats:checked ~ .main label[for='kids-cats'],
 #rare-cats:checked ~ .main label[for='rare-cats'],
@@ -72,7 +74,6 @@
   background-position: 100% 100%;
   background-position: 33% 100%;
   color: #fff; }
-  #all-cats:checked ~ .main label[for='all-cats']:hover,
   #energy-cats:checked ~ .main label[for='energy-cats']:hover,
   #kids-cats:checked ~ .main label[for='kids-cats']:hover,
   #rare-cats:checked ~ .main label[for='rare-cats']:hover,
@@ -169,8 +170,6 @@
   .gallery__card {
     width: calc(33.3% - 12px);
     margin: 0 6px 9px;
-    opacity: 0.3;
-    pointer-events: none;
     transition: opacity 0.4s ease-in-out; }
   .gallery .gallery__card:nth-of-type(4n + 2) {
     width: calc(66.6% - 12px); }
@@ -220,13 +219,14 @@
   position: relative;
   overflow: hidden;
   will-change: transform; }
-  .card:hover .card__caption {
+  .card:hover::after {
     transform: translateY(-50%);
     opacity: 1; }
   .card__img {
     max-width: 100%;
     max-height: 100%; }
-  .card__caption {
+  .card::after {
+    content: attr(data-caption);
     display: flex;
     align-items: center;
     text-align: left;
