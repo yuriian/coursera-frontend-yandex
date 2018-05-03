@@ -1,0 +1,430 @@
+html
+{
+    height: 100%;
+}
+
+body
+{
+    display: grid;
+    grid-template-areas: "header header header" "breed-filter content ratings" "footer footer footer";
+    grid-template-rows: 90px auto 90px;
+    grid-template-columns: 20% auto 20%;
+    grid-column-gap: 7px;
+    min-height: 100%;
+    margin: 0;
+    padding: 0 10px 0 20px;
+    box-sizing: border-box;
+    min-width: 1000px;
+
+    font-family: Verdana, sans-serif;
+
+    background: #eee;
+}
+
+.header
+{
+    grid-area: header;
+}
+
+.footer
+{
+    grid-area: footer;
+}
+
+.ratings
+{
+    grid-area: ratings;
+    align-self: start;
+}
+
+.breed-filter
+{
+    grid-area: breed-filter;
+}
+
+.aside-column
+{
+    font-size: 1.2em;
+
+    background: #d4d4d4;
+}
+
+.main-title
+{
+    margin: 0;
+    padding: 21px;
+
+    text-align: center;
+}
+
+/* ================ */
+
+/* =======Фильтр пород========= */
+.breed-filter__control
+{
+    display: none;
+}
+
+.breed-filter__control:checked ~ .cats-list .cats-item
+{
+    opacity: .4;
+}
+
+.breed-filter__control:checked ~ .cats-list .cats-item .cats-item__info
+{
+    opacity: 0;
+}
+
+#select-breed-type-1:checked ~ .cats-list .breed-type-1,
+#select-breed-type-1:checked ~ .cats-list .breed-type-1:hover .cats-item__info,
+#select-breed-type-2:checked ~ .cats-list .breed-type-2,
+#select-breed-type-2:checked ~ .cats-list .breed-type-2:hover .cats-item__info,
+#select-breed-type-3:checked ~ .cats-list .breed-type-3,
+#select-breed-type-3:checked ~ .cats-list .breed-type-3:hover .cats-item__info,
+#select-breed-type-4:checked ~ .cats-list .breed-type-4,
+#select-breed-type-4:checked ~ .cats-list .breed-type-4:hover .cats-item__info,
+#select-breed-type-5:checked ~ .cats-list .breed-type-5,
+#select-breed-type-5:checked ~ .cats-list .breed-type-5:hover .cats-item__info
+{
+    opacity: 1;
+}
+
+.breed-filter__item
+{
+    display: block;
+
+    padding: 16px 12px;
+
+    cursor: pointer;
+
+    border-bottom: 1px solid #999;
+}
+
+.breed-filter__item:hover
+{
+    background: #bbb;
+}
+
+#select-breed-type-1:checked ~ .breed-filter label[for='select-breed-type-1'],
+#select-breed-type-2:checked ~ .breed-filter label[for='select-breed-type-2'],
+#select-breed-type-3:checked ~ .breed-filter label[for='select-breed-type-3'],
+#select-breed-type-4:checked ~ .breed-filter label[for='select-breed-type-4'],
+#select-breed-type-5:checked ~ .breed-filter label[for='select-breed-type-5']
+{
+    color: #fff;
+    background: #555;
+}
+
+.breed-filter__control:checked ~ .breed-filter .breed-filter__item:hover
+{
+    background: #8c8c8c;
+}
+
+/* ================ */
+
+/* =======Список котят========= */
+
+.cats-list
+{
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 33.3% auto 33.3%;
+    grid-column-gap: 4px;
+    grid-row-gap: 2px;
+
+    box-sizing: border-box;
+}
+
+.cats-list article:nth-child(8n+2),
+.cats-list article:nth-child(8n+6)
+{
+    grid-column: span 2;
+}
+
+.cats-list article:nth-child(8n+8)
+{
+    grid-column: span 3;
+}
+
+/* ================ */
+
+/* =======Карточка катенка========= */
+.cats-item
+{
+    position: relative;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+.cats-item__img
+{
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+    object-position: 50% 0;
+}
+
+.cats-item__info
+{
+    position: absolute;
+    bottom: 30px;
+    left: 4px;
+
+    padding: 16px 8px;
+
+    opacity: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, .6);
+}
+
+.cats-item:hover .cats-item__info
+{
+    opacity: 1;
+}
+
+/* ================ */
+
+/* =======Блок рейтинга========= */
+
+.ratings
+{
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+.ratings__title
+{
+    margin: 0;
+
+    font-weight: normal;
+
+    color: #f00;
+}
+
+.ratings__control-label,
+.ratings__control
+{
+    float: right;
+
+    font-size: .7em;
+}
+
+.ratings__list .ratings__item
+{
+    padding-top: 5px;
+
+    flex: 0 0 100%;
+}
+
+.ratings__list
+{
+    clear: right;
+}
+
+.rating
+{
+    position: relative;
+
+    box-sizing: border-box;
+    height: 1.2em;
+    padding-right: 36px;
+
+    text-align: right;
+
+    font-weight: bold;
+}
+
+.rating__name
+{
+    margin: 10px 0 5px;
+
+    font-weight: 400;
+}
+
+.rating:before
+{
+    display: inline-block;
+    float: left;
+
+    box-sizing: border-box;
+    height: 100%;
+
+    content: '';
+}
+
+.rating:after
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    content: attr(data-value);
+}
+
+.ratings__control:checked ~ .ratings__list
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.ratings__item[data-value='1'] .rating:before,
+.ratings__item[data-value='2'] .rating:before,
+.ratings__item[data-value='3'] .rating:before,
+.ratings__item[data-value='4'] .rating:before
+{
+    border: 1px solid #f00;
+    background: linear-gradient(to right, #f00, #fff);
+}
+
+.ratings__item[data-value='5'] .rating:before,
+.ratings__item[data-value='6'] .rating:before,
+.ratings__item[data-value='7'] .rating:before
+{
+    border: 1px solid #ff0;
+    background: linear-gradient(to right, #ff0, #fff);
+}
+
+.ratings__item[data-value='8'] .rating:before,
+.ratings__item[data-value='9'] .rating:before,
+.ratings__item[data-value='10'] .rating:before
+{
+    border: 1px solid #0f0;
+    background: linear-gradient(to right, #0f0, #fff);
+}
+
+.ratings__item[data-value='1'] .rating:before
+{
+    width: 10%;
+}
+
+.ratings__item[data-value='1']
+{
+    order: 10;
+}
+
+.ratings__item[data-value='2'] .rating:before
+{
+    width: 20%;
+}
+
+.ratings__item[data-value='2']
+{
+    order: 9;
+}
+
+.ratings__item[data-value='3'] .rating:before
+{
+    width: 30%;
+}
+
+.ratings__item[data-value='3']
+{
+    order: 8;
+}
+
+.ratings__item[data-value='4'] .rating:before
+{
+    width: 40%;
+}
+
+.ratings__item[data-value='4']
+{
+    order: 7;
+}
+
+.ratings__item[data-value='5'] .rating:before
+{
+    width: 50%;
+}
+
+.ratings__item[data-value='5']
+{
+    order: 6;
+}
+
+.ratings__item[data-value='6'] .rating:before
+{
+    width: 60%;
+}
+
+.ratings__item[data-value='6']
+{
+    order: 5;
+}
+
+.ratings__item[data-value='7'] .rating:before
+{
+    width: 70%;
+}
+
+.ratings__item[data-value='7']
+{
+    order: 4;
+}
+
+.ratings__item[data-value='8'] .rating:before
+{
+    width: 80%;
+}
+
+.ratings__item[data-value='8']
+{
+    order: 3;
+}
+
+.ratings__item[data-value='9'] .rating:before
+{
+    width: 90%;
+}
+
+.ratings__item[data-value='9']
+{
+    order: 2;
+}
+
+.ratings__item[data-value='10'] .rating:before
+{
+    width: 100%;
+}
+
+.ratings__item[data-value='10']
+{
+    order: 1;
+}
+
+/* ================ */
+
+/* =======Подвал========= */
+.footer
+{
+    display: flex;
+
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px 20px;
+
+    justify-content: space-between;
+}
+
+.footer:before
+{
+    position: absolute;
+    left: 0;
+
+    width: 100%;
+    margin-top: -16px;
+
+    content: '';
+
+    border-top: 1px solid #333;
+}
+
+.footer__contact
+{
+    font-style: normal;
+}
+/* ================ */

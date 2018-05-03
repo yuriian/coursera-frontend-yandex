@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Котятки</title>
+    <link rel="stylesheet" type="text/css" href="index-flex.css">
+</head>
+<body>
+<header>
+    <h1 class="main-title">Котятки</h1>
+</header>
+<main class="content">
+    <input type="checkbox" class="breed-filter__control" id="select-breed-type-1">
+    <input type="checkbox" class="breed-filter__control" id="select-breed-type-2">
+    <input type="checkbox" class="breed-filter__control" id="select-breed-type-3">
+    <input type="checkbox" class="breed-filter__control" id="select-breed-type-4">
+    <input type="checkbox" class="breed-filter__control" id="select-breed-type-5">
+    <aside class="breed-filter aside-column">
+        <label class="breed-filter__item" for="select-breed-type-1">Порода 1</label>
+        <label class="breed-filter__item" for="select-breed-type-2">Порода 2</label>
+        <label class="breed-filter__item" for="select-breed-type-3">Порода 3</label>
+        <label class="breed-filter__item" for="select-breed-type-4">Порода 4</label>
+        <label class="breed-filter__item" for="select-breed-type-5">Порода 5</label>
+    </aside>
+    <section class="cats-list">
+        <article class="cats-item breed-type-4">
+            <img class="cats-item__img" src="./cat4.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Кот породы 1, ооооооооочень много текста. Так много, что текст переносится.</span>
+        </article>
+        <article class="cats-item breed-type-3">
+            <img class="cats-item__img" src="./cat3.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Кот породы 1</span>
+        </article>
+        <article class="cats-item breed-type-2">
+            <img class="cats-item__img" src="./cat2.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Кот породы 4</span>
+        </article>
+        <article class="cats-item breed-type-5">
+            <img class="cats-item__img" src="./cat5.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Кот породы 2</span>
+        </article>
+        <article class="cats-item breed-type-1">
+            <img class="cats-item__img" src="./cat1.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Кот породы 3</span>
+        </article>
+        <article class="cats-item breed-type-4">
+            <img class="cats-item__img" src="./cat4.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Кот породы 2</span>
+        </article>
+        <article class="cats-item breed-type-3">
+            <img class="cats-item__img" src="./cat3.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Кот породы 4</span>
+        </article>
+        <article class="cats-item breed-type-5">
+            <img class="cats-item__img" src="./cat5.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Кот породы 1</span>
+        </article>
+        <article class="cats-item breed-type-1">
+            <img class="cats-item__img" src="./cat1.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Кот породы 4</span>
+        </article>
+        <article class="cats-item breed-type-2">
+            <img class="cats-item__img" src="./cat2.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Кот породы 3</span>
+        </article>
+        <article class="cats-item breed-type-3">
+            <img class="cats-item__img" src="./cat3.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Кот породы 2</span>
+        </article>
+        <article class="cats-item breed-type-4">
+            <img class="cats-item__img" src="./cat4.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Кот породы 3</span>
+        </article>
+        <article class="cats-item breed-type-5">
+            <img class="cats-item__img" src="./cat5.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Кот породы 1</span>
+        </article>
+    </section>
+    <aside class="ratings aside-column">
+        <h2 class="ratings__title">Рейтинг</h2>
+        <input class="ratings__control" id="select-sort-ratings" type="checkbox">
+        <label for="select-sort-ratings" class="ratings__control-label">по убыванию</label>
+        <div class="ratings__list">
+            <div class="ratings__item" data-value="5">
+                <h5 class="rating__name">Порода 5</h5>
+                <div class="rating" data-value="5"></div>
+            </div>
+            <div class="ratings__item" data-value="1">
+                <h5 class="rating__name">Порода 1</h5>
+                <div class="rating" data-value="1"></div>
+            </div>
+            <div class="ratings__item" data-value="10">
+                <h5 class="rating__name">Порода 10</h5>
+                <div class="rating" data-value="10"></div>
+            </div>
+            <div class="ratings__item" data-value="7">
+                <h5 class="rating__name">Порода 7</h5>
+                <div class="rating" data-value="7"></div>
+            </div>
+            <div class="ratings__item" data-value="3">
+                <h5 class="rating__name">Порода 3</h5>
+                <div class="rating" data-value="3"></div>
+            </div>
+            <div class="ratings__item" data-value="6">
+                <h5 class="rating__name">Порода 6</h5>
+                <div class="rating" data-value="6"></div>
+            </div>
+            <div class="ratings__item" data-value="2">
+                <h5 class="rating__name">Порода 2</h5>
+                <div class="rating" data-value="2"></div>
+            </div>
+            <div class="ratings__item" data-value="8">
+                <h5 class="rating__name">Порода 8</h5>
+                <div class="rating" data-value="8"></div>
+            </div>
+            <div class="ratings__item" data-value="4">
+                <h5 class="rating__name">Порода 4</h5>
+                <div class="rating" data-value="4"></div>
+            </div>
+            <div class="ratings__item" data-value="9">
+                <h5 class="rating__name">Порода 9</h5>
+                <div class="rating" data-value="9"></div>
+            </div>
+        </div>
+    </aside>
+</main>
+<footer class="footer">
+    &copy; ООО ОАО, 2016
+    <address class="footer__contact">
+        Наш адрес: улица Китовая, д.4
+    </address>
+</footer>
+</body>
+</html>
