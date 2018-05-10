@@ -1,0 +1,453 @@
+body{
+    margin: 0 auto;
+
+    width: 993px;
+    height: 4634px;
+    z-index: 1;
+}
+
+/* скрываем radio buttons*/
+input{
+    display: none;
+}
+
+/*основной контейнер*/
+.bg {
+    position: absolute;
+    top: 0;
+    width: 993px;
+    height: 4634px;
+    margin: 0;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    font-size: 16px;
+    z-index: 2;
+}
+
+/*внутренний блок для отображения цвета фона*/
+.bg-color{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 953px;
+    height: 4594px;
+    background-color: #72c4f6;
+    z-index: 2;
+    border: 2px solid black;
+}
+
+/* переключение цвета фона по radio buttons*/
+.inp-blue:checked ~ .bg-color{
+    background-color: #72c4f6;
+}
+
+.inp-red:checked ~.bg-color{
+    background-color: #ff8283;
+}
+
+
+.inp-yellow:checked ~.bg-color{
+    background-color: #ffe05d;
+}
+
+/*Логотип Яндекс сверху*/
+.logo{
+    position: absolute;
+    top: -2px;
+    left: 410px;
+    z-index: 2;
+}
+
+.bottom-logo {
+    position: absolute;
+    top: 4261px;
+    left: 676px;
+}
+
+
+.logo_atom {
+    background-image: url("images/logo atom.png");
+    position: absolute;
+    left: 676px;
+    top: 4253px;
+    width: 102px;
+    height: 102px;
+    z-index: 160;
+}
+
+
+
+/*блок, который формирует 2 линии сверху*/
+.lines{
+    position: absolute;
+    top: 550px;
+    width: 953px;
+    height: 390px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    z-index: 2;
+}
+
+.bottom-line{
+    position: absolute;
+    top: 4180px;
+    width: 953px;
+    height: 5px;
+    border-top: 2px solid black;
+    z-index: 2;
+}
+
+/*блок с буквой Я и кругами*/
+.group44{
+    position: absolute;
+    top: 90px;
+    z-index: 3;
+}
+
+/* картинки путь*/
+.imgs{
+    position: absolute;
+    top: 1399px;
+    z-index: 3;
+}
+
+/* люди первый блок*/
+.people{
+    position: absolute;
+    left: 191px;
+    top: 1039px;
+    z-index: 6;
+}
+
+.people li{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    height: 155px;
+    display: block;
+}
+
+.people a{
+    height: 155px;
+    display: block;
+    width: 155px;
+}
+
+.macs-label{
+    position: absolute;
+    width: 155px;
+    height: 155px;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.alex-label{
+    position: absolute;
+    width: 155px;
+    height: 155px;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.georg-label{
+    position: absolute;
+    width: 155px;
+    height: 155px;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.macs, .macs2{
+     left: 0;
+     width: 155px;
+     background: url("images/people.png") -1px 0;
+    z-index: 6;
+ }
+
+
+
+.macs a:hover, .macs2 a:hover{
+    background: url("images/people.png") -1px -155px;
+    cursor: default;
+}
+
+.macs a:focus ~ .macs-describe{
+    display: block;
+}
+
+.macs a:focus ~ .alex-describe, .georg-describe{
+    display: none;
+}
+
+.alex, .alex2 {
+    left: 240px;
+    width: 155px;
+    height: 155px;
+    background: url("images/people.png") -235px 0;
+}
+
+.alex a:hover, .alex2 a:hover{
+    background: url("images/people.png") -235px -155px;
+    cursor: default;
+}
+
+.alex a:focus ~ .alex-describe{
+    display: block;
+}
+
+.alex a:focus ~ .macs-describe, .georg-describe{
+    display: none;
+}
+
+.georg, .georg2 {
+    left: 480px;
+    width: 155px;
+    height: 155px;
+    background: url("images/people.png") -469px 0;
+}
+
+.georg a:hover, .georg2 a:hover{
+    background: url("images/people.png") -469px -155px;
+    cursor: default;
+}
+
+.georg a:focus ~ .georg-describe{
+    display: block;
+}
+
+.georg a:focus ~ .macs-describe, .alex-describe{
+    display: none;
+}
+
+
+.people-name{
+    text-align: center;
+    font-weight: bold;
+}
+
+.people-describe{
+    position: absolute;
+    left: -70px;
+   display: none;
+    width: 300px;
+    text-align: center;
+}
+
+/*люди второй блок*/
+
+.people_2{
+    position: absolute;
+    left: 193px;
+    top: 3932px;
+    z-index: 16;
+}
+
+.people_2 li{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    height: 155px;
+    display: block;
+}
+
+.people_2 a{
+    height: 155px;
+    display: block;
+    width: 155px;
+}
+
+.people_2 p{
+    position: absolute;
+    top: 145px;
+    width: 139px;
+
+}
+
+/*Заголовок*/
+.head{
+    color: rgb(0, 0, 0);
+    line-height: 1.091;
+    left: 113.136px;
+    /*top: 439.242px;*/
+    width: 730px;
+    height: 86px;
+    position: absolute;
+    top: 390px;
+    font-size: 44px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    letter-spacing: -0.3px;
+    z-index: 4;
+}
+
+.text1{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: left;
+    position: absolute;
+    left: 113.375px;
+    top: 648px;
+    width: 450px;
+    height: 236px;
+    z-index: 244;
+}
+
+.text3{
+    font-size: 15.5px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: center;
+    -moz-transform: matrix( 1,0,0,0.9997737611225,0,0);
+    -webkit-transform: matrix( 1,0,0,0.9997737611225,0,0);
+    -ms-transform: matrix( 1,0,0,0.9997737611225,0,0);
+    position: absolute;
+    left: 105.664px;
+    top: 1486px;
+    width: 272.024px;
+    height: 63px;
+    z-index: 195;
+}
+
+.text4{
+    font-size: 15.5px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: center;
+    -moz-transform: matrix( 1,0,0,0.9997737611225,0,0);
+    -webkit-transform: matrix( 1,0,0,0.9997737611225,0,0);
+    -ms-transform: matrix( 1,0,0,0.9997737611225,0,0);
+    position: absolute;
+    left: 105.469px;
+    top: 1582px;
+    width: 277.945px;
+    height: 63px;
+    z-index: 194;
+}
+
+.text5{
+    font-size: 15.5px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: center;
+    position: absolute;
+    left: 581.367px;
+    top: 2285px;
+    width: 280px;
+    height: 61px;
+    z-index: 191;
+}
+
+.text6{
+    font-size: 15.5px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: center;
+    position: absolute;
+    left: 581.441px;
+    top: 2384px;
+    width: 280px;
+    height: 64px;
+    z-index: 190;
+}
+
+.text7{
+    font-size: 15.5px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: center;
+    position: absolute;
+    left: 98.035px;
+    top: 3081px;
+    width: 292px;
+    height: 64px;
+    z-index: 187;
+}
+
+.text8{
+    font-size: 15.5px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: center;
+    position: absolute;
+    left: 98.023px;
+    top: 3180px;
+    width: 287px;
+    height: 64px;
+    z-index: 186;
+}
+
+.text9{
+    font-size: 15.5px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: left;
+    position: absolute;
+    left: 115px;
+    top: 4270px;
+    width: 439px;
+    height: 164px;
+    z-index: 159;
+}
+
+.help {
+    font-size: 15.5px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: left;
+    position: absolute;
+    left: 115px;
+    top: 4565px;
+    z-index: 158;
+}
+
+.adr{
+    font-size: 15.5px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: right;
+    position: absolute;
+    left: 392px;
+    top: 4565px;
+    z-index: 157;
+}
+
+.button
+{
+    margin: 0;
+    padding: 0;
+    z-index: 4;
+    position: absolute;
+    top: 650px;
+    left:660px;
+}
+
+.button-caption{
+    line-height: 16pt;
+    font-size: 12pt;
+    font-family: "Arial", Arial, Arial, sans-serif;
+}
+
+.social{
+    position: absolute;
+    left: 116px;
+    top: 4449px;
+    z-index: 255;
+}
+
