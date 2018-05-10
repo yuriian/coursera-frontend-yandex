@@ -1,0 +1,32 @@
+.footer {
+  padding-top: 80px;
+  grid-template-rows: 193px 110px 50px;
+  border: none;
+
+  &__text {
+    grid-column: 2 / 8;
+
+    p {
+      margin: 0 0 27px;
+    }
+  }
+
+  &__help {
+    grid-column: 2 / 3;
+  }
+
+  &__feedback {
+    grid-column: 3 / 5;
+  }
+
+  &__copyright {
+    grid-column: 5 / 9;
+    margin-left: 43px;
+  }
+
+  &__img {
+    grid-column: 9 / 11;
+    justify-self: center;
+    margin: 4px 4px 0 0;
+  }
+}

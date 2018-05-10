@@ -1,0 +1,44 @@
+html {
+  font: 16px / 1.5rem Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  width: $pageWidth;
+  margin: 18px auto;
+  border: 2px solid;
+  background-image: radial-gradient(
+      circle at 50% 20%,
+      $yellowBg 31%,
+      transparent 36%
+    ),
+    radial-gradient(circle at 17% 75%, $redBg 30%, transparent 35%),
+    radial-gradient(circle at 83% 75%, $blueBg 30%, transparent 35%);
+  background-repeat: no-repeat;
+  background-size: 11500px 11500px;
+  transition: background-position 1s cubic-bezier(0.11, 0.95, 0.29, 0.99);
+  will-change: opacity;
+}
+#personOne:checked ~ .content {
+  background-position: 50% 0;
+}
+#personTwo:checked ~ .content {
+  background-position: 14% 94%;
+}
+#personThree:checked ~ .content {
+  background-position: 86% 95%;
+}
+.section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 18px;
+  padding: 0 18px;
+  border-bottom: 2px solid;
+}
+.hidden {
+  display: none;
+}

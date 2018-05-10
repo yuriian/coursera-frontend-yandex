@@ -1,0 +1,13 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch --sourcemap=none scss:css",
+    "browser-sync": "browser-sync start --server --files='**/*'"
+  },
+  "author": "",
+  "license": "ISC"
+}

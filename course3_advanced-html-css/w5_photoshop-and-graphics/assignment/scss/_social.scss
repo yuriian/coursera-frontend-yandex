@@ -1,0 +1,48 @@
+.social {
+  cursor: default;
+  user-select: none;
+  grid-column: 2 / 5;
+
+  &__item {
+    float: left;
+    width: $socialIconSize;
+    height: $socialIconSize;
+    margin-right: 9px;
+    // background-image: url('./../img/social.png');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAAAYCAMAAAAie4Q/AAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxMzggNzkuMTU5ODI0LCAyMDE2LzA5LzE0LTAxOjA5OjAxICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+IEmuOgAAAARnQU1BAACxjwv8YQUAAAABc1JHQgCuzhzpAAAA3lBMVEW4uLjz8/P39/f+/v64uLj////7+/u4uLi4uLi4uLji4uK5ubm8vLz5+fm+vr66urq9vb3s7Oz8/PzOzs7v7++/v7/6+vrx8fH29vb9/f3Nzc3r6+vZ2dnS0tLy8vK3t7fh4eHf39/b29vd3d3Gxsb19fXFxcX09PTJycnj4+PMzMzl5eXR0dHn5+fLy8vAwMC7u7vBwcHa2trExMTX19ft7e3p6enPz8/IyMjDw8PV1dXu7u7c3NzT09P4+PjKysrg4ODW1tbHx8fCwsLk5OTm5ubQ0NDe3t7o6Ojq6uozSlTyAAAACnRSTlPw////////7vbgL+vnNAAAAiVJREFUSMfNlnlbozAQxhvIsMpNael9arXWqvU+1nNXd9fv/4UcCkpIwAata+cPyjOUeX/Pm5mQEl2ZWPuBsV6iqxWl1QEyXNcQgZw/G/pO+1t46gB1gweqbgPGzwJlji+XBGSGyiYPtAM8EIlCr7J/23Lim6YCQMb+cKFcWJb9lQVC26Cyd81VCqO8yST3zmYRWGP+TPHtzwMZtSCoCUumAQRCJYtYeG0xyVPobiWGgrrLPBuYhYFsO3fKEEgRKumUIhFhkn9DiLFBvQjIS71gPRiFgJrYt2Q/E+iqjUugtdtTAYikHToILQOtYkVAfU56dD6/62WsPAeE6L46NxmJZgKQEr9xlq7U6uh8D9VYATjivYDTzQyHBCANm5iOomSN0sPwUSZQP6OSzpY/SfHARJRWH6sSQLdo9mvWpbTBAz15aF/D8zpZlRRGwfFYAc3JktZ+LQYKFgDlN3WH8+jyn5oIDLK8qFwsbur5km2/s2T5QGFXs2N2WE54AlsEUqYyU6YBrsUkauo7Sh+KAHFzT8fkDcgXXigfzagcUBfHbIKlujhkTl0WiOh6ON8b6a/wbty9J7y02rcl9yFUGyYb4z3IAsVNkeTci/PBbZS1mrx061h6p0Y1uI53UeceCgGRlD/N56in60NT8lueCwTkBv2pXo1AEijvsHA3vfF/f/LEob1+uMvJjvBRoKVEBbjofjOQxJnadF3zv+r3lnbI732VQy9gVk+Kb0cbPgAAAABJRU5ErkJggg==');
+    background-position-y: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+
+    &:hover {
+      filter: invert(1);
+      filter: brightness(0.9);
+    }
+
+    &--facebook {
+      background-position-x: 0;
+    }
+
+    &--vk {
+      background-position-x: -$socialIconSize;
+    }
+
+    &--twitter {
+      background-position-x: -$socialIconSize * 2;
+    }
+
+    &--youtube {
+      background-position-x: -$socialIconSize * 3;
+    }
+
+    &--habr {
+      background-position-x: -$socialIconSize * 4;
+    }
+
+    &--instagram {
+      background-position-x: -$socialIconSize * 5;
+    }
+  }
+}
