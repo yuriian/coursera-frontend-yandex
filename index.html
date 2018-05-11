@@ -129,7 +129,6 @@
       cursor: pointer;
     }
   </style>
-  <link rel="stylesheet" href="" />
   <noscript>
     <link rel="stylesheet" href="./css/main.css" />
   </noscript>
@@ -260,23 +259,23 @@
       <span class="footer__copyright">&copy; 2018 &nbsp;OOO &laquo;Яндекс&raquo;</span>
     </footer>
   </div>
+
+  <script>
+    var allStylesLink = document.createElement('link');
+    allStylesLink.rel = 'stylesheet';
+    allStylesLink.href = './css/main.css';
+    allStylesLink.type = 'text/css';
+
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(allStylesLink);
+
+    var headerImg = document.getElementById('headerBg');
+    headerImg.onload = animate;
+
+    function animate() {
+      this.classList.add('animate');
+    }
+  </script>
 </body>
-
-<script type="text/javascript" defer>
-  var allStylesLink = document.createElement('link');
-  allStylesLink.rel = 'stylesheet';
-  allStylesLink.href = './css/main.css';
-  allStylesLink.type = 'text/css';
-
-  var link = document.getElementsByTagName('link')[0];
-  link.parentNode.insertBefore(allStylesLink, link);
-
-  var headerImg = document.getElementById('headerBg');
-  headerImg.onload = animate;
-
-  function animate() {
-    this.classList.add('animate');
-  }
-</script>
 
 </html>
