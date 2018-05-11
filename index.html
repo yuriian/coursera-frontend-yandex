@@ -65,13 +65,18 @@
     .header__logo {
       grid-column: 6 / 8;
       margin: -2px 0 0 -1px;
+      opacity: 0;
     }
 
     .header__bg-img {
       position: absolute;
       top: 39px;
       right: -27px;
-      animation: fadeIn 1s ease .5s backwards;
+      opacity: 0;
+    }
+
+    .animate {
+      animation: fadeIn 1s ease forwards;
     }
 
     @keyframes fadeIn {
@@ -100,6 +105,35 @@
       right: 9px;
       bottom: 8px;
     }
+
+    .foreword {
+      padding-top: 75px;
+      padding-bottom: 45px;
+      border-bottom: 2px solid;
+    }
+
+    .foreword__text {
+      grid-column: 2 / 8;
+      margin: 0 0 28px -2px;
+      z-index: 0;
+    }
+
+    .foreword__video-lnk {
+      grid-column: 9 / 12;
+      grid-row: 1 / 2;
+    }
+
+    .video-lnk::before {
+      content: '';
+      display: block;
+      width: 138px;
+      height: 80px;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIoAAABQCAYAAADGIu0tAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ppVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo2RkFENUQ2MjUzMjA2ODExODIyQUNEMDdENTYxNDM4NSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowMUZFQUVEMjUyRTMxMUU4ODA4MkQzRkQ2ODQxRjEzRCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowMUZFQUVEMTUyRTMxMUU4ODA4MkQzRkQ2ODQxRjEzRCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNyAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDQjc5NDlEOTE2MjA2ODExODIyQUM1MDQ0MkJCNzAwQyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2RkFENUQ2MjUzMjA2ODExODIyQUNEMDdENTYxNDM4NSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Ps+zFRUAAAPCSURBVHja7J0/SJRxGMdfvTvvEEKTg84jJMFIwcUhKIeEhMjFxSFucRIHoaEcmlzCwSlEcLqpxcUOuiFyaLkhC4eQJOwPIQlGYhzdmWip9/S85/t7e/Xe4tIm388HvnogDu+XD++fu+f3u1rrgIuajKagEUIcFzKOG1aN5pLmpabRAqjkm+aK5VhjG/RU00wv4NDsOCGOI+7lBknATxbbjc0a54W5DAEcpexHLT1ANSAKIAogCiAKIAogCiAKAKIAogCiAKIAogCiAKIAWFY46AWIyIn+v6YmGGM8nFEAUXy4rnkTiUR+xGKx16FQaEjPCCE0qPLsa/0ehzztfLQqlyXkNC32Jeg4CZIfQRKlfKxbW1syOzsryWTSHHteM4AoiHLooA0bGxvS39/vPbukNfWIgiiHRLEplUoyPT0tes9ieljWdCEKoogfS0tL0tnZabrY0dyxn34RBVEq2N7elpGREdEnIdOJvVLuHKIgii/ZbFbi8bjp5YvmJqIgii9ra2vS29truilpHmiiiIIoFezv78vExIREIhHT0StNO6Igii8LCwvS1tZmetrSDCEKovhSLBZlcHDQ+57LI81ZREEUX2ZmZqShocF09klzDVEQxZeVlRXp7u42ve1p7lund2QDUU7C7u6ujI2NSSgUMv0911xAFETxJZfLSUtLi+nQ3u/sFqIgii/5fF4GBga8N7rDiIIof2Rqasp0+fm0dcYo5H+krq4uGI8/nFGOR6FQkFQq5b303ObSgyiHmJ+fl9bWVtNhUTPIzSyiuOzt7cn4+LiEw2HT34KmjcdjRHFZXV2Vnp4e09u+ZkIT4Q03RHHJZDLS1NRkOlvT9AahM0SpEntyf3h42HvDmtXEg9IZolTB4uKidHR0mJ62NSOWM0+LKIhSntCfnJyUaDRqOlrSdDK4hCgu6+vr0tfX5x2FnNbEGIVEFJe5uTlJJBKmlw1NP8PViOKys7Mjo6Oj3uUazzRJlmsgisvy8rJ0dXWZLn5q7mlqWQCGKC7pdFrq6+tNDx80l1lSiih/myN5qDnDInVEKR+rvXTUXg3omUyzv1cxxbYXiGLw20hnXtPKRjqI4uWG5r118EHeW81dTfi4kgRJlMB/Sym7QlYlCrtCQnUEfp/ZoOwTe1I4owCiAKIAogCiAKIAogAgCiAKIAogCiAKIAogCgCiwD+IUnReN1MHHCHh/P5u/8hYB+NuTzx/ADjvOGG7kbHHu9o1LzSNdAM+2JssX7W/HPqr5rEm6VgUpRtQNp0zSkrz7pcAAwCnW6SADkZiKAAAAABJRU5ErkJggg==);
+      background-repeat: no-repeat;
+      position: relative;
+      top: 5px;
+      cursor: pointer;
+    }
   </style>
   <link rel="stylesheet" href="" />
   <noscript>
@@ -113,8 +147,8 @@
   <input type="radio" class="hidden" id="personThree" name="persons">
   <div class="content">
     <header class="header section">
-      <img src="./img/logo.png" alt="Logo" class="header__logo">
-      <img src="./img/header_bg.png" alt="" class="header__bg-img">
+      <img src="./img/logo.png" alt="Logo" class="header__logo" id="logo" />
+      <img src="./img/header_bg.png" alt="" class="header__bg-img" id="headerBg">
       <h1 class="header__title">
         <span>&mdash;</span>А что если интернет подстроится под меня?
       </h1>
@@ -243,6 +277,14 @@
 
   var link = document.getElementsByTagName('link')[0];
   link.parentNode.insertBefore(allStylesLink, link);
+
+  var headerImg = document.getElementById('headerBg');
+  var logo = document.getElementById('logo');
+  headerImg.onload = animate;
+  logo.onload = animate;
+  function animate() {
+    this.classList.add('animate');
+  }
 </script>
 
 </html>
