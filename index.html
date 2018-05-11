@@ -62,15 +62,9 @@
       grid-template-rows: repeat(3, 1fr);
     }
 
-    .header__logo {
-      grid-column: 6 / 8;
-      margin: -2px 0 0 -1px;
-      opacity: 0;
-    }
-
     .header__bg-img {
       position: absolute;
-      top: 39px;
+      top: -50px;
       right: -27px;
       opacity: 0;
     }
@@ -91,12 +85,12 @@
     .header__title {
       grid-row: 3 / 4;
       grid-column: 2 / 12;
+      align-self: center;
       font-size: 2.75rem;
       line-height: 3rem;
       font-weight: normal;
       text-align: center;
       z-index: 1;
-      margin: 3px 0 0 0;
     }
 
     .header__title span {
@@ -147,7 +141,6 @@
   <input type="radio" class="hidden" id="personThree" name="persons">
   <div class="content">
     <header class="header section">
-      <img src="./img/logo.png" alt="Logo" class="header__logo" id="logo" />
       <img src="./img/header_bg.png" alt="" class="header__bg-img" id="headerBg">
       <h1 class="header__title">
         <span>&mdash;</span>А что если интернет подстроится под меня?
@@ -279,9 +272,8 @@
   link.parentNode.insertBefore(allStylesLink, link);
 
   var headerImg = document.getElementById('headerBg');
-  var logo = document.getElementById('logo');
   headerImg.onload = animate;
-  logo.onload = animate;
+
   function animate() {
     this.classList.add('animate');
   }
