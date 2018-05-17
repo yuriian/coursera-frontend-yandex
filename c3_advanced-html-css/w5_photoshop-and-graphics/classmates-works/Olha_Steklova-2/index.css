@@ -1,0 +1,653 @@
+body{
+    margin: 0 auto;
+
+    width: 993px;
+    height: 4634px;
+    z-index: 1;
+}
+
+/* скрываем radio buttons*/
+input{
+    display: none;
+}
+
+/*основной контейнер*/
+.bg {
+    position: absolute;
+    top: 0;
+    width: 993px;
+    height: 4634px;
+    margin: 0;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    font-size: 16px;
+    z-index: 2;
+}
+
+/*внутренний блок для отображения цвета фона*/
+.bg-color{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 953px;
+    height: 4594px;
+    background-color: #72c4f6;
+    z-index: 2;
+    border: 2px solid black;
+}
+
+.people-describe{
+    display: none;
+}
+
+/* переключение цвета фона по radio buttons*/
+.inp-blue:checked ~ .bg-color{
+    background-color: #72c4f6;
+}
+
+.inp-blue:checked ~ .people .georg .georg-describe{
+    display: block;
+}
+
+.inp-red:checked ~.bg-color{
+    background-color: #ff8283;
+}
+
+.inp-red:checked ~ .people .alex .alex-describe{
+    display: block;
+}
+
+.inp-yellow:checked ~.bg-color{
+    background-color: #ffe05d;
+}
+
+.inp-yellow:checked ~ .people .macs .macs-describe{
+    display: block;
+}
+
+/*Логотип Яндекс сверху*/
+.logo{
+    position: absolute;
+    top: -2px;
+    left: 407px;
+    z-index: 2;
+}
+
+.bottom-logo {
+    position: absolute;
+    top: 4261px;
+    left: 676px;
+}
+
+
+.logo_atom {
+    background-image: url("images/logo atom.png");
+    position: absolute;
+    left: 655px;
+    top: 4240px;
+    width: 102px;
+    height: 102px;
+    z-index: 160;
+}
+
+
+
+/*блок, который формирует 2 линии сверху*/
+.lines{
+    position: absolute;
+    top: 552px;
+    width: 953px;
+    height: 392px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    z-index: 2;
+}
+
+.bottom-line{
+    position: absolute;
+    top: 4155px;
+    width: 953px;
+    height: 5px;
+    border-top: 2px solid black;
+    z-index: 2;
+}
+
+/*блок с буквой Я и кругами*/
+.group44{
+    position: absolute;
+    top: 91px;
+    left: 1px;
+    z-index: 3;
+}
+
+/* картинки путь*/
+/*.imgs{
+    position: absolute;
+    top: 1399px;
+    z-index: 3;
+}*/
+
+.path
+{
+    position: absolute;
+    top: 1401px;
+    left: 116px;
+    z-index: 3;
+}
+
+.notebook{
+    position: absolute;
+    top: 1479px;
+    left: 505px;
+    z-index: 5;
+}
+
+.watch{
+    position: absolute;
+    top: 1995px;
+    left:506px;
+    z-index: 5;
+}
+
+.photo{
+    position: absolute;
+    top: 1950px;
+    left:818px;
+    z-index: 5;
+}
+
+.ticket{
+    position: absolute;
+    top: 1835px;
+    left: 428px;
+    z-index: 4;
+}
+
+.pen{
+    position: absolute;
+    top: 1731px;
+    left: 350px;
+    z-index: 5;
+}
+
+.phone{
+    position: absolute;
+    top: 1731px;
+    left: 1px;
+    z-index: 5;
+}
+
+.cup{
+    position: absolute;
+    top: 2660px;
+    left: 350px;
+    z-index: 6;
+}
+
+.ipad{
+    position: absolute;
+    top: 2290px;
+    left: 224px;
+    z-index: 5;
+}
+
+.palka{
+    position: absolute;
+    top: 2291px;
+    left: 741px;
+    z-index: 5;
+}
+
+.mask{
+    position: absolute;
+    top: 2528px;
+    left: 584px;
+    z-index: 6;
+}
+
+.newspaper{
+    position: absolute;
+    top: 3351px;
+    left: 113px;
+    z-index: 5;
+}
+
+.bag{
+    position: absolute;
+    top: 3018px;
+    left: 461px;
+    z-index: 5;
+}
+
+.iphone{
+    position: absolute;
+    top: 2615px;
+    left: 66px;
+    z-index: 5;
+}
+
+.magazine{
+    position: absolute;
+    top: 3462px;
+    left:700px;
+    z-index: 5;
+}
+
+
+
+/* люди первый блок*/
+.people{
+    position: absolute;
+    left: 186px;
+    top: 1023px;
+    /*display: flex;
+    justify-content: space-between;*/
+    z-index: 4;
+
+}
+
+.people li, .people_2 li{
+    margin: 0;
+    padding: 8px;
+    position: absolute;
+    top: 0;
+    height: 155px;
+    width: 155px;
+    border: 3px solid transparent;
+    border-radius: 65%;
+    box-sizing: border-box;
+    z-index: 4;
+    display: block;
+
+
+}
+
+.people > li:hover{
+
+    border: 3px solid white;
+}
+
+.people_2 > li:hover{
+
+    border: 3px solid white;
+}
+
+
+.people a{
+    height: 139px;
+    display: block;
+    width: 139px;
+
+
+}
+
+.macs-label{
+    position: absolute;
+    width: 139px;
+    height: 139px;
+    left: 0;
+    top: 0;
+    z-index: 10;
+
+}
+
+.alex-label{
+    position: absolute;
+    width: 139px;
+    height: 139px;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.georg-label{
+    position: absolute;
+    width: 139px;
+    height: 139px;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.macs, .macs2{
+     left: -1px;
+     width: 139px;
+     background: url("images/people3.png") 6px 6px;
+    background-repeat: no-repeat;
+
+    background-clip: border-box;
+    z-index: 6;
+ }
+
+.macs-label:hover, .alex-label:hover, .georg-label:hover{
+    cursor: pointer;
+
+}
+
+
+.alex, .alex2 {
+
+    left: 234px;
+    width: 139px;
+    height: 139px;
+    background: url("images/people3.png") -230px 5px;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+}
+
+
+.georg, .georg2 {
+    left: 467px;
+    width: 139px;
+    height: 139px;
+    background: url("images/people3.png") -463px 5px;
+    background-repeat: no-repeat;
+}
+
+
+
+.people-name{
+    position: absolute;
+    font-size: 16px;
+
+    font-weight: bold;
+    top: 143px;
+}
+
+.macs > .people-name{
+    left: 45px;
+}
+
+.alex > .people-name{
+    left: 13px;
+}
+
+.georg > .people-name{
+    left: 8px;
+}
+
+.people-describe{
+    position: absolute;
+    top: 189px;
+
+    line-height: 1.5;
+  
+    width: 300px;
+    text-align: center;
+}
+
+.macs > .people-describe{
+    left: -73px;
+}
+
+.alex > .people-describe{
+    left: -76px;
+    top: 190px;
+}
+
+.georg > .people-describe{
+    left: -68px;
+}
+
+/*люди второй блок*/
+
+.people_2{
+    position: absolute;
+    left: 188px;
+    top: 3910px;
+    z-index: 16;
+}
+
+.people_2 li{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    height: 155px;
+    display: block;
+}
+
+.people_2 a{
+    height: 155px;
+    display: block;
+    width: 155px;
+}
+
+
+/*Заголовок*/
+.head{
+    color: rgb(0, 0, 0);
+    line-height: 1.1;
+    left: 120px;
+    /*top: 439.242px;*/
+    width: 748px;
+    height: 86px;
+    position: absolute;
+    top: 392px;
+    font-size: 44px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    letter-spacing: 0;
+    z-index: 4;
+}
+
+.text1{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: left;
+    position: absolute;
+    left: 114px;
+    top: 650px;
+    width: 450px;
+    height: 236px;
+    z-index: 244;
+}
+
+.text2{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: left;
+    position: absolute;
+    left: 114px;
+    top: 822px;
+    width: 450px;
+    height: 236px;
+    z-index: 244;
+}
+
+.text3{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: center;
+    -moz-transform: matrix( 1,0,0,0.9997737611225,0,0);
+    -webkit-transform: matrix( 1,0,0,0.9997737611225,0,0);
+    -ms-transform: matrix( 1,0,0,0.9997737611225,0,0);
+    position: absolute;
+    left: 113px;
+    top: 1483px;
+    width: 280px;
+    height: 63px;
+    z-index: 195;
+}
+
+.text4{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: center;
+    -moz-transform: matrix( 1,0,0,0.9997737611225,0,0);
+    -webkit-transform: matrix( 1,0,0,0.9997737611225,0,0);
+    -ms-transform: matrix( 1,0,0,0.9997737611225,0,0);
+    position: absolute;
+    left: 111px;
+    top: 1582px;
+    width: 286px;
+    height: 63px;
+    z-index: 194;
+}
+
+.text5{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: center;
+    position: absolute;
+    left: 590px;
+    top: 2285px;
+    width: 283px;
+    height: 61px;
+    z-index: 191;
+}
+
+.text6{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: center;
+    position: absolute;
+    left: 590px;
+    top: 2384px;
+    width: 283px;
+    height: 64px;
+    z-index: 190;
+}
+
+.text7{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: center;
+    position: absolute;
+    left: 99px;
+    top: 3081px;
+    width: 296px;
+    height: 64px;
+    z-index: 187;
+}
+
+.text8{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: center;
+    position: absolute;
+    left: 104px;
+    top: 3180px;
+    width: 287px;
+    height: 64px;
+    z-index: 186;
+}
+
+.text9{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: left;
+    position: absolute;
+    left: 117px;
+    top: 4259px;
+    width: 445px;
+    height: 164px;
+    z-index: 159;
+}
+
+.text10{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: left;
+    position: absolute;
+    left: 117px;
+    top: 4383px;
+    width: 439px;
+    height: 164px;
+    z-index: 159;
+}
+
+.help {
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: left;
+    position: absolute;
+    left: 117px;
+    top: 4563px;
+    z-index: 158;
+}
+
+.feedback
+{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: left;
+    position: absolute;
+    left: 196px;
+    top: 4563px;
+    z-index: 158;
+}
+
+.adr{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: right;
+    position: absolute;
+    left: 394px;
+    top: 4563px;
+    z-index: 157;
+}
+
+.yandex
+{
+    font-size: 16px;
+    font-family: "Arial", Arial, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    text-align: right;
+    position: absolute;
+    left: 455px;
+    top: 4563px;
+    z-index: 157;
+}
+
+.button
+{
+    margin: 0;
+    padding: 0;
+    z-index: 4;
+    position: absolute;
+    top: 655px;
+    left:661px;
+}
+
+.button-caption{
+    line-height: 29pt;
+    font-size: 12pt;
+    font-family: "Arial", Arial, Arial, sans-serif;
+}
+
+.social{
+    position: absolute;
+    left: 116px;
+    top: 4449px;
+    z-index: 255;
+}
+
