@@ -20,7 +20,7 @@
   text-align: center;
   transition-property: height, width, transform, margin, box-shadow;
   transition-duration: .2s;
-  transition-timing-function: ease-in-out;
+  transition-timing-function: ease-out;
   transition-delay: .1s; }
   .article:hover {
     box-shadow: 0 4px 10px 2px rgba(0, 0, 0, 0.2); }
@@ -42,7 +42,7 @@
     margin: 0;
     opacity: 0;
     transform: translateX(-110%);
-    transition: transform 0.3s ease-in 0.25s;
+    transition: transform 0.3s ease-out 0.25s;
     text-align: left; }
   .article__title {
     display: none; }
@@ -64,7 +64,7 @@
     top: 0;
     left: 0;
     will-change: margin;
-    transition: margin-left 0.7s ease-in-out; }
+    transition: margin-left 0.7s ease-out; }
   .slider__toggle-label {
     width: 15px;
     height: 15px;
