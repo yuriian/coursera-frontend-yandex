@@ -9,6 +9,7 @@ function validateForm(formAttributes) {
   var isValid = false;
 
   form.addEventListener('blur', handleBlur, true);
+  form.addEventListener('focus', handleFocus, true);
   form.addEventListener('submit', handleSubmit);
 
   function handleBlur(event) {
@@ -21,9 +22,14 @@ function validateForm(formAttributes) {
     }
   }
 
-  function handleSubmit(event) {
-    console.log('submit');
+  function handleFocus(event) {
+    if (event.target.tagName === 'INPUT') {
+      event.target.classList.remove(inputErrorClass);
+      console.log(`removed class '${inputErrorClass}'`)
+    }
+  }
 
+  function handleSubmit(event) {
     var elem = event.target;
     var isValid = false;
 
@@ -58,10 +64,10 @@ function validateForm(formAttributes) {
 
     switch (input.dataset.validator) {
       case 'letters':
-        isValid = /^[a-zа-я]{2,}$/gi.test(val);
+        isValid = /^[a-zа-яё]{2,}$/gi.test(val);
         break;
       case 'number':
-        if (/^\d+$/.test(val)) {
+        if (/^-?\d+$/.test(val)) {
           isValid = true;
 
           if ('validatorMin' in input.dataset &&
