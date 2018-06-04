@@ -25,7 +25,6 @@ function validateForm(formAttributes) {
   function handleFocus(event) {
     if (event.target.tagName === 'INPUT') {
       event.target.classList.remove(inputErrorClass);
-      console.log(`removed class '${inputErrorClass}'`)
     }
   }
 
