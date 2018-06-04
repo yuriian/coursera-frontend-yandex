@@ -1,0 +1,22 @@
+@import 'variables';
+@import 'card';
+body {
+  margin: 0;
+  background: $bodyBgColor;
+}
+
+.main {
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template: repeat(4, $cardWidth) /repeat(4, $cardHeight);
+  grid-gap: $cardGap;
+}
+
+.title {
+  font: 42px/47px Arial, sans-serif;
+  margin: 40px 0;
+  grid-area: 1 / 1/ 2 / 5;
+  text-align: center;
+  color: $titleColor;
+}

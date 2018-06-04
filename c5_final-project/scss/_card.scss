@@ -1,0 +1,50 @@
+.card {
+  width: $cardWidth;
+  height: $cardHeight;
+  position: relative;
+  perspective: $cardPerspective;
+  * {
+    box-sizing: border-box;
+  }
+  &--rotated {
+    .card__front {
+      transform: rotateY(0deg);
+    }
+    .card__back {
+      transform: rotateY(180deg);
+    }
+  }
+  &__front {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #fff;
+    border-radius: $cardBorderRadius;
+    box-shadow: $cardBoxShadow;
+    will-change: transform;
+    backface-visibility: hidden;
+    transition: transform .45s ease;
+    transform: rotateY(-180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $emojiSize;
+    cursor: default;
+  }
+  &__emoji {
+    width: $emojiSize;
+    height: $emojiSize;
+  }
+  &__back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(45deg, $cardGradientStartColor, $cardGradientStopColor);
+    border: $cardBorder;
+    border-radius: $cardBorderRadius;
+    box-shadow: $cardBoxShadow;
+    backface-visibility: hidden;
+    will-change: transform;
+    transition: transform .45s ease;
+  }
+}
