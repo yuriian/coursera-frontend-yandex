@@ -2,7 +2,9 @@
   width: $cardWidth;
   height: $cardHeight;
   position: relative;
-  perspective: $cardPerspective;
+  &:hover {
+    cursor: pointer;
+  }
   * {
     box-sizing: border-box;
   }
@@ -23,17 +25,12 @@
     box-shadow: $cardBoxShadow;
     will-change: transform;
     backface-visibility: hidden;
-    transition: transform .45s ease;
+    transition: transform .45s cubic-bezier(.17, .67, .54, 1.25);
     transform: rotateY(-180deg);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: $emojiSize;
-    cursor: default;
-  }
-  &__emoji {
-    width: $emojiSize;
-    height: $emojiSize;
   }
   &__back {
     width: 100%;
@@ -45,6 +42,6 @@
     box-shadow: $cardBoxShadow;
     backface-visibility: hidden;
     will-change: transform;
-    transition: transform .45s ease;
+    transition: transform .45s cubic-bezier(.17, .67, .54, 1.25);
   }
 }

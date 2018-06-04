@@ -9,14 +9,14 @@ body {
   margin: 0 auto;
   display: grid;
   justify-content: center;
-  grid-template: repeat(4, $cardWidth) /repeat(4, $cardHeight);
+  grid-template: repeat(3, $cardHeight) /repeat(4, $cardWidth);
   grid-gap: $cardGap;
+  perspective: $cardPerspective;
 }
 
 .title {
   font: 42px/47px Arial, sans-serif;
   margin: 40px 0;
-  grid-area: 1 / 1/ 2 / 5;
   text-align: center;
   color: $titleColor;
 }
