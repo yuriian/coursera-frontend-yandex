@@ -6,10 +6,16 @@
     cursor: pointer; }
   .card * {
     box-sizing: border-box; }
-  .card--rotated .card__front {
-    transform: rotateY(0deg); }
-  .card--rotated .card__back {
-    transform: rotateY(180deg); }
+  .card--rotated {
+    pointer-events: none; }
+    .card--rotated .card__front {
+      transform: rotateY(0deg); }
+    .card--rotated .card__back {
+      transform: rotateY(180deg); }
+  .card--win .card__front {
+    background-color: #5ad66f; }
+  .card--lose .card__front {
+    background-color: #f44336; }
   .card__front {
     width: 100%;
     height: 100%;
@@ -19,7 +25,7 @@
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     will-change: transform;
     backface-visibility: hidden;
-    transition: transform 0.45s cubic-bezier(0.17, 0.67, 0.54, 1.25);
+    transition: background-color 0.3s ease-in 0.2s, transform 0.45s cubic-bezier(0.17, 0.67, 0.54, 1.25);
     transform: rotateY(-180deg);
     display: flex;
     justify-content: center;

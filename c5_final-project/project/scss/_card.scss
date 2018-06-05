@@ -9,11 +9,22 @@
     box-sizing: border-box;
   }
   &--rotated {
+    pointer-events: none;
     .card__front {
       transform: rotateY(0deg);
     }
     .card__back {
       transform: rotateY(180deg);
+    }
+  }
+  &--win {
+    .card__front {
+      background-color: $cardWinColor;
+    }
+  }
+  &--lose {
+    .card__front {
+      background-color: $cardLoseColor;
     }
   }
   &__front {
@@ -25,7 +36,7 @@
     box-shadow: $cardBoxShadow;
     will-change: transform;
     backface-visibility: hidden;
-    transition: transform .45s cubic-bezier(.17, .67, .54, 1.25);
+    transition: background-color .3s ease-in .2s, transform .45s cubic-bezier(.17, .67, .54, 1.25);
     transform: rotateY(-180deg);
     display: flex;
     justify-content: center;
