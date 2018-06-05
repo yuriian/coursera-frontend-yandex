@@ -1,0 +1,104 @@
+body
+{
+    margin: 0 auto;
+
+    height: 575px;
+    color: #434344;
+    background: #cfd0cf;
+
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+header h1
+{
+    margin: 40px auto;
+    width: 645px;
+    font-size: 42px;
+    text-align: center;
+    line-height: 47px;
+}
+
+.cards-grid {
+    width: 640px;
+    height: 450px;
+    margin: 0 auto;
+    font-size: 0;
+    perspective: 600px;
+    transform-style: preserve-3d;
+}
+
+.card {
+    position: relative;
+    border-radius: 9px;
+    width: 130px;
+    height: 130px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 25px 25px 0;
+    transition: transform .5s;
+
+    perspective: 600px;
+    transform-style: preserve-3d;
+}
+
+.front, .back:after {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(45deg, #22ab93, #19668d);
+    border: 5px solid #fff;
+    border-radius: 5px;
+    position: absolute;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    backface-visibility:hidden;
+}
+
+.back {
+    --bg-color: #fff;
+}
+
+.back:after {
+    left: 0;
+    top: 0;
+    font-size: 65px;
+    text-align: center;
+    line-height: 120px;
+    background: var(--bg-color);
+    border: none;
+    padding: 5px;
+
+    transform: rotateY(180deg);
+    text-shadow: 0 2px 2px rgba(150, 150, 150, 1);
+
+}
+
+.cards-grid .chosen .front,
+.cards-grid .chosen .card {
+    transform: rotateY(180deg);
+}
+.cards-grid .chosen .back:after {
+    transform: rotateY(360deg);
+}
+
+.back[data-info=dog]:after{
+    content: '🐶';
+}
+.back[data-info=rat]:after {
+    content: '🐭';
+}
+.back[data-info=cat]:after {
+    content: '🐱';
+}
+.back[data-info=cow]:after {
+    content: '🐮';
+}
+.back[data-info=frog]:after {
+    content: '🐸';
+}
+.back[data-info=bear]:after {
+    content: '🐻';
+}
