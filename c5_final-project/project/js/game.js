@@ -1,24 +1,35 @@
 function Game(cardNums) {
-  var cardAmount = cardNums || 12;
-
-  this.init(cardAmount);
+  this._cardNums = cardNums || 12;
+  this.init(this._cardNums);
 }
 
 Game.prototype = {
+  _cardNums: 0,
   _emojiList: ['🐸', '🐼', '🐵', '🐨', '🐞', '🐷', ],
   _cardsList: [],
-
   _flippedCards: [],
+  _winningCardsNum: 0,
   _isPrevStepWin: false,
+  _timer: null,
+  _intervalId: null,
+  _gameTimeSec: 60,
+  _timeLeft: 0,
+  _dialog: null,
 
   init: function (cardNums) {
     var cardsContainer = document.getElementById('cardsContainer');
     cardsContainer.addEventListener('click', handleCardClick.bind(this));
 
-    createCards.call(this, cardsContainer, cardNums);
+    this._cardsList = createCards(cardsContainer, cardNums);
     this._fillCards();
 
+    this._timer = createTimer(cardsContainer);
+    this._setTimer();
+
+    this._dialog = createDialog(this);
+
     function createCards(container, cardAmount) {
+      var cardObjsList = [];
       var cardObj;
       var frontCards = document.querySelectorAll('.card__front');
 
@@ -29,13 +40,9 @@ Game.prototype = {
       for (var i = 0; i < cardAmount; i++) {
         cardObj = {};
 
-        domCard = document.createElement('div');
-        domCardFront = document.createElement('div');
-        domCardBack = document.createElement('div');
-
-        domCard.classList.add('card');
-        domCardFront.classList.add('card__front');
-        domCardBack.classList.add('card__back');
+        domCard = createElement('div', 'card');
+        domCardFront = createElement('div', 'card__front');
+        domCardBack = createElement('div', 'card__back');
 
         domCard.append(domCardFront, domCardBack);
         container.append(domCard);
@@ -43,10 +50,58 @@ Game.prototype = {
         cardObj.domCard = domCard;
         cardObj.domCardFront = domCardFront;
 
-        this._cardsList.push(cardObj);
+        cardObjsList.push(cardObj);
       }
 
       document.body.appendChild(container);
+
+      return cardObjsList;
+    }
+
+    function createTimer() {
+      var timerObj = {};
+      var domTimer = createElement('div', 'timer');
+
+      document.body.append(domTimer);
+      timerObj.domTimer = domTimer;
+
+      return timerObj;
+    }
+
+    function createDialog(_this) {
+      var domDialog = createElement('div', 'dialog');
+      var domDialogContent = createElement('div', 'dialog__content');
+      var domDialogText = createElement('p', 'dialog__text');
+      var domDialogBtn = createElement('button', 'dialog__btn', null, _this._restartGame, _this);
+
+      domDialogContent.append(domDialogText, domDialogBtn);
+      domDialog.append(domDialogContent);
+      document.body.append(domDialog);
+
+      var dialogObj = {
+        text: {
+          lose: 'Lose',
+          win: 'Win',
+          tryAgain: 'Try again',
+          playAgain: 'Play again',
+        },
+        domDialog: domDialog,
+        domDialogContent: domDialogContent,
+        domDialogText: domDialogText,
+        domDialogBtn: domDialogBtn,
+      }
+
+      return dialogObj;
+    }
+
+    function createElement(elTag, elClass, elId, listener, ctx) {
+      var element = document.createElement(elTag);
+
+      elClass ? element.classList.add(elClass) : '';
+      elId ? element.id = elId : '';
+      listener ? element.addEventListener('click', listener.bind(ctx)) : '';
+
+      return element;
     }
 
     function handleCardClick(event) {
@@ -55,6 +110,8 @@ Game.prototype = {
       if (!card.classList.contains('card')) {
         return;
       }
+
+      this._startTimer();
 
       if (!this._isPrevStepWin && this._flippedCards.length === 2) {
         this._flippedCards.forEach(function (item) {
@@ -80,9 +137,10 @@ Game.prototype = {
         if (firstCard.dataset.emojiId === secondCard.dataset.emojiId) {
           this._flippedCards.forEach(function (item) {
             item.classList.add('card--win');
-          });
-
+          }, this);
+          this._winningCardsNum += 2;
           this._isPrevStepWin = true;
+          this._checkGameState();
         } else {
           this._flippedCards.forEach(function (item) {
             item.classList.add('card--lose');
@@ -127,8 +185,78 @@ Game.prototype = {
     }
   },
 
-  showDialog: function (isWin) {
-    this.showDialog.textContent = isWin ? 'Win' : 'Lose';
+  _checkGameState: function () {
+    if (this._timeLeft === 0 || this._winningCardsNum === this._cardNums) {
+      this._finishGame();
+      return;
+    }
+  },
+
+  _finishGame: function () {
+    clearInterval(this._intervalId);
+    this._intervalId = null;
+
+    this._winningCardsNum === this._cardNums ?
+      this._showDialog('win') :
+      this._showDialog('lose');
+  },
+
+  _restartGame: function () {
+    this._hideDialog();
+
+    this._cardsList.forEach(function (card) {
+      card.domCard.classList.remove('card--flipped', 'card--win', 'card--lose');
+    });
+
+    this._flippedCards = [];
+    this._winningCardsNum = 0;
+
+    this._fillCards();
+    this._setTimer();
+  },
+
+  _setTimer: function (isTimerStart) {
+    this._timer.domTimer.textContent = this._formatGameDuration(this._gameTimeSec);
+  },
+
+  _startTimer: function (isTimerStart) {
+    if (this._intervalId === null) {
+      this._timeLeft = this._gameTimeSec;
+      this._intervalId = setInterval(this._updateTimer.bind(this), 1000);
+    }
+
+  },
+
+  _updateTimer: function () {
+    this._timeLeft--;
+    this._timer.domTimer.textContent = this._formatGameDuration(this._timeLeft);
+    this._checkGameState();
+  },
+
+  _formatGameDuration(durationSec) {
+    var min = parseInt(durationSec / 60);
+    var sec = durationSec % 60;
+
+    min = min < 10 ? ('0' + min) : min;
+    sec = sec < 10 ? ('0' + sec) : sec;
+
+    return min + ' : ' + sec;
+  },
+
+  _showDialog: function (gameResult) {
+    if (gameResult === 'win') {
+      this._dialog.domDialogText.textContent = this._dialog.text.win;
+      this._dialog.domDialogBtn.textContent = this._dialog.text.playAgain;
+    } else {
+      this._dialog.domDialogText.textContent = this._dialog.text.lose;
+      this._dialog.domDialogBtn.textContent = this._dialog.text.tryAgain;
+    }
+
+    this._dialog.domDialog.classList.add('dialog--shown');
+  },
+
+  _hideDialog: function () {
+    this._dialog.domDialog.classList.remove('dialog--shown');
   },
 };
 

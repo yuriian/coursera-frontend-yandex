@@ -1,0 +1,31 @@
+html {
+  font-size: $fontSize;
+  @media screen and(max-width: 500px) {
+    font-size: 12px;
+  }
+}
+
+body {
+  margin: 0;
+  background: $bodyBgColor;
+  font-family: 'Arial', sans-serif;
+  color: $textColor;
+}
+
+.main {
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template: repeat(3, $rowHeight) /repeat(4, $columnWidth);
+  grid-gap: $cardGap;
+  perspective: $cardPerspective;
+  @media screen and (max-width: 500px) {
+    grid-template: repeat(4, $cardHeight) /repeat(3, $cardWidth);
+  }
+}
+
+.title {
+  font: bold 42px/47px Arial, sans-serif;
+  margin: 40px 0;
+  text-align: center;
+}

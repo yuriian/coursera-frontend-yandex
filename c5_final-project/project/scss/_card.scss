@@ -36,7 +36,7 @@
     box-shadow: $cardBoxShadow;
     will-change: transform;
     backface-visibility: hidden;
-    transition: background-color .3s ease-in .2s, transform .45s cubic-bezier(.17, .67, .54, 1.25);
+    transition: background-color .3s ease-in .1s, transform .45s cubic-bezier(.17, .67, .54, 1.25);
     transform: rotateY(-180deg);
     display: flex;
     justify-content: center;

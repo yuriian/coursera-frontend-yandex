@@ -1,16 +1,37 @@
+$fontSize: 16px;
+// grid
+$columnWidth: 8.125rem; // 130px
+$rowHeight: 8.125rem; // 130px
+$gap: 1.5625rem; // 25px
 // colors
 $bodyBgColor: #cfd0cf;
-$titleColor: #434344;
+$textColor: #434344;
 $cardGradientStartColor: #22ab93;
 $cardGradientStopColor:#19668d;
 $cardWinColor: #5ad66f;
 $cardLoseColor: #f44336;
 // card
-$cardWidth: 130px;
-$cardHeight: $cardWidth;
-$cardGap: 25px;
-$cardBorder: 5px solid #fff;
-$cardBorderRadius: 9px;
+$cardWidth: $columnWidth; // 130px
+$cardHeight: $rowHeight; // 130px
+$cardGap: 1.5625rem; // 25px;
+$cardBorder: 0.3125rem solid #fff; // 5px
+$cardBorderRadius: 0.5625rem; // 9px
 $cardBoxShadow: 1px 1px 5px rgba(0, 0, 0, .5);
-$cardPerspective: 600px;
-$emojiSize: 75px;
+$cardPerspective:37.5rem; //600px
+$emojiSize: 4.6875rem; //75px;
+// timer
+$timerFontSize: 2rem; //32px
+$timerLineHeight: 2.25rem; //36px
+$timerPaddings: 1.875rem; // 30px
+//dialog
+$dlgMinWidth: 21.875rem; // 350px
+$dlgTextSize: 3rem; //48px
+$dlgPaddings: 1.875rem; //30px
+// dialog button
+$dlgBtnTextSize: 1.25rem; // 30px
+$dlgBtnTextColor: #fff;
+$dlgBtnWidePaddings: 1.25rem; // 30px
+$dlgBtnHeighPaddings: .625rem; // 10px
+$dlgBtnBorderRadius: .5625rem; // 9px;
+$dlgBtnShadow: 1px 1px 1px rgba(0, 0, 0, .5);
+$dlgActiveBtnShadow: inset 2px 1px 8px rgba(0, 0, 0, .7);
