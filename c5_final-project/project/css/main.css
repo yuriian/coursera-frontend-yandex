@@ -6,11 +6,11 @@
     cursor: pointer; }
   .card * {
     box-sizing: border-box; }
-  .card--rotated {
+  .card--flipped {
     pointer-events: none; }
-    .card--rotated .card__front {
+    .card--flipped .card__front {
       transform: rotateY(0deg); }
-    .card--rotated .card__back {
+    .card--flipped .card__back {
       transform: rotateY(180deg); }
   .card--win .card__front {
     background-color: #5ad66f; }
@@ -56,7 +56,7 @@ body {
   perspective: 600px; }
 
 .title {
-  font: 42px/47px Arial, sans-serif;
+  font: bold 42px/47px Arial, sans-serif;
   margin: 40px 0;
   text-align: center;
   color: #434344; }

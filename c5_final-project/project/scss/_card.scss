@@ -8,7 +8,7 @@
   * {
     box-sizing: border-box;
   }
-  &--rotated {
+  &--flipped {
     pointer-events: none;
     .card__front {
       transform: rotateY(0deg);
