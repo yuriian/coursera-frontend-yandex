@@ -134,7 +134,9 @@ Game.prototype = {
 
       if (!this._isPrevStepWin && this._flippedCards.length === 2) {
         this._flippedCards.forEach(function (item) {
-          item.classList.remove('card--lose', 'card--flipped');
+          // IE doesn't support multiple parameters for the add() and remove() methods
+          item.classList.remove('card--flipped');
+          item.classList.remove('card--lose');
         });
       }
 
@@ -224,7 +226,10 @@ Game.prototype = {
     this._hideDialog();
 
     this._cardsList.forEach(function (card) {
-      card.domCard.classList.remove('card--flipped', 'card--win', 'card--lose');
+      // IE doesn't support multiple parameters for the add() and remove() methods
+      card.domCard.classList.remove('card--flipped');
+      card.domCard.classList.remove('card--win');
+      card.domCard.classList.remove('card--lose');
     });
 
     this._flippedCards = [];

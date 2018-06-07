@@ -13,14 +13,23 @@ body {
 }
 
 .main {
-  margin: 0 auto;
-  display: grid;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
   justify-content: center;
-  grid-template: repeat(3, $rowHeight) /repeat(4, $columnWidth);
-  grid-gap: $cardGap;
   perspective: $cardPerspective;
-  @media screen and (max-width: 500px) {
-    grid-template: repeat(4, $cardHeight) /repeat(3, $cardWidth);
+  margin: 0 auto;
+  width: 700px;
+}
+
+@supports(display: grid) {
+  .main {
+    display: grid;
+    grid-template: repeat(3, $rowHeight) /repeat(4, $columnWidth);
+    grid-gap: $cardGap;
+    @media screen and (max-width: 500px) {
+      grid-template: repeat(4, $cardHeight) /repeat(3, $cardWidth);
+    }
   }
 }
 
