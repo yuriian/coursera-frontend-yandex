@@ -1,4 +1,6 @@
 $fontSize: 16px;
+$smPhoneBreakpoint: 575.98px; // from Bootstrap
+$mdPhoneBreakpoint: 767.98px;
 // grid
 $columnWidth: 8.125rem; // 130px
 $rowHeight: 8.125rem; // 130px
@@ -10,15 +12,21 @@ $cardGradientStartColor: #22ab93;
 $cardGradientStopColor:#19668d;
 $cardWinColor: #5ad66f;
 $cardLoseColor: #f44336;
+// title 
+$titleVerticalMargin: 2.5rem; // 40px
+$titleFontSize: 2.625rem; // 42px
+$titleLineHeight: 2.9375rem; // 47px
 // card
 $cardWidth: $columnWidth; // 130px
 $cardHeight: $rowHeight; // 130px
 $cardGap: 1.5625rem; // 25px;
+$cardPhoneLandSize: 18vh;
+$cardPhoneLandGap: 3vh;
 $cardBorder: 0.3125rem solid #fff; // 5px
 $cardBorderRadius: 0.5625rem; // 9px
 $cardBoxShadow: 1px 1px 5px rgba(0, 0, 0, .5);
 $cardPerspective:37.5rem; //600px
-$emojiSize: 4.6875rem; //75px;
+$emojiSize: 4.6875em; //75px;
 // timer
 $timerFontSize: 2rem; //32px
 $timerLineHeight: 2.25rem; //36px

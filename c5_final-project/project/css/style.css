@@ -1,8 +1,11 @@
 html {
   font-size: 16px; }
-  @media screen and (max-width: 500px) {
+  @media only screen and (max-width: 767.98px) {
     html {
-      font-size: 12px; } }
+      font-size: 13px; } }
+  @media only screen and (max-width: 575.98px) {
+    html {
+      font-size: 11px; } }
 
 body {
   margin: 0;
@@ -11,25 +14,48 @@ body {
   color: #434344; }
 
 .main {
-  margin: 0 auto;
-  display: grid;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
   justify-content: center;
-  grid-template: repeat(3, 8.125rem)/repeat(4, 8.125rem);
-  grid-gap: 1.5625rem;
-  perspective: 37.5rem; }
-  @media screen and (max-width: 500px) {
-    .main {
-      grid-template: repeat(4, 8.125rem)/repeat(3, 8.125rem); } }
+  perspective: 37.5rem;
+  margin: 0 auto;
+  width: 700px; }
 
+@supports (display: grid) {
+  .main {
+    width: auto;
+    display: grid;
+    grid-template: repeat(3, 8.125rem)/repeat(4, 8.125rem);
+    grid-gap: 1.5625rem; }
+    @media only screen and (max-width: 767.98px) and (orientation: landscape) {
+      .main {
+        grid-template: repeat(3, 18vh)/repeat(4, 18vh);
+        grid-gap: 3vh; } }
+    @media only screen and (max-width: 575.98px) {
+      .main {
+        grid-template: repeat(4, 8.125rem)/repeat(3, 8.125rem); } } }
 .title {
-  font: bold 42px/47px Arial, sans-serif;
-  margin: 40px 0;
+  font-size: 2.625rem;
+  line-height: 2.9375rem;
+  font-family: Arial, sans-serif;
+  margin: 2.5rem 0;
   text-align: center; }
 
 .card {
   width: 8.125rem;
   height: 8.125rem;
-  position: relative; }
+  position: relative;
+  transform-style: preserve-3d;
+  margin: 0 12.5px 25px; }
+  @media only screen and (max-width: 800px) and (orientation: landscape) {
+    .card {
+      width: 18vh;
+      height: 18vh;
+      font-size: .63rem; } }
+  @supports (display: grid) {
+    .card {
+      margin: 0; } }
   .card:hover {
     cursor: pointer; }
   .card * {
@@ -51,14 +77,17 @@ body {
     background: #fff;
     border-radius: 0.5625rem;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-    will-change: transform;
     backface-visibility: hidden;
-    transition: background-color 0.3s ease-in 0.1s, transform 0.45s cubic-bezier(0.17, 0.67, 0.54, 1.25);
+    will-change: transform;
     transform: rotateY(-180deg);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4.6875rem; }
+    font-size: 4.6875em;
+    transition: background-color .2s ease-out; }
+    @supports (display: grid) {
+      .card__front {
+        transition: background-color 0.3s ease-out 0.1s, transform 0.45s cubic-bezier(0.17, 0.67, 0.54, 1.25); } }
   .card__back {
     width: 100%;
     height: 100%;
@@ -68,8 +97,10 @@ body {
     border-radius: 0.5625rem;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     backface-visibility: hidden;
-    will-change: transform;
-    transition: transform 0.45s cubic-bezier(0.17, 0.67, 0.54, 1.25); }
+    will-change: transform; }
+    @supports (display: grid) {
+      .card__back {
+        transition: transform 0.45s cubic-bezier(0.17, 0.67, 0.54, 1.25); } }
 
 .timer {
   font-size: 2rem;
@@ -93,7 +124,7 @@ body {
     z-index: 0;
     background: rgba(0, 0, 0, 0.5); }
     .dialog--shown .dialog__content {
-      transition: transform 0.25s cubic-bezier(0.47, 0.51, 0.45, 1.39);
+      transition: transform 0.25s cubic-bezier(0.47, 0.51, 0.45, 1.39) 0.1s;
       transform: scale(1); }
   .dialog__content {
     display: flex;
@@ -105,23 +136,34 @@ body {
     min-width: 21.875rem;
     background: #fff;
     padding: 1.875rem;
-    border-radius: 5px; }
+    border-radius: 5px;
+    overflow: hidden; }
   .dialog__text {
     font-size: 3rem;
     font-weight: bold;
     margin: 0 0 2.5rem; }
+  .dialog__letter {
+    will-change: transform;
+    display: inline-block;
+    transform-origin: 0 100%;
+    animation: resizeLetter .55s ease-out infinite alternate backwards; }
   .dialog__btn {
     border: none;
     font-size: 1.25rem;
     color: #fff;
-    font-weight: bold;
-    padding: 0.625rem 1.25rem;
+    padding: 0.532rem 1.875rem;
     border-radius: 0.5625rem;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(45deg, #22ab93, #19668d); }
+    background: linear-gradient(90deg, #19668d, #22ab93); }
     .dialog__btn:active {
       box-shadow: inset 2px 1px 8px rgba(0, 0, 0, 0.7); }
     .dialog__btn:hover {
       cursor: pointer; }
+
+@keyframes resizeLetter {
+  from {
+    transform: translateY(0) scaleY(0.6); }
+  to {
+    transform: translateY(-5%) scaleY(1.3); } }
 
 /*# sourceMappingURL=style.css.map */

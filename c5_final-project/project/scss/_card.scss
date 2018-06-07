@@ -1,6 +1,11 @@
 .card {
   width: $cardWidth;
   height: $cardHeight;
+  @media only screen and (max-width: 800px) and (orientation: landscape) {
+    width: $cardPhoneLandSize;
+    height: $cardPhoneLandSize;
+    font-size: .63rem;
+  }
   position: relative;
   transform-style: preserve-3d;
   margin: 0 12.5px 25px;

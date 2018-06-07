@@ -1,7 +1,10 @@
 html {
   font-size: $fontSize;
-  @media screen and(max-width: 500px) {
-    font-size: 12px;
+  @media only screen and (max-width: $mdPhoneBreakpoint) {
+    font-size: 13px;
+  }
+  @media only screen and (max-width: $smPhoneBreakpoint) {
+    font-size: 11px;
   }
 }
 
@@ -24,17 +27,24 @@ body {
 
 @supports(display: grid) {
   .main {
+    width: auto;
     display: grid;
     grid-template: repeat(3, $rowHeight) /repeat(4, $columnWidth);
     grid-gap: $cardGap;
-    @media screen and (max-width: 500px) {
+    @media only screen and (max-width: $mdPhoneBreakpoint) and (orientation: landscape) {
+      grid-template: repeat(3, $cardPhoneLandSize) /repeat(4, $cardPhoneLandSize);
+      grid-gap: $cardPhoneLandGap;
+    }
+    @media only screen and (max-width: $smPhoneBreakpoint) {
       grid-template: repeat(4, $cardHeight) /repeat(3, $cardWidth);
     }
   }
 }
 
 .title {
-  font: bold 42px/47px Arial, sans-serif;
-  margin: 40px 0;
+  font-size: $titleFontSize;
+  line-height: $titleLineHeight;
+  font-family: Arial, sans-serif;
+  margin: $titleVerticalMargin 0;
   text-align: center;
 }
