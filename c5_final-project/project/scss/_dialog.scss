@@ -13,7 +13,7 @@
     z-index: 0;
     background: hsla(0, 0, 0, 0.5);
     .dialog__content {
-      transition: transform .25s cubic-bezier(.47, .51, .45, 1.39);
+      transition: transform .25s cubic-bezier(.47, .51, .45, 1.39) .1s;
       transform: scale(1);
     }
   }
@@ -28,26 +28,41 @@
     background: #fff;
     padding: $dlgPaddings;
     border-radius: 5px;
+    overflow: hidden;
   }
   &__text {
     font-size: $dlgTextSize;
     font-weight: bold;
     margin: 0 0 40px / $fontSize * 1rem;
   }
+  &__letter {
+    will-change: transform;
+    display: inline-block;
+    transform-origin: 0 100%;
+    animation: resizeLetter .55s ease-out infinite alternate backwards;
+  }
   &__btn {
     border: none;
     font-size: $dlgBtnTextSize;
     color: $dlgBtnTextColor;
-    font-weight: bold;
     padding: $dlgBtnHeighPaddings $dlgBtnWidePaddings;
     border-radius: $dlgBtnBorderRadius;
     box-shadow: $dlgBtnShadow;
-    background: linear-gradient(45deg, $cardGradientStartColor, $cardGradientStopColor);
+    background: linear-gradient(90deg, $cardGradientStopColor, $cardGradientStartColor);
     &:active {
       box-shadow: $dlgActiveBtnShadow;
     }
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+@keyframes resizeLetter {
+  from {
+    transform: translateY(0) scaleY(.6);
+  }
+  to {
+    transform: translateY(-5%)scaleY(1.3);
   }
 }

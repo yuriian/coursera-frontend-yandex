@@ -6,6 +6,12 @@ function Game(cardNums) {
 Game.prototype = {
   _cardNums: 0,
   _emojiList: ['🐸', '🐼', '🐵', '🐨', '🐞', '🐷', ],
+  _text: {
+    lose: 'Lose',
+    win: 'Win',
+    tryAgain: 'Try again',
+    playAgain: 'Play again',
+  },
   _cardsList: [],
   _flippedCards: [],
   _winningCardsNum: 0,
@@ -26,7 +32,7 @@ Game.prototype = {
     this._timer = createTimer(cardsContainer);
     this._setTimer();
 
-    this._dialog = createDialog(this);
+    this._dialog = createDialog.call(this);
 
     function createCards(container, cardAmount) {
       var cardObjsList = [];
@@ -68,11 +74,11 @@ Game.prototype = {
       return timerObj;
     }
 
-    function createDialog(_this) {
+    function createDialog() {
       var domDialog = createElement('div', 'dialog');
       var domDialogContent = createElement('div', 'dialog__content');
       var domDialogText = createElement('p', 'dialog__text');
-      var domDialogBtn = createElement('button', 'dialog__btn', null, _this._restartGame, _this);
+      var domDialogBtn = createElement('button', 'dialog__btn', null, this._restartGame, this);
 
       domDialogContent.append(domDialogText, domDialogBtn);
       domDialog.append(domDialogContent);
@@ -80,10 +86,10 @@ Game.prototype = {
 
       var dialogObj = {
         text: {
-          lose: 'Lose',
-          win: 'Win',
-          tryAgain: 'Try again',
-          playAgain: 'Play again',
+          lose: addLettersAnimations(this._text.lose, 'dialog__letter'),
+          win: addLettersAnimations(this._text.win, 'dialog__letter'),
+          tryAgain: this._text.tryAgain,
+          playAgain: this._text.playAgain,
         },
         domDialog: domDialog,
         domDialogContent: domDialogContent,
@@ -92,6 +98,19 @@ Game.prototype = {
       }
 
       return dialogObj;
+    }
+
+    function addLettersAnimations(word, letterClass) {
+      var animDelay = 0.18;
+      var animDelayStyle = '';
+
+      var letters = Array.prototype.reduce.call(word, function (str, letter) {
+        animDelay += 0.12;
+        animDelayStyle = 'style="animation-delay:' + animDelay + 's"'
+        return str + '<span class="' + letterClass + '" ' + animDelayStyle + '>' + letter + '</span>';
+      }, '');
+
+      return letters;
     }
 
     function createElement(elTag, elClass, elId, listener, ctx) {
@@ -233,7 +252,7 @@ Game.prototype = {
     this._checkGameState();
   },
 
-  _formatGameDuration(durationSec) {
+  _formatGameDuration: function (durationSec) {
     var min = parseInt(durationSec / 60);
     var sec = durationSec % 60;
 
@@ -245,10 +264,10 @@ Game.prototype = {
 
   _showDialog: function (gameResult) {
     if (gameResult === 'win') {
-      this._dialog.domDialogText.textContent = this._dialog.text.win;
+      this._dialog.domDialogText.innerHTML = this._dialog.text.win;
       this._dialog.domDialogBtn.textContent = this._dialog.text.playAgain;
     } else {
-      this._dialog.domDialogText.textContent = this._dialog.text.lose;
+      this._dialog.domDialogText.innerHTML = this._dialog.text.lose;
       this._dialog.domDialogBtn.textContent = this._dialog.text.tryAgain;
     }
 
