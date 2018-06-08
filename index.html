@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Memoji</title>
-  <link rel="stylesheet" href="./css/style.css">
   <style>
     html {
       font-size: 16px;
@@ -68,6 +67,10 @@
       text-align: center;
     }
 
+    .card * {
+      box-sizing: border-box;
+    }
+
     .card {
       width: 8.125rem;
       height: 8.125rem;
@@ -91,8 +94,11 @@
     }
 
     .card__front {
+      width: 100%;
+      height: 100%;
       position: absolute;
       border-radius: 0.5625rem;
+      transform: rotateY(-180deg);
     }
 
     .card__back {
@@ -175,6 +181,24 @@
       <div class="card__back"></div>
     </div>
   </main>
+  <noscript id="deferred-styles">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </noscript>
+  <script>
+    var loadDeferredStyles = function () {
+      var addStylesNode = document.getElementById("deferred-styles");
+      var replacement = document.createElement("div");
+      replacement.innerHTML = addStylesNode.textContent;
+      document.body.appendChild(replacement)
+      addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+      window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    if (raf) raf(function () {
+      window.setTimeout(loadDeferredStyles, 0);
+    });
+    else window.addEventListener('load', loadDeferredStyles);
+  </script>
   <script src="./js/index.js"></script>
 </body>
 
