@@ -9,7 +9,7 @@ html {
 
 body {
   margin: 0;
-  background: #cfd0cf;
+  background: #cecfce;
   font-family: 'Arial', sans-serif;
   color: #434344; }
 
@@ -26,15 +26,14 @@ body {
   .main {
     width: auto;
     display: grid;
-    grid-template: repeat(3, 8.125rem)/repeat(4, 8.125rem);
+    grid-template-columns: repeat(4, max-content);
     grid-gap: 1.5625rem; }
     @media only screen and (max-width: 767.98px) and (orientation: landscape) {
       .main {
-        grid-template: repeat(3, 18vh)/repeat(4, 18vh);
         grid-gap: 3vh; } }
     @media only screen and (max-width: 575.98px) {
       .main {
-        grid-template: repeat(4, 8.125rem)/repeat(3, 8.125rem); } } }
+        grid-template-columns: repeat(3, max-content); } } }
 .title {
   font-size: 2.625rem;
   line-height: 2.9375rem;
@@ -67,9 +66,9 @@ body {
     .card--flipped .card__back {
       transform: rotateY(180deg); }
   .card--win .card__front {
-    background-color: #5ad66f; }
+    background-color: #7cde8d; }
   .card--lose .card__front {
-    background-color: #f44336; }
+    background-color: #f66055; }
   .card__front {
     width: 100%;
     height: 100%;

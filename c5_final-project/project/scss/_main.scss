@@ -29,14 +29,13 @@ body {
   .main {
     width: auto;
     display: grid;
-    grid-template: repeat(3, $rowHeight) /repeat(4, $columnWidth);
+    grid-template-columns: repeat(4, max-content);
     grid-gap: $cardGap;
     @media only screen and (max-width: $mdPhoneBreakpoint) and (orientation: landscape) {
-      grid-template: repeat(3, $cardPhoneLandSize) /repeat(4, $cardPhoneLandSize);
       grid-gap: $cardPhoneLandGap;
     }
     @media only screen and (max-width: $smPhoneBreakpoint) {
-      grid-template: repeat(4, $cardHeight) /repeat(3, $cardWidth);
+      grid-template-columns: repeat(3, max-content);
     }
   }
 }
