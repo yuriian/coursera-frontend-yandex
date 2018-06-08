@@ -125,8 +125,8 @@
 
         domDialogContent.append(domDialogText, domDialogBtn);
         domDialog.append(domDialogContent);
-        insertedAfterNode.parentNode.insertBefore(domDialog, insertedAfterNode.nextSibling);
-        // document.body.append(domDialog);
+        // insertedAfterNode.parentNode.insertBefore(domDialog, insertedAfterNode.nextSibling);
+        document.body.append(domDialog);
 
         var dialogObj = {
           text: {
