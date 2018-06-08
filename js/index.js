@@ -59,7 +59,7 @@
 
       this._dialog = createDialog.call(this, cardsContainer);
 
-      this._timer = createTimer(cardsContainer);
+      this._timer = getTimer(cardsContainer);
       this._setTimer();
 
 
@@ -108,12 +108,10 @@
         return cardObjsList;
       }
 
-      function createTimer(insertedAfterNode) {
+      function getTimer() {
         var timerObj = {};
-        var domTimer = createElement('div', 'timer');
+        var domTimer = document.getElementById('timer');
 
-        insertedAfterNode.parentNode.insertBefore(domTimer, insertedAfterNode.nextSibling);
-        // document.body.append(domTimer);
         timerObj.domTimer = domTimer;
 
         return timerObj;
