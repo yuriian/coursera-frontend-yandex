@@ -6,12 +6,12 @@ $columnWidth: 8.125rem; // 130px
 $rowHeight: 8.125rem; // 130px
 $gap: 1.5625rem; // 25px
 // colors
-$bodyBgColor: #cfd0cf;
+$bodyBgColor: hsl(120, 1%, 81%);
 $textColor: #434344;
 $cardGradientStartColor: #22ab93;
 $cardGradientStopColor:#19668d;
-$cardWinColor: #5ad66f;
-$cardLoseColor: #f44336;
+$cardWinColor: hsl(130, 60%, 68%);
+$cardLoseColor: hsl(4, 90%, 65%);
 // title 
 $titleVerticalMargin: 2.5rem; // 40px
 $titleFontSize: 2.625rem; // 42px
