@@ -13,7 +13,8 @@ $cardGradientStopColor:#19668d;
 $cardWinColor: hsl(130, 60%, 68%);
 $cardLoseColor: hsl(4, 90%, 65%);
 // title 
-$titleVerticalMargin: 2.5rem; // 40px
+$titleVerticalMargin: 2.4rem;
+$titleWideMargin: 1.7rem;
 $titleFontSize: 2.625rem; // 42px
 $titleLineHeight: 2.9375rem; // 47px
 // card
@@ -30,7 +31,7 @@ $emojiSize: 4.6875em; //75px;
 // timer
 $timerFontSize: 2rem; //32px
 $timerLineHeight: 2.25rem; //36px
-$timerPaddings: 1.875rem; // 30px
+$timerPaddings: 1.5rem;
 //dialog
 $dlgMinWidth: 21.875rem; // 350px
 $dlgTextSize: 3rem; //48px

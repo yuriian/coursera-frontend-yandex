@@ -42,8 +42,7 @@ body {
 
 .title {
   font-size: $titleFontSize;
-  line-height: $titleLineHeight;
   font-family: Arial, sans-serif;
-  margin: $titleVerticalMargin 0;
+  margin: $titleVerticalMargin 0 $titleWideMargin;
   text-align: center;
 }
