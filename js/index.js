@@ -1,5 +1,5 @@
 // Source: https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/append()/append().md
-// polyfill for IE9+
+// polyfill for the append method for IE9+
 (function (arr) {
   arr.forEach(function (item) {
     if (item.hasOwnProperty('append')) {
@@ -53,18 +53,19 @@
       var cardsContainer = document.getElementById('cardsContainer');
       cardsContainer.addEventListener('click', handleCardClick.bind(this));
 
-      this._cardsList = createCards(cardsContainer, cardNums);
+      // this._cardsList = createCards(cardsContainer, cardNums);
+      this._cardsList = getCards();
       this._fillCards();
+
+      this._dialog = createDialog.call(this, cardsContainer);
 
       this._timer = createTimer(cardsContainer);
       this._setTimer();
 
-      this._dialog = createDialog.call(this);
 
       function createCards(container, cardAmount) {
         var cardObjsList = [];
         var cardObj;
-        var frontCards = document.querySelectorAll('.card__front');
 
         var domCard;
         var domCardFront;
@@ -75,7 +76,6 @@
 
           domCard = createElement('div', 'card');
           domCardFront = createElement('div', 'card__front');
-          domCardBack = createElement('div', 'card__back');
 
           domCard.append(domCardFront, domCardBack);
           container.append(domCard);
@@ -91,17 +91,35 @@
         return cardObjsList;
       }
 
-      function createTimer() {
+      function getCards() {
+        var cardObjsList = [];
+        var cardObj;
+        var domCards = document.querySelectorAll('.card');
+
+        [].forEach.call(domCards, function (domCardItem) {
+          cardObj = {};
+
+          cardObj.domCard = domCardItem;
+          cardObj.domCardFront = domCardItem.firstElementChild;
+
+          cardObjsList.push(cardObj);
+        });
+
+        return cardObjsList;
+      }
+
+      function createTimer(insertedAfterNode) {
         var timerObj = {};
         var domTimer = createElement('div', 'timer');
 
-        document.body.append(domTimer);
+        insertedAfterNode.parentNode.insertBefore(domTimer, insertedAfterNode.nextSibling);
+        // document.body.append(domTimer);
         timerObj.domTimer = domTimer;
 
         return timerObj;
       }
 
-      function createDialog() {
+      function createDialog(insertedAfterNode) {
         var domDialog = createElement('div', 'dialog');
         var domDialogContent = createElement('div', 'dialog__content');
         var domDialogText = createElement('p', 'dialog__text');
@@ -109,7 +127,8 @@
 
         domDialogContent.append(domDialogText, domDialogBtn);
         domDialog.append(domDialogContent);
-        document.body.append(domDialog);
+        insertedAfterNode.parentNode.insertBefore(domDialog, insertedAfterNode.nextSibling);
+        // document.body.append(domDialog);
 
         var dialogObj = {
           text: {
