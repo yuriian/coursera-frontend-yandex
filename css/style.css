@@ -1,112 +1,51 @@
-html {
-  font-size: 16px; }
-  @media only screen and (max-width: 767.98px) {
-    html {
-      font-size: 13px; } }
-  @media only screen and (max-width: 575.98px) {
-    html {
-      font-size: 11px; } }
+.card:hover {
+  cursor: pointer;
+}
 
-body {
-  margin: 0;
-  background: #cecfce;
-  font-family: 'Arial', sans-serif;
-  color: #434344; }
+.card * {
+  box-sizing: border-box;
+}
 
-.main {
+.card--flipped {
+  pointer-events: none;
+}
+
+.card--flipped .card__front {
+  transform: rotateY(0deg);
+}
+
+.card--flipped .card__back {
+  transform: rotateY(180deg);
+}
+
+.card--win .card__front {
+  background-color: #7cde8d;
+}
+
+.card--lose .card__front {
+  background-color: #f66055;
+}
+
+.card__front {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  backface-visibility: hidden;
+  will-change: transform;
+  transform: rotateY(-180deg);
   display: flex;
-  flex-flow: row wrap;
-  align-content: center;
   justify-content: center;
-  perspective: 37.5rem;
-  margin: 0 auto;
-  width: 700px; }
+  align-items: center;
+  font-size: 4.6875em;
+  transition: background-color .2s ease-out;
+}
 
 @supports (display: grid) {
-  .main {
-    width: auto;
-    display: grid;
-    grid-template-columns: repeat(4, max-content);
-    grid-gap: 1.5625rem; }
-    @media only screen and (max-width: 767.98px) and (orientation: landscape) {
-      .main {
-        grid-gap: 3vh; } }
-    @media only screen and (max-width: 575.98px) {
-      .main {
-        grid-template-columns: repeat(3, max-content); } } }
-.title {
-  font-size: 2.625rem;
-  line-height: 2.9375rem;
-  font-family: Arial, sans-serif;
-  margin: 2.5rem 0;
-  text-align: center; }
-
-.card {
-  width: 8.125rem;
-  height: 8.125rem;
-  position: relative;
-  transform-style: preserve-3d;
-  margin: 0 12.5px 25px; }
-  @media only screen and (max-width: 800px) and (orientation: landscape) {
-    .card {
-      width: 18vh;
-      height: 18vh;
-      font-size: .63rem; } }
-  @supports (display: grid) {
-    .card {
-      margin: 0; } }
-  .card:hover {
-    cursor: pointer; }
-  .card * {
-    box-sizing: border-box; }
-  .card--flipped {
-    pointer-events: none; }
-    .card--flipped .card__front {
-      transform: rotateY(0deg); }
-    .card--flipped .card__back {
-      transform: rotateY(180deg); }
-  .card--win .card__front {
-    background-color: #7cde8d; }
-  .card--lose .card__front {
-    background-color: #f66055; }
   .card__front {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: #fff;
-    border-radius: 0.5625rem;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-    backface-visibility: hidden;
-    will-change: transform;
-    transform: rotateY(-180deg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 4.6875em;
-    transition: background-color .2s ease-out; }
-    @supports (display: grid) {
-      .card__front {
-        transition: background-color 0.3s ease-out 0.1s, transform 0.45s cubic-bezier(0.17, 0.67, 0.54, 1.25); } }
-  .card__back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(45deg, #22ab93, #19668d);
-    border: 0.3125rem solid #fff;
-    border-radius: 0.5625rem;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-    backface-visibility: hidden;
-    will-change: transform; }
-    @supports (display: grid) {
-      .card__back {
-        transition: transform 0.45s cubic-bezier(0.17, 0.67, 0.54, 1.25); } }
-
-.timer {
-  font-size: 2rem;
-  line-height: 2.25rem;
-  font-weight: bold;
-  text-align: center;
-  padding: 1.875rem; }
+    transition: background-color 0.3s ease-out 0.1s, transform 0.45s cubic-bezier(0.17, 0.67, 0.54, 1.25);
+  }
+}
 
 .dialog {
   position: fixed;
@@ -118,51 +57,71 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  font-size: 1rem; }
-  .dialog--shown {
-    z-index: 0;
-    background: rgba(0, 0, 0, 0.5); }
-    .dialog--shown .dialog__content {
-      transition: transform 0.25s cubic-bezier(0.47, 0.51, 0.45, 1.39) 0.1s;
-      transform: scale(1); }
-  .dialog__content {
-    display: flex;
-    will-change: transform;
-    transform: scale(0);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 21.875rem;
-    background: #fff;
-    padding: 1.875rem;
-    border-radius: 5px;
-    overflow: hidden; }
-  .dialog__text {
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 0 0 2.5rem; }
-  .dialog__letter {
-    will-change: transform;
-    display: inline-block;
-    transform-origin: 0 100%;
-    animation: resizeLetter .55s ease-out infinite alternate backwards; }
-  .dialog__btn {
-    border: none;
-    font-size: 1.25rem;
-    color: #fff;
-    padding: 0.532rem 1.875rem;
-    border-radius: 0.5625rem;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(90deg, #19668d, #22ab93); }
-    .dialog__btn:active {
-      box-shadow: inset 2px 1px 8px rgba(0, 0, 0, 0.7); }
-    .dialog__btn:hover {
-      cursor: pointer; }
+  font-size: 1rem;
+}
+
+.dialog--shown {
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dialog--shown .dialog__content {
+  transition: transform 0.25s cubic-bezier(0.47, 0.51, 0.45, 1.39) 0.1s;
+  transform: scale(1);
+}
+
+.dialog__content {
+  display: flex;
+  will-change: transform;
+  transform: scale(0);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 21.875rem;
+  background: #fff;
+  padding: 1.875rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dialog__text {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 0 2.5rem;
+}
+
+.dialog__letter {
+  will-change: transform;
+  display: inline-block;
+  transform-origin: 0 100%;
+  animation: resizeLetter .55s ease-out infinite alternate backwards;
+}
+
+.dialog__btn {
+  border: none;
+  font-size: 1.25rem;
+  color: #fff;
+  padding: 0.532rem 1.875rem;
+  border-radius: 0.5625rem;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(90deg, #19668d, #22ab93);
+}
+
+.dialog__btn:active {
+  box-shadow: inset 2px 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+.dialog__btn:hover {
+  cursor: pointer;
+}
 
 @keyframes resizeLetter {
   from {
-    transform: translateY(0) scaleY(0.6); }
+    transform: translateY(0) scaleY(0.6);
+  }
   to {
-    transform: translateY(-5%) scaleY(1.3); } }
+    transform: translateY(-5%) scaleY(1.3);
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
